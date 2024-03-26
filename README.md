@@ -2,7 +2,7 @@
 
 ## Database Schema
 
-![schema](<Exercise Schema (2).png>)
+![schema](<Exercise Schema (4).png>)
 
 ## Users
 
