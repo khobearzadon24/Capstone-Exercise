@@ -2,7 +2,7 @@
 
 ## Database Schema
 
-![schema](<Exercise Schema (1).png>)
+![schema](<Exercise Schema (2).png>)
 
 ## Users
 
@@ -43,30 +43,33 @@
   - If I click yes, the exercise will be deleted and I will be redirected to the exercise website.
   - If I click no, the exercise will not be deleted and I will be redirected to the exercise website.
 
-## Workouts
+## Exercise Comments
 
-- Either a logged in or unauthorized user can be able to view all of the workouts the users have created
+- Either a logged in or unauthorized user can be able to view all of the comments under the exercises the users have created.
 
-- Create a Workout (logged-in only)
-  - As a logged-in user, when I am on the `"/workouts"` page, I should be able to see the "Create workout" button.
-  - When I click on the "Create workout" button, I should be brought to a modal that will allow me to create a specific type of workout with a maximum of 5 exercises of the same type to add in.
-  - I should also add in a mininum of 2 exercises into the workout form.
-  - I should be able to fill out this modal form and post my workout to the workout page `"/workouts"`.
-- Edit Workout
-  - On the nav bar, I should see a manage workouts button that will navigate me to (`"workouts/my-workouts"`)
-    - This is where I will be able to see the workouts I have made
-    - I should also be able to see the Edit button
-      - When I click the edit button, I should be brought to a modal that will show me a prefilled form with the data from the workout I want to edit.
-        - The type of workout will be listed at the top
-          - I should only be able to add in exercises that are of the same type as what is listed at the top
-        - If I change the type of workout listed at the top, all of the previous exercises will be taken out and the choices of exercises should change to that type of workout.
-  - There should be validations on the form to make sure the information submitted is allowed.
-  - Once the 'Finish edit' button is clicked, I should be brought to the `"/workouts/my-workouts"` page.
-- Delete a workout
-  - On the `"/workouts/my-workouts"` page, every workout should have a delete button.
-  - When clicking the delete button, I should be brought to the delete workout modal which will confirm if I want to delete the workout I have created
-  - If yes is clicked, the workout will be deleted and I will be redirected to the `"workouts/my-workouts` page.
-  - If no is clicked, the modal will close and I will be on the `workouts/my-workouts` page.
+- Create an exercise comment (logged-in only)
+
+  - I should be able to add a comment on any exercise created that is not my own.
+  - I should see a text box underneath each exercise post that will be easy to spot so I can leave my comment.
+  - Once I click submit on the comment. The comment will render at the bottom of all the other comments that have been previously created as well.
+
+- Get all exercise comments
+
+  - I should be able to view all the comments made underneath an exercise post.
+
+- Edit exercise comments
+
+  - I should be able to see an edit button on any exercise comments that are owned by me.
+  - If I am not the owner of the comment, I will not see the edit button.
+  - When I click the edit button, I should be brough to a modal that will display the form with the pre-filled data.
+  - I should not be allowed to leave the desciption box empty. It should be filled with some info for the comment to be able to submit.
+
+- Delete exercise comments
+  - I should be able to delete all the comments that I own.
+  - For any comment that I have made, I should see a delete button.
+  - When clicking the delete button, a delete modal will pop up just to confirm that I want to delete the comment.
+  - When I click yes, I will be brought back to the exercise post with my comment deleted.
+  - When I click no, the modal will be closed and I will still be on the exercise post with my comment still there.
 
 ## MVP's Feauture's List
 
@@ -75,12 +78,11 @@
   - Get all exercises
   - Edit an exercise
   - Delete an exercise
-- Workouts
+- Exercise Comments
 
-  - Create a workout
-  - Get all workouts
-  - Get all workouts made by the owner
-  - Edit a workout
+  - Create a exercise commment
+  - Get all exercise comments
+  - Edit an exercise comment
   - Delete a workout
 
 - Post
@@ -94,8 +96,8 @@
   - Get all comments
 
 - Bonus
-  - Add in finished workout list and a to do workout list onto the page to show what you have accomplished and what you still have to accomplish
-  - Be able to add in two types of exercises into one workout and create validations for it
+  - Be able to choose a bunch of exercises and put it under one workout to be able to post.
+  - Be able to create a workouts form that will only allow me to add exercises in that are of the same type.
 
 ## Wireframe
 
@@ -107,6 +109,6 @@
 
 ![exercise](ExercisePage.png)
 
-### Workouts Page
+### Posts Page
 
-![workout](WorkoutPage.png)
+![posts](<Posts(1).png>)
