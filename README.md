@@ -2,7 +2,7 @@
 
 ## Database Schema
 
-![alt text](<Exercise Schema (3).png>)
+![schema](<Exercise Schema (3).png>)
 
 ## Users
 
@@ -76,13 +76,37 @@
   - Edit an exercise
   - Delete an exercise
 - Workouts
+
   - Create a workout
   - Get all workouts
   - Get all workouts made by the owner
   - Edit a workout
   - Delete a workout
+
+- Post
+
+  - Create a post
+  - Get all posts
+
+- Comment
+
+  - Create a comment
+  - Get all comments
+
 - Bonus
   - Add in finished workout list and a to do workout list onto the page to show what you have accomplished and what you still have to accomplish
   - Be able to add in two types of exercises into one workout and create validations for it
 
 ## Wireframe
+
+### Landing Page
+
+![landing](LandingPage.png)
+
+### Exerxises Page
+
+![exercise](ExercisePage.png)
+
+### Workouts Page
+
+![workout](WorkoutPage.png)
