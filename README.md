@@ -1,114 +1,131 @@
-# Show up Show out (Exercise Website)
+# Flask React Project
 
-## Database Schema
+This is the starter for the Flask React project.
 
-![schema](<images/Exercise Schema (4).png>)
+## Getting started
 
-## Users
+1. Clone this repository (only this branch).
 
-### Unauthorized & Not Logged In User Permission
+2. Install dependencies.
 
-- As an unauthorized and unregistered user, I should have access to the website’s `"/"` home page:
-  - When on the Home Page:
-    - I can see the nav bar that will allow me to see links to the workouts page, exercises page, and the posts page.
-    - I can navigate across different workouts created by other users
-    - I can navigate to the posts created by the users
-    - On the posts page, when clicking the 'submit comment' button, I will be redirected to login
+   ```bash
+   pipenv install -r requirements.txt
+   ```
 
-### Log-In / Sign-Up
+3. Create a __.env__ file based on the example with proper settings for your
+   development environment.
 
-- As an unauthorized and unregistered user, I should have access to the login form to enter my email and password.
-  - If I am an existing user, I will enter my credentials and upon successful validation, be redirected to the home page at `"/"`.
-  - If I am not an existing user, I will have the option to click a button called “Sign Up” and be redirected to the sign-up page at `"/auth-signup"`.
-- As an unauthorized and unregistered user, after clicking the ‘Sign-Up’ button, I should have access to the sign-up form.
-  - I should be able to enter my first name, last name, email address, password.
-  - After successfully entering my information, I should be redirected to the home page at `"/"`.
+4. Make sure the SQLite3 database connection URL is in the __.env__ file.
 
-## Exercises
+5. This starter organizes all tables inside the `flask_schema` schema, defined
+   by the `SCHEMA` environment variable.  Replace the value for
+   `SCHEMA` with a unique name, **making sure you use the snake_case
+   convention.**
 
-- Either a logged in or unauthorized user can be able to view all of the exercises the users have created
+6. Get into your pipenv, migrate your database, seed your database, and run your
+   Flask app:
 
-- Create an Exercise (logged-in only)
-  - As a logged-in user, when I am on the `"/exercises"` page, I should be able to see the "Create exercise" button.
-  - When I click on the "Create exercise" button, I should be able to see a modal that will allow me to create an exercise
-  - I should be able to fill out this modal form and post my exerice to the exercise page "/exerxises."
-- Edit an exercise
-  - For the exericises I create, I should see an 'edit' button.
-  - when I click the edit button, I should be brought to a modal that will show me a prefilled form with the data from the exercise I want to edit.
-  - There should be validations on the form to make sure the information submitted is allowed.
-  - Once the 'Finish edit' button is clicked, I should be brought to the `"/exercises"` page.
-- Delete an exercise
-  - For the exercises I create, I should see a 'delete' button.
-  - When I click the delete button, I should be brought to a modal that makes sure I want to delete the exercise that I have selected.
-  - If I click yes, the exercise will be deleted and I will be redirected to the exercise website.
-  - If I click no, the exercise will not be deleted and I will be redirected to the exercise website.
+   ```bash
+   pipenv shell
+   ```
 
-## Exercise Comments
+   ```bash
+   flask db upgrade
+   ```
 
-- Either a logged in or unauthorized user can be able to view all of the comments under the exercises the users have created.
+   ```bash
+   flask seed all
+   ```
 
-- Create an exercise comment (logged-in only)
+   ```bash
+   flask run
+   ```
 
-  - I should be able to add a comment on any exercise created that is not my own.
-  - I should see a text box underneath each exercise post that will be easy to spot so I can leave my comment.
-  - Once I click submit on the comment. The comment will render at the bottom of all the other comments that have been previously created as well.
+7. The React frontend has no styling applied. Copy the __.css__ files from your
+   Authenticate Me project into the corresponding locations in the
+   __react-vite__ folder to give your project a unique look.
 
-- Get all exercise comments
+8. To run the React frontend in development, `cd` into the __react-vite__
+   directory and run `npm i` to install dependencies. Next, run `npm run build`
+   to create the `dist` folder. The starter has modified the `npm run build`
+   command to include the `--watch` flag. This flag will rebuild the __dist__
+   folder whenever you change your code, keeping the production version up to
+   date.
 
-  - I should be able to view all the comments made underneath an exercise post.
+## Deployment through Render.com
 
-- Edit exercise comments
+First, recall that Vite is a development dependency, so it will not be used in
+production. This means that you must already have the __dist__ folder located in
+the root of your __react-vite__ folder when you push to GitHub. This __dist__
+folder contains your React code and all necessary dependencies minified and
+bundled into a smaller footprint, ready to be served from your Python API.
 
-  - I should be able to see an edit button on any exercise comments that are owned by me.
-  - If I am not the owner of the comment, I will not see the edit button.
-  - When I click the edit button, I should be brough to a modal that will display the form with the pre-filled data.
-  - I should not be allowed to leave the desciption box empty. It should be filled with some info for the comment to be able to submit.
+Begin deployment by running `npm run build` in your __react-vite__ folder and
+pushing any changes to GitHub.
 
-- Delete exercise comments
-  - I should be able to delete all the comments that I own.
-  - For any comment that I have made, I should see a delete button.
-  - When clicking the delete button, a delete modal will pop up just to confirm that I want to delete the comment.
-  - When I click yes, I will be brought back to the exercise post with my comment deleted.
-  - When I click no, the modal will be closed and I will still be on the exercise post with my comment still there.
+Refer to your Render.com deployment articles for more detailed instructions
+about getting started with [Render.com], creating a production database, and
+deployment debugging tips.
 
-## MVP's Feauture's List
+From the Render [Dashboard], click on the "New +" button in the navigation bar,
+and click on "Web Service" to create the application that will be deployed.
 
-- Exercises
-  - Create an exercsie
-  - Get all exercises
-  - Edit an exercise
-  - Delete an exercise
-- Exercise Comments
+Select that you want to "Build and deploy from a Git repository" and click
+"Next". On the next page, find the name of the application repo you want to
+deploy and click the "Connect" button to the right of the name.
 
-  - Create a exercise commment
-  - Get all exercise comments
-  - Edit an exercise comment
-  - Delete a workout
+Now you need to fill out the form to configure your app. Most of the setup will
+be handled by the __Dockerfile__, but you do need to fill in a few fields.
 
-- Post
+Start by giving your application a name.
 
-  - Create a post
-  - Get all posts
+Make sure the Region is set to the location closest to you, the Branch is set to
+"main", and Runtime is set to "Docker". You can leave the Root Directory field
+blank. (By default, Render will run commands from the root directory.)
 
-- Comment
+Select "Free" as your Instance Type.
 
-  - Create a comment
-  - Get all comments
+### Add environment variables
 
-- Bonus
-  - Be able to choose a bunch of exercises and put it under one workout to be able to post.
-  - Be able to create a workouts form that will only allow me to add exercises in that are of the same type.
+In the development environment, you have been securing your environment
+variables in a __.env__ file, which has been removed from source control (i.e.,
+the file is gitignored). In this step, you will need to input the keys and
+values for the environment variables you need for production into the Render
+GUI.
 
-## Wireframe
+Add the following keys and values in the Render GUI form:
 
-### Landing Page
+- SECRET_KEY (click "Generate" to generate a secure secret for production)
+- FLASK_ENV production
+- FLASK_APP app
+- SCHEMA (your unique schema name, in snake_case)
 
-![landing](images/LandingPage.png)
+In a new tab, navigate to your dashboard and click on your Postgres database
+instance.
 
-### Exerxises Page
+Add the following keys and values:
 
-![exercise](images/ExercisePage.png)
+- DATABASE_URL (copy value from the **External Database URL** field)
 
-### Posts Page
+**Note:** Add any other keys and values that may be present in your local
+__.env__ file. As you work to further develop your project, you may need to add
+more environment variables to your local __.env__ file. Make sure you add these
+environment variables to the Render GUI as well for the next deployment.
 
-![posts](<images/Posts(1).png>)
+### Deploy
+
+Now you are finally ready to deploy! Click "Create Web Service" to deploy your
+project. The deployment process will likely take about 10-15 minutes if
+everything works as expected. You can monitor the logs to see your Dockerfile
+commands being executed and any errors that occur.
+
+When deployment is complete, open your deployed site and check to see that you
+have successfully deployed your Flask application to Render! You can find the
+URL for your site just below the name of the Web Service at the top of the page.
+
+**Note:** By default, Render will set Auto-Deploy for your project to true. This
+setting will cause Render to re-deploy your application every time you push to
+main, always keeping it up to date.
+
+[Render.com]: https://render.com/
+[Dashboard]: https://dashboard.render.com/
