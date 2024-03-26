@@ -2,7 +2,7 @@
 
 ## Database Schema
 
-![schema](<Exercise Schema (4).png>)
+![schema](<images/Exercise Schema (4).png>)
 
 ## Users
 
@@ -103,12 +103,12 @@
 
 ### Landing Page
 
-![landing](LandingPage.png)
+![landing](images/LandingPage.png)
 
 ### Exerxises Page
 
-![exercise](ExercisePage.png)
+![exercise](images/ExercisePage.png)
 
 ### Posts Page
 
-![posts](<Posts(1).png>)
+![posts](<images/Posts(1).png>)
