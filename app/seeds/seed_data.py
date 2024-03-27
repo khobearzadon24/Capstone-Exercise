@@ -122,3 +122,527 @@ users= [
     }
 
 ]
+
+
+exercises = [
+    {
+        "name" : "Dumbell Bench Press",
+        "userId": 1,
+        "description": "You are going to use two dumbells and do 3 sets of 12.",
+        "imgUrl": "https://i.postimg.cc/GtwY4HZK/db-bench-press.jpg",
+        "typeId": 1,
+    },
+    {
+        "name" : "Chest Flys",
+        "userId": 2,
+        "description": "You are going to use two dumbells and do 2 sets of 15. Stop the motion to where you start to feel the stretch in your chest.",
+        "imgUrl": "https://i.postimg.cc/fbPqgf9b/chest-flys.jpg",
+        "typeId": 1,
+    },
+    {
+        "name" : "Incline Bench Press",
+        "userId": 3,
+        "description": "Make sure you have the angle of the bench correct.",
+        "imgUrl": "https://i.postimg.cc/fRrvwTT2/incline-bench-press.jpg",
+        "typeId": 1,
+    },
+    {
+        "name" : "Decline Bench Press",
+        "userId": 4,
+        "description": "Drop the weight for this one and do 3 sets of 10.",
+        "imgUrl": "https://i.postimg.cc/Qd2W4BM3/decline-bench-press.jpg",
+        "typeId": 1,
+    },
+    {
+        "name" : "Pushups",
+        "userId": 5,
+        "description": "You can do wide pushups for 4 sets of 25.",
+        "imgUrl": "https://i.postimg.cc/RCgJrp0G/pushups.jpg",
+        "typeId": 1,
+    },
+    {
+        "name" : "Dips",
+        "userId": 6,
+        "description": "You can try this workout with weights, but it will make it harder.",
+        "imgUrl": "https://i.postimg.cc/3NZxBRc3/dips.jpg",
+        "typeId": 2,
+    },
+    {
+        "name" : "Tricep Pulldowns",
+        "userId": 7,
+        "description": "Make sure that you keep the tension on the way down and up.",
+        "imgUrl": "https://i.postimg.cc/T114kNkh/tricep-pulldowns.jpg",
+        "typeId": 2,
+    },
+    {
+        "name" : "Overhead Tricep Extensions",
+        "userId": 8,
+        "description": "You can increase the weight for this workout and it will help grow your arms.",
+        "imgUrl": "https://i.postimg.cc/SxgVPfMM/overhead-tricep-extensions.jpg",
+        "typeId": 2,
+    },
+    {
+        "name" : "Skull Crushers",
+        "userId": 9,
+        "description": "Be careful with the weight on this workout. Increase the reps.",
+        "imgUrl": "https://i.postimg.cc/HLJ0hDmq/skull-crushers.jpg",
+        "typeId": 2,
+    },
+    {
+        "name" : "Kickbacks",
+        "userId": 10,
+        "description": "Decrease the weight and add more reps.",
+        "imgUrl": "https://i.postimg.cc/fR1Sk34P/kickbacks.jpg",
+        "typeId": 2,
+    },
+    {
+        "name" : "Lat Pulldowns",
+        "userId": 11,
+        "description": "Try doing a slow count on the way back up and be explosive on the way down.",
+        "imgUrl": "https://i.postimg.cc/CKBhBJCC/lat-pulldowns.jpg",
+        "typeId": 3,
+    },
+    {
+        "name" : "Bent Over Rows",
+        "userId": 12,
+        "description": "Get your form right and this will be a great workout.",
+        "imgUrl": "https://i.postimg.cc/fW5GsmmM/bent-over-rows.jpg",
+        "typeId": 3,
+    },
+    {
+        "name" : "Pull Ups",
+        "userId": 13,
+        "description": "You can usually do this as a warm up for your back day.",
+        "imgUrl": "https://i.postimg.cc/QCnYTgJ5/pull-ups.jpg",
+        "typeId": 3,
+    },
+    {
+        "name" : "Barbell Rows",
+        "userId": 14,
+        "description": "Drop the weight so you do not injure yourself.",
+        "imgUrl": "https://i.postimg.cc/ydLvMh55/barbell-rows.jpg",
+        "typeId": 3,
+    },
+    {
+        "name" : "Seated Rows",
+        "userId": 15,
+        "description": "You can do 4 sets of 15.",
+        "imgUrl": "https://i.postimg.cc/VN1g5HPp/seated-rows.jpg",
+        "typeId": 3,
+    },
+    {
+        "name" : "Hammer Curls",
+        "userId": 16,
+        "description": "Make sure you stretch your muscles by going all the way down on the reps.",
+        "imgUrl": "https://i.postimg.cc/NjYYfBLc/hammer-curls.jpg",
+        "typeId": 4,
+    },
+    {
+        "name" : "Concentration Curls",
+        "userId": 17,
+        "description": "You must concentrate and feel the burn.",
+        "imgUrl": "https://i.postimg.cc/HLvC2MzY/Concentration-curls.jpg",
+        "typeId": 4,
+    },
+    {
+        "name" : "Cable Curls",
+        "userId": 18,
+        "description": "These are better than using dumbells for this specific type of workout.",
+        "imgUrl": "https://i.postimg.cc/0NBLms5r/cable-curls.jpg",
+        "typeId": 4,
+    },
+    {
+        "name" : "Preacher Curls",
+        "userId": 19,
+        "description": "Be careful with your wrists.",
+        "imgUrl": "https://i.postimg.cc/4NsFYdvB/preacher-curls.jpg",
+        "typeId": 4,
+    },
+    {
+        "name" : "Spider Curls",
+        "userId": 20,
+        "description": "Make sure you have good position before starting this.",
+        "imgUrl": "https://i.postimg.cc/B65B3Tzs/spider-curls.jpg",
+        "typeId": 4,
+    },
+    {
+        "name" : "Front Squats",
+        "userId": 1,
+        "description": "It would help to have someone spot you while you do this.",
+        "imgUrl": "https://i.postimg.cc/KcQxv4CD/front-squats.jpg",
+        "typeId": 5,
+    },
+    {
+        "name" : "Deadlifts",
+        "userId": 2,
+        "description": "A good form is crucial for this workout.",
+        "imgUrl": "https://i.postimg.cc/FKKnpsTN/deadlifts.jpg",
+        "typeId": 5,
+    },
+    {
+        "name" : "Hack Squats",
+        "userId": 3,
+        "description": "Make sure you have an easy reach to the lock just in case anything happens.",
+        "imgUrl": "https://i.postimg.cc/RZpTM1Tx/hack-squats.jpg",
+        "typeId": 5,
+    },
+    {
+        "name" : "Leg Press",
+        "userId": 4,
+        "description": "You can do leg presses for 4 sets of 15.",
+        "imgUrl": "https://i.postimg.cc/fRPx4zww/leg-press.jpg",
+        "typeId": 5,
+    },
+    {
+        "name" : "Lunges",
+        "userId": 5,
+        "description": "Lunges are one of the easier workouts for legs. You will all like it.",
+        "imgUrl": "https://i.postimg.cc/fRSV9xNN/lunges.jpg",
+        "typeId": 5,
+    },
+    {
+        "name" : "Lateral Raises",
+        "userId": 6,
+        "description": "Doing this with a dumbell may be eaisir.",
+        "imgUrl": "https://i.postimg.cc/RhjNsF78/lateral-raises.jpg",
+        "typeId": 6,
+    },
+    {
+        "name" : "Dumbell Shoulder Press",
+        "userId": 7,
+        "description": "You can add more weight if you are comfortable.",
+        "imgUrl": "https://i.postimg.cc/fLPLyLrL/dumbell-shoulder-press.jpg",
+        "typeId": 6,
+    },
+    {
+        "name" : "Front Raises",
+        "userId": 8,
+        "description": "These are uncomfortable at first, but it gets better as time goes on",
+        "imgUrl": "https://i.postimg.cc/qB9sZMv4/front-raises.jpg",
+        "typeId": 6,
+    },
+    {
+        "name" : "Overhead Press",
+        "userId": 9,
+        "description": "You can do this for a set 3 for 6 reps.",
+        "imgUrl": "https://i.postimg.cc/D0dwggzW/overhead-press.jpg",
+        "typeId": 6,
+    },
+    {
+        "name" : "Rear Delt Flys",
+        "userId": 10,
+        "description": "You can do these for 3 sets of 12.",
+        "imgUrl": "https://i.postimg.cc/rFf8wzRL/rear-delt-flys.jpg",
+        "typeId": 6,
+    },
+    {
+        "name" : "Cycling",
+        "userId": 11,
+        "description": "Try doing workouts that involve going up and down an incline",
+        "imgUrl": "https://i.postimg.cc/2yZ2X0bx/cycling.webp",
+        "typeId": 7,
+    },
+    {
+        "name" : "Jumping Jacks",
+        "userId": 12,
+        "description": "This workout is a good one, but I do not feel the burnid",
+        "imgUrl": "https://i.postimg.cc/XNR2y6m1/jumping-jacks.jpg",
+        "typeId": 7,
+    },
+    {
+        "name" : "Boxing",
+        "userId": 13,
+        "description": "Box for 30 minutes and then take a 5 min break.",
+        "imgUrl": "https://i.postimg.cc/YS0NsdTm/boxing.jpg",
+        "typeId": 7,
+    },
+    {
+        "name" : "Swimming",
+        "userId": 14,
+        "description": "You should do laps for an hour.",
+        "imgUrl": "https://i.postimg.cc/wTkhTKpm/swimming.png",
+        "typeId": 7,
+    },
+    {
+        "name" : "Stair Steppers",
+        "userId": 15,
+        "description": "Do this for 30 minutes and make sure you challenge yourself.",
+        "imgUrl": "https://i.postimg.cc/gcVhN9rT/stair-stepper.jpg",
+        "typeId": 7,
+    },
+    {
+        "name" : "Planks",
+        "userId": 16,
+        "description": "Hold for one minute",
+        "imgUrl": "https://i.postimg.cc/DzGQhSy2/planks.jpg",
+        "typeId": 8,
+    },
+    {
+        "name" : "Mountain Climbers",
+        "userId": 17,
+        "description": "Make sure to get your knees to your chest when you do this.",
+        "imgUrl": "https://i.postimg.cc/wvVmxLKd/mountain-climbers.jpg",
+        "typeId": 8,
+    },
+    {
+        "name" : "Crunches",
+        "userId": 18,
+        "description": "These are going to help develop your upper abs",
+        "imgUrl": "https://i.postimg.cc/T2tDZVqV/crunches.jpg",
+        "typeId": 8,
+    },
+    {
+        "name" : "Flutter Kicks",
+        "userId": 19,
+        "description": "These are going to help develop your lower abs.",
+        "imgUrl": "https://i.postimg.cc/sgdD8x8P/flutter-kicks.jpg",
+        "typeId": 8,
+    },
+    {
+        "name" : "Bear Crawls",
+        "userId": 20,
+        "description": "You need to make sure your form is good when doing this.",
+        "imgUrl": "https://i.postimg.cc/YSXvJkQp/bear-crawls.png",
+        "typeId": 8,
+    },
+
+]
+
+types = [
+    {
+        "name": "Chest",
+        "imgUrl":"https://mybucketkhobe.s3.us-west-2.amazonaws.com/chest_image.jpeg",
+    },
+    {
+        "name": "Triceps",
+        "imgUrl": "https://mybucketkhobe.s3.us-west-2.amazonaws.com/tricep_image.jpeg"
+    },
+    {
+        "name": "Back",
+        "imgUrl": "https://mybucketkhobe.s3.us-west-2.amazonaws.com/back_image.jpeg",
+    },
+    {
+        "name": "Biceps",
+        "imgUrl": "https://mybucketkhobe.s3.us-west-2.amazonaws.com/bicep_image.png",
+    },
+    {
+        "name": "Legs",
+        "imgUrl": "https://mybucketkhobe.s3.us-west-2.amazonaws.com/legs_image.jpeg",
+    },
+    {
+        "name": "Shoulders",
+        "imgUrl": "https://mybucketkhobe.s3.us-west-2.amazonaws.com/shoulder_image.jpeg",
+    },
+    {
+        "name": "Cardio",
+        "imgUrl": "https://mybucketkhobe.s3.us-west-2.amazonaws.com/cardio_image.png",
+    },
+    {
+        "name": "Abs",
+        "imgUrl": "https://mybucketkhobe.s3.us-west-2.amazonaws.com/abs_image.png",
+    },
+]
+
+exercise_comments = [
+    {
+        "userId": 3,
+        "exerciseId": 1,
+        "description":"I have never tried this and I think this is something I will try next time I am at the gym."
+    },
+    {
+        "userId": 4,
+        "exerciseId": 2,
+        "description":"I am not sure if I was doing this workout correctly."
+    },
+    {
+        "userId": 5,
+        "exerciseId": 3,
+        "description":"I think it would be nice to drop the reps and increase the weight"
+    },
+    {
+        "userId": 6,
+        "exerciseId": 4,
+        "description":"I was very sore after trying this one for the first time."
+    },
+    {
+        "userId": 7,
+        "exerciseId": 5,
+        "description":"Pushups are definitely a classic that I grew up doing."
+    },
+    {
+        "userId": 8,
+        "exerciseId": 6,
+        "description":"These are hard and I definitely need to work on my form."
+    },
+    {
+        "userId": 9,
+        "exerciseId": 7,
+        "description":"I love doing this workout. I feel great after."
+    },
+    {
+        "userId": 10,
+        "exerciseId": 8,
+        "description":"Increasing the weight on this is a must."
+    },
+    {
+        "userId": 11,
+        "exerciseId": 9,
+        "description":"These do not feel as safe to do, but I tried my best."
+    },
+    {
+        "userId": 12,
+        "exerciseId": 10,
+        "description":"I think this would go well with some bicep workouts too."
+    },
+    {
+        "userId": 13,
+        "exerciseId": 11,
+        "description":"I forsure feel this in my back."
+    },
+    {
+        "userId": 14,
+        "exerciseId": 12,
+        "description":"I might need some tips on how to do this."
+    },
+    {
+        "userId": 15,
+        "exerciseId": 13,
+        "description":"I am surpisingly good at doing these."
+    },
+    {
+        "userId": 16,
+        "exerciseId": 14,
+        "description":"First time trying this and I did okay."
+    },
+    {
+        "userId": 17,
+        "exerciseId": 15,
+        "description":"I feel like I am rowing a boat with this workout."
+    },
+    {
+        "userId": 18,
+        "exerciseId": 16,
+        "description":"I am feeling the burn with this one."
+    },
+    {
+        "userId": 19,
+        "exerciseId": 17,
+        "description":"I am so concentrated on my muscles now."
+    },
+    {
+        "userId": 20,
+        "exerciseId": 18,
+        "description":"I think using cables is better than dumbells."
+    },
+    {
+        "userId": 1,
+        "exerciseId": 19,
+        "description":"I was not sure if I was doing this right."
+    },
+    {
+        "userId": 2,
+        "exerciseId": 20,
+        "description":"These were very hard to do."
+    },
+    {
+        "userId": 3,
+        "exerciseId": 21,
+        "description":"I have tried these before and I think this is something I will try again forsure."
+    },
+    {
+        "userId": 4,
+        "exerciseId": 22,
+        "description":"I was very sure I was doing this workout correctly."
+    },
+    {
+        "userId": 5,
+        "exerciseId": 23,
+        "description":"I think it would be nice to increase the reps and drop the weight."
+    },
+    {
+        "userId": 6,
+        "exerciseId": 24,
+        "description":"I was not sore after trying this one for the first time."
+    },
+    {
+        "userId": 7,
+        "exerciseId": 25,
+        "description":"Lunges are definitely a classic that I grew up doing."
+    },
+    {
+        "userId": 8,
+        "exerciseId": 26,
+        "description":"Cycling is hard and I definitely need to work on my form."
+    },
+    {
+        "userId": 9,
+        "exerciseId": 27,
+        "description":"I love doing this workout. It is very fun."
+    },
+    {
+        "userId": 10,
+        "exerciseId": 28,
+        "description":"This is grwat cardio and it gets the blood flowing"
+    },
+    {
+        "userId": 11,
+        "exerciseId": 29,
+        "description":"I am not the best swimmer, but I try my best."
+    },
+    {
+        "userId": 12,
+        "exerciseId": 30,
+        "description":"I think this would go well with some water on the side."
+    },
+    {
+        "userId": 13,
+        "exerciseId": 31,
+        "description":"I forsure feel this in my abs."
+    },
+    {
+        "userId": 14,
+        "exerciseId": 32,
+        "description":"I might need some tips on how to do this better."
+    },
+    {
+        "userId": 15,
+        "exerciseId": 33,
+        "description":"I am surpisingly bad at doing these."
+    },
+    {
+        "userId": 16,
+        "exerciseId": 34,
+        "description":"First time trying this and I did horrible."
+    },
+    {
+        "userId": 17,
+        "exerciseId": 35,
+        "description":"I feel like I am a big bear when I do this."
+    },
+    {
+        "userId": 18,
+        "exerciseId": 36,
+        "description":"I am feeling the burn with this one on my shoulders."
+    },
+    {
+        "userId": 19,
+        "exerciseId": 37,
+        "description":"I am so feeling it on my shoulders now."
+    },
+    {
+        "userId": 20,
+        "exerciseId": 38,
+        "description":"I think using cables is better for this than dumbells."
+    },
+    {
+        "userId": 1,
+        "exerciseId": 39,
+        "description":"I was not sure if I was doing this exercise correctly."
+    },
+    {
+        "userId": 2,
+        "exerciseId": 40,
+        "description":"These were very weird to do."
+    },
+
+]

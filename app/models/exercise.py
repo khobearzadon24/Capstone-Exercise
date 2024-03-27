@@ -8,13 +8,14 @@ class Exercise(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String, nullable=False)
+    description=db.Column(db.Text, nullable=False)
     userId = db.Column(db.Integer, nullable=False)
     imgUrl = db.Column(db.String, nullable=False)
     typeId = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("types.id")), nullable=False)
     createdAt = db.Column(db.Date, default=dt.datetime.now())
     updatedAt = db.Column(db.Date, default=dt.datetime.now())
 
-    exercise_comments = db.relationship("Exercise_comment", back_populates="exercise", cascade = 'all, delete-orphan')
+    exercise_comments = db.relationship("Exercise_Comment", back_populates="exercise", cascade = 'all, delete-orphan')
     type = db.relationship("Type", back_populates="exercises")
 
     def to_dict(self):
