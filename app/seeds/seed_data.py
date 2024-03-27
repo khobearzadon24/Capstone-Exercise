@@ -646,3 +646,110 @@ exercise_comments = [
     },
 
 ]
+
+posts = [
+    {
+        "name": "Hard Work",
+        "description": "I was able to bench 2 plates on each side today!",
+        "userId": 1
+    },
+    {
+        "name": "Great Work",
+        "description": "I worked out with a partner today and we psuhed each other very hard.",
+        "userId": 2
+    },
+    {
+        "name": "Grind Don't Stop",
+        "description": "I worked out for 5 days in a row this week!",
+        "userId": 3
+    },
+    {
+        "name": "Work then Hard Work",
+        "description": "Right after I got off work, I decided to go to the gym and put in extra work!",
+        "userId": 4
+    },
+    {
+        "name": "Cardio Sucks",
+        "description": "I decided to run 3 miles on the tredmill today and my legs are dead.",
+        "userId": 5
+    },
+    {
+        "name": "New Gym",
+        "description": "I am looking for a new gym but I do not know where.",
+        "userId": 6
+    },
+    {
+        "name": "Back Day",
+        "description": "I hit a personal record in my lat pulldowns today and it felt amazing.",
+        "userId": 7
+    },
+    {
+        "name": "Leg Day",
+        "description": "I tried front squats today and I definitely need to work on my form.",
+        "userId": 8
+    },
+    {
+        "name": "Chest Day",
+        "description": "I was able to use 50 lbs on each side for incline bench press!",
+        "userId": 9
+    },
+    {
+        "name": "Love The Gym",
+        "description": "It was my first day at the gym and everyone was very friendly!",
+        "userId": 10
+    },
+]
+
+
+post_comments = [
+    {
+        "userId": 11,
+        "postId": 1,
+        "description": "I am so proud of you! That is really strong!"
+    },
+    {
+        "userId": 12,
+        "postId": 2,
+        "description": "Working out with someone else is always good motivation."
+    },
+    {
+        "userId": 13,
+        "postId": 3,
+        "description": "Wow that is really impressive, but make sure to give your body some rest days."
+    },
+    {
+        "userId": 14,
+        "postId": 4,
+        "description": "I love it. Keep grinding and keep up the work!"
+    },
+    {
+        "userId": 15,
+        "postId": 5,
+        "description": "Wow I could never. I hate running!"
+    },
+    {
+        "userId": 16,
+        "postId": 6,
+        "description": "I know the planet fitness down the street from my place is a great gym to go to."
+    },
+    {
+        "userId": 17,
+        "postId": 7,
+        "description": "Wow congrats! Make sure to drink lots of water and to rest!"
+    },
+    {
+        "userId": 18,
+        "postId": 8,
+        "description": "I think it would be best if you start with lower weight so you can focus on your form more."
+    },
+    {
+        "userId": 19,
+        "postId": 9,
+        "description": "Wow that is impressive! Keep it up!"
+    },
+    {
+        "userId": 20,
+        "postId": 10,
+        "description": "Gym people might seem intimidating, but they actually are pretty nice."
+    },
+]

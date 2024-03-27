@@ -12,6 +12,7 @@ class Type(db.Model):
     createdAt = db.Column(db.Date, default=dt.datetime.now())
     updatedAt = db.Column(db.Date, default=dt.datetime.now())
 
+    # NOT SURE IF NEEDED
     exercises = db.relationship("Exercise", back_populates="type", cascade='all, delete-orphan')
 
     def to_dict(self):

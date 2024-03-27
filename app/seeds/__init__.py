@@ -3,6 +3,8 @@ from .users import seed_users, undo_users
 from .exercises import seed_exercises, undo_exercises
 from .exercise_comments import seed_exercise_comments, undo_exercise_comments
 from .types import seed_types, undo_types
+from .posts import seed_posts, undo_posts
+from .post_comments import seed_post_comments, undo_post_comments
 
 from app.models.db import db, environment, SCHEMA
 
@@ -23,10 +25,14 @@ def seed():
         undo_types()
         undo_exercises()
         undo_exercise_comments()
+        undo_posts()
+        undo_post_comments()
     seed_users()
     seed_types()
     seed_exercises()
     seed_exercise_comments()
+    seed_posts()
+    seed_post_comments()
     # Add other seed functions here
 
 
@@ -37,4 +43,6 @@ def undo():
     undo_types()
     undo_exercises()
     undo_exercise_comments()
+    undo_posts()
+    undo_post_comments()
     # Add other undo functions here
