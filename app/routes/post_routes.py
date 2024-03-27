@@ -1,6 +1,5 @@
 from app.models import db, Post, Post_Comment, User
-from app.forms.post_form import PostForm
-from app.forms.post_comment_form import PostCommentForm
+from app.forms import PostForm, PostCommentForm
 from flask import Blueprint, request
 from flask_login import login_required
 from app.utils.authorization import is_post_owner, get_current_user

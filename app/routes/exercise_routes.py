@@ -1,6 +1,5 @@
 from app.models import db, Exercise, Exercise_Comment, User, Type
-from app.forms.exercise_form import ExerciseForm
-from app.forms.exercise_comment_form import ExerciseCommentForm
+from app.forms import ExerciseForm,ExerciseCommentForm
 from flask import Blueprint, request
 from flask_login import login_required
 from app.utils.authorization import is_exercise_owner, get_current_user
