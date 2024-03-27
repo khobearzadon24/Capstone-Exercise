@@ -23,6 +23,7 @@ class Exercise(db.Model):
         return {
             "id": self.id,
             "name": self.name,
+            "description":self.description,
             "userId": self.userId,
             "imgUrl": self.imgUrl,
             "typeId": self.typeId,
