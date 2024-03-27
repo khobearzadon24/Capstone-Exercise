@@ -5,7 +5,7 @@ from flask_migrate import Migrate
 from flask_wtf.csrf import CSRFProtect, generate_csrf
 from flask_login import LoginManager
 from .models import db, User, Exercise, Exercise_Comment, Post, Post_Comment, Type
-from .routes import user_routes, auth_routes, exercise_routes, exercise_comment_routes
+from .routes import user_routes, auth_routes, exercise_routes, exercise_comment_routes, post_routes, post_comment_routes
 from .seeds import seed_commands
 from .config import Config
 
@@ -29,6 +29,8 @@ app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(exercise_routes, url_prefix='/api/exercises')
 app.register_blueprint(exercise_comment_routes, url_prefix='/api/exercise-comments')
+app.register_blueprint(post_routes, url_prefix='/api/posts')
+app.register_blueprint(post_comment_routes, url_prefix='/api/post-comments')
 
 db.init_app(app)
 Migrate(app, db)
