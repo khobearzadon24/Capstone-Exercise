@@ -411,35 +411,35 @@ exercises = [
 types = [
     {
         "name": "Chest",
-        "imgUrl":"https://mybucketkhobe.s3.us-west-2.amazonaws.com/chest_image.jpeg",
+        "imgUrl":"https://i.postimg.cc/y8d7bbQM/chest-image.jpg",
     },
     {
         "name": "Triceps",
-        "imgUrl": "https://mybucketkhobe.s3.us-west-2.amazonaws.com/tricep_image.jpeg"
+        "imgUrl": "https://i.postimg.cc/HkQ9F6rt/tricep-image.jpg"
     },
     {
         "name": "Back",
-        "imgUrl": "https://mybucketkhobe.s3.us-west-2.amazonaws.com/back_image.jpeg",
+        "imgUrl": "https://i.postimg.cc/W45gPCT0/back-image.jpg",
     },
     {
         "name": "Biceps",
-        "imgUrl": "https://mybucketkhobe.s3.us-west-2.amazonaws.com/bicep_image.png",
+        "imgUrl": "https://i.postimg.cc/J7vvb7SH/bicep-image.png",
     },
     {
         "name": "Legs",
-        "imgUrl": "https://mybucketkhobe.s3.us-west-2.amazonaws.com/legs_image.jpeg",
+        "imgUrl": "https://i.postimg.cc/DwjqX0Yt/legs-image.jpg",
     },
     {
         "name": "Shoulders",
-        "imgUrl": "https://mybucketkhobe.s3.us-west-2.amazonaws.com/shoulder_image.jpeg",
+        "imgUrl": "https://i.postimg.cc/CxTyVMNp/shoulder-image.jpg",
     },
     {
         "name": "Cardio",
-        "imgUrl": "https://mybucketkhobe.s3.us-west-2.amazonaws.com/cardio_image.png",
+        "imgUrl": "https://i.postimg.cc/9fDN4v1Y/cardio-image.png",
     },
     {
         "name": "Abs",
-        "imgUrl": "https://mybucketkhobe.s3.us-west-2.amazonaws.com/abs_image.png",
+        "imgUrl": "https://i.postimg.cc/8kXJ49b6/abs-image.png",
     },
 ]
 
