@@ -1,6 +1,6 @@
 from flask_login import current_user
 from functools import wraps
-from app.models import db, Exercise, Exercise_Comment, Post, Post_Comment, Type
+from app.models import db, Exercise, Exercise_Comment, Post, Post_Comment
 import json
 
 # Get current user

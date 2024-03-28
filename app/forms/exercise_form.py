@@ -3,7 +3,12 @@ from flask_wtf.file import FileField, FileAllowed, FileRequired
 from app.routes.aws_helper import ALLOWED_EXTENSIONS
 from wtforms import StringField
 from wtforms.validators import DataRequired, ValidationError
+from app.models.exercise import exerciseTypes
 import re
+
+def valid_type(form, field):
+    if field.data not in exerciseTypes:
+        raise ValidationError("Invalid Type")
 
 def no_special_char(form, field):
     specialChars = re.compile('[@_!$%^&*()<>?/\|}{~:]')

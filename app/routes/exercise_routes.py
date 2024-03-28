@@ -1,4 +1,5 @@
-from app.models import db, Exercise, Exercise_Comment, User, Type
+from app.models import db, Exercise, Exercise_Comment, User
+from app.models.exercise import exerciseTypes
 from app.forms import ExerciseForm,ExerciseCommentForm
 from flask import Blueprint, request
 from flask_login import login_required
@@ -21,8 +22,7 @@ def allExercises():
 # GET ALL EXERCISE TYPES at ["api/exerices/types"]
 @exercise_routes.route("/types")
 def allExerciseTypes():
-    types = Type.query.all()
-    return json.dumps({"types": [type.to_dict() for type in types]})
+    return json.dumps(exerciseTypes)
 
 
 #CREATE A NEW EXERCISE at ["/api/exercise"]
@@ -45,7 +45,7 @@ def newExercise():
         newExercise = Exercise(
             name=form.data['name'],
             description=form.data['description'],
-            type=form.data['typeId'],
+            type=form.data['type'],
             userId=get_current_user(),
             images = url
         )
@@ -83,7 +83,7 @@ def getExerciseById(id):
         "description": exercise.description,
         "imgUrl": exercise.imgUrl,
         "name": exercise.name,
-        "type": exercise.typeId,
+        "type": exercise.type,
         "Exercise_comments": exercise_comments,
     }
     return json.dumps(exercise_formatted)
