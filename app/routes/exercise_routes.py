@@ -2,6 +2,7 @@ from app.models import db, Exercise, Exercise_Comment, User, Type
 from app.forms import ExerciseForm,ExerciseCommentForm
 from flask import Blueprint, request
 from flask_login import login_required
+from app.routes.aws_helper import upload_file_to_s3, get_unique_filename
 from app.utils.authorization import is_exercise_owner, get_current_user
 import json
 from types import SimpleNamespace
@@ -31,15 +32,27 @@ def newExercise():
     form = ExerciseForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
+        imgUrl = form.imgUrl.data
+        url = None
+
+        if imgUrl:
+            imgUrl.filename = get_unique_filename(imgUrl.filename)
+            upload = upload_file_to_s3(imgUrl)
+            if "url" not in upload:
+                return {"exercise_image": "Faile to upload image, try again."}, 500
+            url = upload["url"]
+
         newExercise = Exercise(
             name=form.data['name'],
             description=form.data['description'],
             type=form.data['typeId'],
-            imgUrl=form.data['imgUrl'],
-            userId=get_current_user()
+            userId=get_current_user(),
+            images = url
         )
+
         db.session.add(newExercise)
         db.session.commit()
+
         return json.dumps(newExercise.to_dict()), 201
     return {'message': 'Bad Request', 'errors': form.errors}, 400
 
@@ -80,19 +93,31 @@ def getExerciseById(id):
 @login_required
 @is_exercise_owner
 def updateExercise(exerciseId):
-    exercise = Exercise.query.get(exerciseId)
+    form = ExerciseForm()
+    form["csrf_token"].data = request.cookies["csrf_token"]
 
-    if not exercise:
-        return json.dumps({
-            "message": "Exercise couldn't be found"
-        }), 404
-    data = json.loads(request.data, object_hook=lambda d: SimpleNamespace(**d)) # convert JSON to Object so form can key in using .
-    form = ExerciseForm(obj=data)
-    form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
-        form.populate_obj(exercise)
-        db.session.add(exercise)
+        exercise = Exercise.query.get(id)
+        imgUrl = form.imgUrl.data
+        url= None
+
+        if not exercise:
+            return {"error": "Exercise could not be found"}, 404
+
+        if imgUrl:
+            imgUrl.filename = get_unique_filename(imgUrl.filename)
+            upload = upload_file_to_s3(imgUrl)
+            if "url" not in upload:
+                return {"exercise_image": "Failed to upload image, try again."}, 500
+            url = upload["url"]
+
+        exercise.name = form.name.data
+        exercise.description = form.description.data
+        exercise.type = form.type.data
+        exercise.imgUrl = url
+
         db.session.commit()
+
         return json.dumps(exercise.to_dict())
     return {'message': 'Bad Request', 'errors': form.errors}, 400
 
