@@ -1,0 +1,20 @@
+.profile-button {
+  height: 40px;
+  color: black;
+  width: 40px;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  border: none;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.profile-logo {
+  width: 20px;
+  height: 20px;
+}
