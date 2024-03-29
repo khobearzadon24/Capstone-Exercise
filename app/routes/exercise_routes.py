@@ -39,7 +39,7 @@ def newExercise():
             imgUrl.filename = get_unique_filename(imgUrl.filename)
             upload = upload_file_to_s3(imgUrl)
             if "url" not in upload:
-                return {"exercise_image": "Faile to upload image, try again."}, 500
+                return {"exercise_image": "Failed to upload image, try again."}, 500
             url = upload["url"]
 
         newExercise = Exercise(

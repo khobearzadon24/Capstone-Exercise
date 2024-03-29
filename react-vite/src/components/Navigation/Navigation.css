@@ -53,3 +53,9 @@ ul {
   text-decoration: none;
   font-size: 40px;
 }
+
+.exercise-post {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}

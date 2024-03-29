@@ -5,7 +5,7 @@ const ADD_POSTCOMMENT = "post/addPost";
 //action creator
 export const loadAllPostComments = (post_comments) => {
   return {
-    type: LOAD_ALL_POSTS,
+    type: LOAD_ALL_POSTCOMMENTS,
     post_comments,
   };
 };

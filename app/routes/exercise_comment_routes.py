@@ -1,7 +1,7 @@
 from flask import Blueprint, Flask, request
 from app.models import db, Exercise_Comment
 from flask_login import login_required
-from app.utils.authorization import is_exercise_comment_owner, get_current_user
+from app.utils import is_exercise_comment_owner, get_current_user
 import json
 
 exercise_comment_routes = Blueprint("exercise-comments", __name__)

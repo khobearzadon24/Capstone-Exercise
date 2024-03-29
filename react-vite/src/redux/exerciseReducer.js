@@ -141,7 +141,7 @@ const exerciseReducer = (state = {}, action) => {
       return { ...state, [action.exercise.id]: action.exercise };
     case LOAD_ALL_EXERCISES: {
       const exerciseState = {};
-      action.exercises.exericses.forEach((exercise) => {
+      action.exercises.exercises.forEach((exercise) => {
         exerciseState[exercise.id] = exercise;
       });
       return exerciseState;

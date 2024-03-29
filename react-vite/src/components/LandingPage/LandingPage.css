@@ -1,4 +1,22 @@
 .landing-page-container {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   margin: 10px;
+}
+
+.first-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 10px;
+}
+
+.exercise-text {
+  width: 50%;
+}
+
+.exercise-image {
+  width: 300px;
 }
