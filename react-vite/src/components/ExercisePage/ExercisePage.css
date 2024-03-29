@@ -1,0 +1,18 @@
+.exercises-type-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.type-box {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.type-image {
+  width: 300px;
+  height: 250px;
+}

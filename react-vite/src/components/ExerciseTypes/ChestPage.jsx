@@ -7,7 +7,7 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchAllExerciseComments } from "../../redux/exerciseCommentReducer";
 
-function ExercisePage() {
+function ChestPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const exercises = useSelector((state) => state.exerciseState);
@@ -24,9 +24,9 @@ function ExercisePage() {
   console.log(user);
   return (
     <>
-      <h1>This is the Exercise Page</h1>
+      <h1>This is the Chest Page</h1>
     </>
   );
 }
 
-export default ExercisePage;
+export default ChestPage;

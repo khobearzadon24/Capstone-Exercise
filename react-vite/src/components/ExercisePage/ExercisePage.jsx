@@ -7,6 +7,7 @@ import {
 } from "../../redux/exerciseReducer";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchAllExerciseComments } from "../../redux/exerciseCommentReducer";
+import "./ExercisePage.css";
 
 function ExercisePage() {
   const dispatch = useDispatch();
@@ -26,15 +27,71 @@ function ExercisePage() {
   return (
     <>
       <h1>This is the Exercise Page</h1>
-      <div>
-        <NavLink to="/exercises/chest">Chest</NavLink>
-        <NavLink to="/exercises/triceps">Triceps</NavLink>
-        <NavLink to="/exercises/back">Back</NavLink>
-        <NavLink to="exercises/biceps">Biceps</NavLink>
-        <NavLink to="exercises/shoulders">Biceps</NavLink>
-        <NavLink to="exercises/legs">Legs</NavLink>
-        <NavLink to="exercises/cardio">Cardio</NavLink>
-        <NavLink to="exercises/abs">Abs</NavLink>
+      <div className="exercises-type-container">
+        <NavLink className="type-box" to="/exercises/chest">
+          Chest
+          <img
+            className="type-image"
+            src="https://i.postimg.cc/y8d7bbQM/chest-image.jpg"
+            alt="chest"
+          />
+        </NavLink>
+        <NavLink className="type-box" to="/exercises/triceps">
+          Triceps
+          <img
+            className="type-image"
+            src="https://i.postimg.cc/HkQ9F6rt/tricep-image.jpg"
+            alt="triceps"
+          />
+        </NavLink>
+        <NavLink className="type-box" to="/exercises/back">
+          Back
+          <img
+            className="type-image"
+            src="https://i.postimg.cc/W45gPCT0/back-image.jpg"
+            alt="back"
+          />
+        </NavLink>
+        <NavLink className="type-box" to="/exercises/biceps">
+          Biceps
+          <img
+            className="type-image"
+            src="https://i.postimg.cc/W45gPCT0/back-image.jpg"
+            alt="biceps"
+          />
+        </NavLink>
+        <NavLink className="type-box" to="/exercises/shoulders">
+          Shoulders
+          <img
+            className="type-image"
+            src="https://i.postimg.cc/W45gPCT0/back-image.jpg"
+            alt="biceps"
+          />
+        </NavLink>
+        <NavLink className="type-box" to="/exercises/legs">
+          Legs
+          <img
+            className="type-image"
+            src="https://i.postimg.cc/W45gPCT0/back-image.jpg"
+            alt="biceps"
+          />
+        </NavLink>
+        <NavLink className="type-box" to="/exercises/cardio">
+          Cardio
+          <img
+            className="type-image"
+            src="https://i.postimg.cc/W45gPCT0/back-image.jpg"
+            alt="biceps"
+          />
+        </NavLink>
+        <NavLink className="type-box" to="/exercises/abs">
+          Abs
+          <img
+            className="type-image"
+            src="https://i.postimg.cc/W45gPCT0/back-image.jpg"
+            alt="biceps"
+          />
+        </NavLink>
       </div>
     </>
   );

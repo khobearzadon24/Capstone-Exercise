@@ -7,7 +7,7 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchAllExerciseComments } from "../../redux/exerciseCommentReducer";
 
-function TricepsPage() {
+function LegsPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const exercises = useSelector((state) => state.exerciseState);
@@ -24,9 +24,9 @@ function TricepsPage() {
   console.log(user);
   return (
     <>
-      <h1>This is the Triceps Page</h1>
+      <h1>This is the Legs Page</h1>
     </>
   );
 }
 
-export default TricepsPage;
+export default LegsPage;
