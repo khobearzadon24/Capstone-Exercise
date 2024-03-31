@@ -27,6 +27,14 @@ function ExercisePage() {
   return (
     <>
       <h1>This is the Exercise Page</h1>
+      {user && (
+        <button
+          className="style-hover"
+          onClick={() => navigate("/exercises/new")}
+        >
+          Add Exercise
+        </button>
+      )}
       <div className="exercises-type-container">
         <NavLink className="type-box" to="/exercises/chest">
           Chest
@@ -56,7 +64,7 @@ function ExercisePage() {
           Biceps
           <img
             className="type-image"
-            src="https://i.postimg.cc/W45gPCT0/back-image.jpg"
+            src="https://i.postimg.cc/hvQ21nxd/bicep-image.png"
             alt="biceps"
           />
         </NavLink>
@@ -64,32 +72,32 @@ function ExercisePage() {
           Shoulders
           <img
             className="type-image"
-            src="https://i.postimg.cc/W45gPCT0/back-image.jpg"
-            alt="biceps"
+            src="https://i.postimg.cc/xdF7vt7B/shoulder-image.jpg"
+            alt="shoulders"
           />
         </NavLink>
         <NavLink className="type-box" to="/exercises/legs">
           Legs
           <img
             className="type-image"
-            src="https://i.postimg.cc/W45gPCT0/back-image.jpg"
-            alt="biceps"
+            src="https://i.postimg.cc/sxK5W0Hh/legs-image.jpg"
+            alt="legs"
           />
         </NavLink>
         <NavLink className="type-box" to="/exercises/cardio">
           Cardio
           <img
             className="type-image"
-            src="https://i.postimg.cc/W45gPCT0/back-image.jpg"
-            alt="biceps"
+            src="https://i.postimg.cc/8CVs1mtQ/cardio-image.png"
+            alt="cardio"
           />
         </NavLink>
         <NavLink className="type-box" to="/exercises/abs">
           Abs
           <img
             className="type-image"
-            src="https://i.postimg.cc/W45gPCT0/back-image.jpg"
-            alt="biceps"
+            src="https://i.postimg.cc/d0TX98Y1/abs-image.png"
+            alt="abs"
           />
         </NavLink>
       </div>

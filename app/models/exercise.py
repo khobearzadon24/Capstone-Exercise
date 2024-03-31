@@ -2,7 +2,7 @@ from .db import db, SCHEMA, environment, add_prefix_for_prod
 import datetime as dt
 
 exerciseTypes = [
-    "Chest"
+    "Chest",
     "Triceps",
     "Back",
     "Biceps",
@@ -10,7 +10,6 @@ exerciseTypes = [
     "Legs",
     "Cardio",
     "Abs",
-    "Other"
 ]
 
 
@@ -30,11 +29,14 @@ class Exercise(db.Model):
 
     exercise_comments = db.relationship("Exercise_Comment", back_populates="exercise", cascade = 'all, delete-orphan')
 
+    user = db.relationship("User", back_populates = "exercise")
 
     def to_dict(self):
         return {
             "id": self.id,
             "name": self.name,
+            'firstName': self.user.firstName,
+            'lastName': self.user.lastName,
             "description":self.description,
             "userId": self.userId,
             "imgUrl": self.imgUrl,

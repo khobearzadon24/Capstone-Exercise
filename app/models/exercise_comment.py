@@ -18,9 +18,15 @@ class Exercise_Comment(db.Model):
 
     exercise = db.relationship("Exercise", back_populates = "exercise_comments")
 
+    user = db.relationship("User", back_populates = "exercise_comments")
+
+
+
     def to_dict(self):
         return {
             'id': self.id,
+            'firstName': self.user.firstName,
+            'lastName': self.user.lastName,
             'userId': self.userId,
             'exerciseId': self.exerciseId,
             'description': self.description,

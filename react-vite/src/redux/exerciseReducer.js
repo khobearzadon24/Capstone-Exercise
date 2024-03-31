@@ -67,7 +67,7 @@ export const clearExercises = () => {
 
 // thunk action creator
 export const getExerciseTypes = () => async (dispatch) => {
-  const response = await fetch(`/api/exercise/types`);
+  const response = await fetch(`/api/exercises/types`);
   const exerciseTypes = await response.json();
   dispatch(loadExerciseTypes(exerciseTypes));
 };

@@ -69,7 +69,8 @@ def allCurrentUserExercises():
 @exercise_routes.route("/<int:id>")
 def getExerciseById(id):
     exercise = Exercise.query.get(id)
-
+    user = User.query.get(exercise.userId)
+    # print(user, 'here is your user')
     if not exercise:
         return json.dumps({
             "message": "Exercise couldn't be found"
@@ -80,6 +81,8 @@ def getExerciseById(id):
     exercise_formatted = {
         "id": exercise.id,
         "userId": exercise.userId,
+        "firstName": user.firstName,
+        "lastName": user.lastName,
         "description": exercise.description,
         "imgUrl": exercise.imgUrl,
         "name": exercise.name,
@@ -174,6 +177,17 @@ def createExerciseComment(exerciseId):
 @exercise_routes.route('/<int:exerciseId>/exercise-comments', methods=["GET"])
 def getExerciseComments(exerciseId):
     exercise_comments = Exercise_Comment.query.filter_by(exerciseId=exerciseId).all()
+    user = User.query.get(exercise_comments.userId)
     reviewResponse = [exercise_comment.to_dict() for exercise_comment in exercise_comments]
 
-    return json.dumps(reviewResponse)
+    exercise_comment_formatted ={
+        'id': exercise_comments.id,
+        'userId': exercise_comments.userId,
+        "firstName": user.firstName,
+        "lastName": user.lastName,
+        'exerciseId': exercise_comments.exerciseId,
+        'description': exercise_comments.description,
+        'createdAt': str(exercise_comments.createdAt)
+    }
+
+    return json.dumps(exercise_comment_formatted)
