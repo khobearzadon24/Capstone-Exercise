@@ -5,12 +5,12 @@ import { removeExercise } from "../../redux/exerciseReducer";
 function DeleteExerciseModal({ exercise, renderExercise }) {
   const dispatch = useDispatch();
   const { closeModal } = useModal();
-  // console.log(spot, "here is the spot over hererere");
+  // console.log(exercise, "here is the exercise over here");
 
   const deleteSubmit = async (e) => {
     e.preventDefault();
-    await dispatch(removeExercise(exercise.id));
-    renderSpot();
+    await dispatch(removeExercise(exercise?.id));
+    renderExercise();
     closeModal();
   };
 

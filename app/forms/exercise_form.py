@@ -19,4 +19,4 @@ class ExerciseForm(FlaskForm):
     name = StringField('name', validators=[DataRequired("Name is required"), no_special_char])
     description = StringField('description', validators=[DataRequired("Description is required"), no_special_char])
     type = StringField('type', validators=[DataRequired("Type is required"), ])
-    imageUrl = FileField("Image File", validators=[FileRequired(), FileAllowed(list(ALLOWED_EXTENSIONS))])
+    imgUrl = FileField("Image File", validators=[FileRequired(), FileAllowed(list(ALLOWED_EXTENSIONS))])

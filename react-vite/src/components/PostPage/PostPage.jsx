@@ -4,11 +4,14 @@ import {
   fetchAllExercises,
   getExerciseTypes,
 } from "../../redux/exerciseReducer";
+import { fetchAllPosts } from "../../redux/postReducer";
 import { useNavigate, useParams } from "react-router-dom";
-import { fetchAllExerciseComments } from "../../redux/exerciseCommentReducer";
+import { fetchAllPostComments } from "../../redux/postCommentReducer";
 
 function PostPage() {
-  console.log("this is the post page");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   return (
     <>
       <h1>This is the Post Page</h1>

@@ -47,7 +47,7 @@ def newExercise():
             description=form.data['description'],
             type=form.data['type'],
             userId=get_current_user(),
-            images = url
+            imgUrl = url
         )
 
         db.session.add(newExercise)

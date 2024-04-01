@@ -1,8 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchExercise, getExerciseTypes } from "../../redux/exerciseReducer";
 import { useNavigate, useParams } from "react-router-dom";
 import DeleteExerciseButton from "./DeleteExerciseButton";
+// import OpenModalButton from "../OpenModalButton/OpenModalButton";
+import AddExerciseCommentModal from "../ExerciseComment/ExerciseComment";
+import { addExerciseComment } from "../../redux/exerciseCommentReducer";
+import OpenModalButton from "../OpenModalButton/OpenModalButton";
+import UpdateExerciseComment from "../ExerciseForm/UpdateExerciseForm";
 // import DeleteMenuItemButton from "../MenuItems/DeleteMenuItemButton";
 // import { fetchOwnerMenuItems } from "../../redux/menuItemReducer";
 
@@ -18,12 +23,32 @@ function SingleExercise() {
 
   console.log(commentsArr, "here are your comments");
   //   const menuItemsArr = Object.values(menu_items);
+  const [showMenu, setShowMenu] = useState(false);
+  const ulRef = useRef();
+
+  useEffect(() => {
+    if (!showMenu) return;
+
+    const closeMenu = (e) => {
+      if (!ulRef.current.contains(e.target)) {
+        setShowMenu(false);
+      }
+    };
+
+    document.addEventListener("click", closeMenu);
+
+    return () => document.removeEventListener("click", closeMenu);
+  }, [showMenu]);
+
+  const closeMenu = () => setShowMenu(false);
 
   const user = useSelector((state) => state.session.user);
   //   const user_comment = useSelector((state) => state.session.user[id]);
   //   console.log(user_comment, "over here is the comment user");
   useEffect(() => {
-    dispatch(fetchExercise(exerciseId)).then(dispatch(getExerciseTypes()));
+    dispatch(fetchExercise(exerciseId))
+      .then(dispatch(getExerciseTypes()))
+      .then(dispatch(addExerciseComment()));
     //   .then(dispatch(fetchOwnerMenuItems(restaurantId)));
   }, [dispatch, exerciseId]);
 
@@ -58,7 +83,17 @@ function SingleExercise() {
                   </p>
                   <p className="description-exercise-comment">
                     {comment.description}
+                    {comment?.userId === user?.id && (
+                      <div className="delete-button">
+                        <OpenModalButton
+                          buttonText="Edit Exercise Comment"
+                          onItemClick={closeMenu}
+                          modalComponent={<UpdateExerciseComment />}
+                        />
+                      </div>
+                    )}
                   </p>
+                  <AddExerciseCommentModal className="add-comment-button" />
                 </div>
               ))}
             </div>

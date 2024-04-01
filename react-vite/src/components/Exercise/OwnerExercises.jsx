@@ -13,7 +13,7 @@ function OwnerExercises() {
   const renderExercise = () => {
     setPostExercise((arg) => !arg);
   };
-  // console.log(spot, "SPOTS");
+  // console.log(exercise), "EXERCISE");
 
   const exerciseArr = Object.values(exercise);
   console.log(exerciseArr, "this is the exercise arr");

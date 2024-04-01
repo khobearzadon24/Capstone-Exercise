@@ -93,16 +93,16 @@ export const fetchOwnerExercises = () => async (dispatch) => {
 export const writeExercise = (payload) => async (dispatch) => {
   const response = await fetch("/api/exercises/", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
+    // headers: { "Content-Type": "application/json" },
+    // body: JSON.stringify(payload),
+    body: payload,
   });
-  const exercise = await response.json();
-  if (response.status !== 201) {
-    return exercise;
-  }
+  // const exercise = await response.json();
   if (response.ok) {
-    dispatch(addExercise(exercise));
-    return exercise;
+    const { resPost } = await response.json();
+    dispatch(addExercise(resPost));
+  } else {
+    console.log("There was an error making your post");
   }
 };
 
@@ -120,13 +120,15 @@ export const deleteExercise = (exerciseId) => async (dispatch) => {
 export const editExercise = (exerciseId, payload) => async (dispatch) => {
   const response = await fetch(`/api/exercises/${exerciseId}`, {
     method: "PUT",
-    header: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
+    // header: { "Content-Type": "application/json" },
+    // body: JSON.stringify(payload),
+    body: payload,
   });
   if (response.ok) {
     const exercise = await response.json();
-    dispatch(updateExercise(payload));
-    return exercise;
+    dispatch(updateExercise(exercise));
+  } else {
+    console.log("There was an error editing yout post.");
   }
 };
 
@@ -154,7 +156,7 @@ const exerciseReducer = (state = {}, action) => {
       return exerciseState;
     }
     case ADD_EXERCISE:
-      return { ...state, [action.exercise.id]: action.exercise };
+      return { ...state, [action?.exercise?.id]: action.exercise };
     case REMOVE_EXERCISE: {
       const newState = { ...state };
       delete newState[action.exerciseId];

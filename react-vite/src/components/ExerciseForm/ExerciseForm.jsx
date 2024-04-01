@@ -14,7 +14,8 @@ function ExerciseForm() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [type, setType] = useState("");
-  const [imgUrl, setImgUrl] = useState("");
+  const [imgUrl, setImgUrl] = useState(null);
+  const [imgUrlLoading, setImgUrlLoading] = useState(false);
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
@@ -24,17 +25,24 @@ function ExerciseForm() {
   console.log(exerciseTypes, "here is the types");
   const onSubmit = async (e) => {
     e.preventDefault();
-
-    const payload = {
-      name,
-      description,
-      type,
-      imgUrl: imgUrl,
-    };
-
-    const newExercise = await dispatch(writeExercise(payload));
-    if (newExercise.errors) setErrors(newExercise.errors);
-    else navigate(`/exercises/${newExercise.id}`);
+    // const formData = new FormData();
+    // formData.append("imgUrl", imgUrl)
+    // await dispatch(writeExercise(payload))
+    const formData = new FormData();
+    formData.append("imgUrl", imgUrl);
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("type", type);
+    setImgUrlLoading(true);
+    // const payload = {
+    //   name,
+    //   description,
+    //   type,
+    //   imgUrl: imgUrl,
+    // };
+    const newExercise = await dispatch(writeExercise(formData));
+    // if (formData.errors) setErrors(formData.errors);
+    navigate(`/exercises/my-exercises}`);
   };
 
   return (
@@ -43,7 +51,11 @@ function ExerciseForm() {
       <div>
         {exerciseTypes && (
           <div className="exercise-page-create">
-            <form className="exercise-form" onSubmit={onSubmit}>
+            <form
+              className="exercise-form"
+              onSubmit={onSubmit}
+              encType="multipart/form-data"
+            >
               <h1 className="exercise-title-form">Create An Exercise</h1>
               <div className="column-styles">
                 <p>Name</p>
@@ -96,10 +108,11 @@ function ExerciseForm() {
                 <p>Image Url</p>
                 <input
                   className="input-area"
-                  type="url"
+                  type="file"
+                  accept="image/*"
                   placeholder="Enter New Image Url"
-                  value={imgUrl}
-                  onChange={(e) => setImgUrl(e.target.value)}
+                  // value={imgUrl}
+                  onChange={(e) => setImgUrl(e.target.files[0])}
                 ></input>
                 <p className="exercise-errors">
                   {errors.imgUrl ? errors.imgUrl : null}
@@ -108,6 +121,7 @@ function ExerciseForm() {
               <button className="exercise-submit" type="submit">
                 Submit
               </button>
+              {imgUrlLoading && <p>Loading...</p>}
             </form>
           </div>
         )}

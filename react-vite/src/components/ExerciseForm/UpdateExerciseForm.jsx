@@ -18,6 +18,7 @@ function UpdateExercise() {
   const [description, setDescription] = useState(exercise?.description);
   const [type, setType] = useState(exercise?.type);
   const [imgUrl, setImgUrl] = useState(exercise?.imgUrl);
+  const [imgUrlLoading, setImgUrlLoading] = useState(false);
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
@@ -30,9 +31,9 @@ function UpdateExercise() {
     dispatch,
     exerciseId,
     exercise?.name,
-    exercise?.location,
+    exercise?.description,
     exercise?.type,
-    exercise?.imageUrl,
+    exercise?.imgUrl,
   ]);
 
   const onSubmit = async (e) => {
@@ -46,15 +47,19 @@ function UpdateExercise() {
     };
 
     const response = await dispatch(editExercise(exerciseId, payload));
-    if (response.errors) setErrors(response.errors);
-    else navigate(`/exercises/${response.id}`);
+    // if (response.errors) setErrors(response.errors);
+    navigate(`/exercises/${exerciseId}`);
   };
 
   return (
     <div>
       {exercise && exerciseTypes && (
         <div className="exercise-page-create">
-          <form className="exercise-form" onSubmit={onSubmit}>
+          <form
+            className="exercise-form"
+            onSubmit={onSubmit}
+            encType="multipart/form-data"
+          >
             <h1 className="exercise-title-form">Update Your Exercise</h1>
             <div className="column-styles">
               <p>Name</p>
@@ -107,10 +112,11 @@ function UpdateExercise() {
               <p>Image Url</p>
               <input
                 className="input-area"
-                type="imgUrl"
+                type="file"
+                accept="image/*"
                 placeholder="Enter New Image Url"
-                value={imgUrl}
-                onChange={(e) => setImgUrl(e.target.value)}
+                // value={imgUrl}
+                onChange={(e) => setImgUrl(e.target.files[0])}
               ></input>
               <p className="exercise-errors">
                 {errors.imgUrl ? errors.imgUrl : null}
@@ -119,6 +125,7 @@ function UpdateExercise() {
             <button className="exercise-submit" type="submit">
               Submit
             </button>
+            {imgUrlLoading && <p>Loading...</p>}
           </form>
           <img className="exer-logo" src={exercise?.imgUrl} alt="exer-logo" />
         </div>

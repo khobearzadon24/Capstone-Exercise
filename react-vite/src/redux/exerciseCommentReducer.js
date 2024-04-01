@@ -1,5 +1,6 @@
 // action type creator
 const LOAD_EXERCISECOMMENTS = "exerciseComment/loadExerciseComments";
+const LOAD_EXERCISECOMMENT = "exerciseComment/loadExerciseComment";
 const ADD_EXERCISECOMMENT = "exerciseComment/addExerciseComment";
 const DELETE_EXERCISECOMMENT = "exerciseComment/deleteExerciseComment";
 const UPDATE_EXERCISECOMMENT = "exerciseComment/updateExerciseComment";
@@ -12,6 +13,13 @@ export const loadExerciseComments = (exercise_comments) => {
   return {
     type: LOAD_EXERCISECOMMENTS,
     exercise_comments,
+  };
+};
+
+export const loadExerciseComment = (exercise_comment) => {
+  return {
+    type: LOAD_EXERCISECOMMENT,
+    exercise_comment,
   };
 };
 
@@ -56,6 +64,12 @@ export const fetchAllExerciseComments = (exerciseId) => async (dispatch) => {
   );
   const exerciseComments = await response.json();
   dispatch(loadExerciseComments(exerciseComments));
+};
+
+export const fetchExerciseComment = (exerciseCommentId) => async (dispatch) => {
+  const response = await fetch(`/api/exercise-comments/${exerciseCommentId}`);
+  const exerciseComment = await response.json();
+  dispatch(loadExerciseComment(exerciseComment));
 };
 
 export const createExerciseComment =
@@ -135,7 +149,7 @@ const exerciseCommentReducer = (state = {}, action) => {
     case ADD_EXERCISECOMMENT: {
       return {
         ...state,
-        [action.exercise_comment.id]: action.exercise_comment,
+        [action.exercise_comment?.id]: action.exercise_comment,
       };
     }
     case DELETE_EXERCISECOMMENT: {
