@@ -1,11 +1,11 @@
 // action type creator
-const LOAD_ALL_POSTCOMMENTS = "post/loadAllPosts";
-const ADD_POSTCOMMENT = "post/addPost";
+const LOAD_POSTCOMMENTS = "postComment/loadAllPostComments";
+const ADD_POSTCOMMENT = "postComment/addPostComment";
 
 //action creator
-export const loadAllPostComments = (post_comments) => {
+export const loadPostComments = (post_comments) => {
   return {
-    type: LOAD_ALL_POSTCOMMENTS,
+    type: LOAD_POSTCOMMENTS,
     post_comments,
   };
 };
@@ -19,9 +19,9 @@ export const addPostComment = (post_comment) => {
 
 // thunk action creator
 export const fetchAllPostComments = () => async (dispatch) => {
-  const response = await fetch("/api/post-comments");
+  const response = await fetch(`/api/posts/${postId}/post-comments`);
   const post_comments = await response.json();
-  dispatch(loadAllPostComments(post_comments));
+  dispatch(loadPostComments(post_comments));
 };
 
 export const writePostComment = (payload) => async (dispatch) => {
@@ -43,7 +43,7 @@ export const writePostComment = (payload) => async (dispatch) => {
 // reducer
 const postCommentReducer = (state = {}, action) => {
   switch (action.type) {
-    case LOAD_ALL_POSTCOMMENTS: {
+    case LOAD_POSTCOMMENTS: {
       const postCommentState = {};
       action.post_comments?.forEach((post_comment) => {
         postCommentState[post_comment?.id] = post_comment;

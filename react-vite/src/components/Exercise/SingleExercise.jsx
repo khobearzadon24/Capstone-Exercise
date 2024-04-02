@@ -26,7 +26,7 @@ function SingleExercise() {
   console.log(exercise, "here is the exercise you wanted");
   //   const menu_items = useSelector((state) => state.menuItemState);
 
-  const commentsArr = exercise[exerciseId]?.Exercise_comments;
+  const commentsArr = exercise[exerciseId]?.exercise_comments;
   // console.log(commentsArr[0]?.id, "here is your id");
 
   console.log(commentsArr, "here are your comments");

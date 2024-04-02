@@ -14,13 +14,21 @@ function PostPage() {
   const navigate = useNavigate();
   const posts = useSelector((state) => state.postState);
   const user = useSelector((state) => state.session.user);
+  const post_comment = useSelector((state) => state.postCommentState);
 
   useEffect(() => {
     dispatch(fetchAllPosts());
+    dispatch(fetchAllPostComments());
   }, [dispatch]);
 
   let postArr = Object.values(posts);
+  let postCommentArr = Object.values(post_comment);
+  console.log(post_comment, "over here is the comment state");
+
   console.log(postArr, "here is the array of posts");
+  console.log(postArr[0]?.post_comments);
+  // const commentsArr = posts;
+  // console.log(commentsArr, "here is the comments for the posts");
 
   return (
     <div className="post-page-container">
