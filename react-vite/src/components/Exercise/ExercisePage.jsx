@@ -25,8 +25,8 @@ function ExercisePage() {
   // console.log(types, "here is the types");
   console.log(user);
   return (
-    <>
-      <h1>This is the Exercise Page</h1>
+    <div className="exercise-page">
+      <h1 className="types-title">Type of Exercises</h1>
       {user && (
         <button
           className="style-hover"
@@ -37,7 +37,7 @@ function ExercisePage() {
       )}
       <div className="exercises-type-container">
         <NavLink className="type-box" to="/exercises/chest">
-          Chest
+          <h1 className="type-of-title">Chest</h1>
           <img
             className="type-image"
             src="https://i.postimg.cc/y8d7bbQM/chest-image.jpg"
@@ -45,7 +45,7 @@ function ExercisePage() {
           />
         </NavLink>
         <NavLink className="type-box" to="/exercises/triceps">
-          Triceps
+          <h1 className="type-of-title">Triceps</h1>
           <img
             className="type-image"
             src="https://i.postimg.cc/HkQ9F6rt/tricep-image.jpg"
@@ -53,7 +53,7 @@ function ExercisePage() {
           />
         </NavLink>
         <NavLink className="type-box" to="/exercises/back">
-          Back
+          <h1 className="type-of-title">Back</h1>
           <img
             className="type-image"
             src="https://i.postimg.cc/W45gPCT0/back-image.jpg"
@@ -61,7 +61,7 @@ function ExercisePage() {
           />
         </NavLink>
         <NavLink className="type-box" to="/exercises/biceps">
-          Biceps
+          <h1 className="type-of-title">Biceps</h1>
           <img
             className="type-image"
             src="https://i.postimg.cc/hvQ21nxd/bicep-image.png"
@@ -69,7 +69,7 @@ function ExercisePage() {
           />
         </NavLink>
         <NavLink className="type-box" to="/exercises/shoulders">
-          Shoulders
+          <h1 className="type-of-title">Shoulders</h1>
           <img
             className="type-image"
             src="https://i.postimg.cc/xdF7vt7B/shoulder-image.jpg"
@@ -77,7 +77,7 @@ function ExercisePage() {
           />
         </NavLink>
         <NavLink className="type-box" to="/exercises/legs">
-          Legs
+          <h1 className="type-of-title">Legs</h1>
           <img
             className="type-image"
             src="https://i.postimg.cc/sxK5W0Hh/legs-image.jpg"
@@ -85,7 +85,7 @@ function ExercisePage() {
           />
         </NavLink>
         <NavLink className="type-box" to="/exercises/cardio">
-          Cardio
+          <h1 className="type-of-title">Cardio</h1>
           <img
             className="type-image"
             src="https://i.postimg.cc/8CVs1mtQ/cardio-image.png"
@@ -93,7 +93,7 @@ function ExercisePage() {
           />
         </NavLink>
         <NavLink className="type-box" to="/exercises/abs">
-          Abs
+          <h1 className="type-of-title">Abs</h1>
           <img
             className="type-image"
             src="https://i.postimg.cc/d0TX98Y1/abs-image.png"
@@ -101,7 +101,7 @@ function ExercisePage() {
           />
         </NavLink>
       </div>
-    </>
+    </div>
   );
 }
 

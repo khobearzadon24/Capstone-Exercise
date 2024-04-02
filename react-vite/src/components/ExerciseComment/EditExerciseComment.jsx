@@ -7,23 +7,30 @@ import {
   editExerciseComment,
 } from "../../redux/exerciseCommentReducer";
 
-function UpdateExerciseComment() {
+function UpdateExerciseComment({ id }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { exerciseCommentId } = useParams();
+  const { exerciseId } = useParams();
+  const exercise = useSelector((state) => state.exerciseState);
+  // const exerciseComment = useSelector(
+  //   (state) => state.exerciseCommentState[id]
+  // );
   const exerciseComment = useSelector(
-    (state) => state.exerciseCommentState[exerciseCommentId]
+    (state) => state.exerciseCommentState[id]
   );
+  console.log(exerciseComment, "here is the comments");
+
+  console.log(exercise, "over here");
   //   const exerciseTypes = useSelector((state) => state.exerciseState.types);
 
   //   const [name, setName] = useState(exercise?.name);
-  const [description, setDescription] = useState(exercise?.description);
+  const [description, setDescription] = useState(exerciseComment?.description);
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    dispatch(fetchExerciseComment(exerciseCommentId));
+    dispatch(fetchExerciseComment(id));
     setDescription(exerciseComment?.description);
-  }, [dispatch, exerciseCommentId, exerciseComment?.description]);
+  }, [dispatch, id, exerciseComment?.description]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -32,11 +39,10 @@ function UpdateExerciseComment() {
       description,
     };
 
-    const response = await dispatch(
-      editExerciseComment(exerciseCommentId, payload)
-    );
-    if (response.errors) setErrors(response.errors);
-    else navigate(`/exercises/${exerciseComment?.exerciseId}`);
+    const response = await dispatch(editExerciseComment(id, payload));
+    if (response?.errors) setErrors(response?.errors);
+    // else navigate(`/exercises/${exerciseId}`);
+    window.location.reload();
   };
 
   return (

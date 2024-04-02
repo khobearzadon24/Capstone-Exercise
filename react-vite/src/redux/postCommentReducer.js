@@ -45,7 +45,7 @@ const postCommentReducer = (state = {}, action) => {
   switch (action.type) {
     case LOAD_ALL_POSTCOMMENTS: {
       const postCommentState = {};
-      action.post_comments.post_comments.forEach((post_comment) => {
+      action.post_comments?.forEach((post_comment) => {
         postCommentState[post_comment.id] = post_comment;
       });
       return postCommentState;

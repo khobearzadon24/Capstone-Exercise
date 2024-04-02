@@ -125,7 +125,7 @@ export const editExercise = (exerciseId, payload) => async (dispatch) => {
     body: payload,
   });
   if (response.ok) {
-    const exercise = await response.json();
+    const { exercise } = await response.json();
     dispatch(updateExercise(exercise));
   } else {
     console.log("There was an error editing yout post.");
@@ -159,11 +159,11 @@ const exerciseReducer = (state = {}, action) => {
       return { ...state, [action?.exercise?.id]: action.exercise };
     case REMOVE_EXERCISE: {
       const newState = { ...state };
-      delete newState[action.exerciseId];
+      delete newState[action?.exerciseId];
       return newState;
     }
     case UPDATE_EXERCISE:
-      return { ...state, [action.exercise.id]: action.exercise };
+      return { ...state, [action?.exercise?.id]: action.exercise };
     case CLEAR_EXERCISES:
       return {};
     default:

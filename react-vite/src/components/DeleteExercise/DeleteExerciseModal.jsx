@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import { removeExercise } from "../../redux/exerciseReducer";
 
-function DeleteExerciseModal({ exercise, renderExercise }) {
+function DeleteExerciseModal({ exercise }) {
   const dispatch = useDispatch();
   const { closeModal } = useModal();
   // console.log(exercise, "here is the exercise over here");
@@ -10,7 +10,6 @@ function DeleteExerciseModal({ exercise, renderExercise }) {
   const deleteSubmit = async (e) => {
     e.preventDefault();
     await dispatch(removeExercise(exercise?.id));
-    renderExercise();
     closeModal();
   };
 

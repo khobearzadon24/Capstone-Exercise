@@ -7,7 +7,7 @@ import {
   getExerciseTypes,
 } from "../../redux/exerciseReducer";
 
-function UpdateExercise() {
+function UpdateExercise({ id }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { exerciseId } = useParams();
@@ -39,14 +39,20 @@ function UpdateExercise() {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const payload = {
-      name,
-      description,
-      type,
-      imgUrl: imgUrl,
-    };
+    // const payload = {
+    //   name,
+    //   description,
+    //   type,
+    //   imgUrl: imgUrl,
+    // };
+    const formData = new FormData();
+    formData.append("imgUrl", imgUrl);
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("type", type);
+    setImgUrlLoading(true);
 
-    const response = await dispatch(editExercise(exerciseId, payload));
+    const response = await dispatch(editExercise(exerciseId, formData));
     // if (response.errors) setErrors(response.errors);
     navigate(`/exercises/${exerciseId}`);
   };

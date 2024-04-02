@@ -20,8 +20,8 @@ function Navigation() {
         </NavLink>
       </div>
 
-      <ul className="">
-        <ProfileButton />
+      <ul>
+        <ProfileButton className="profile-button" />
       </ul>
     </div>
   );

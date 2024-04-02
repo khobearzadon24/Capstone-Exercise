@@ -18,26 +18,29 @@ function LandingPage() {
         <div className="exercise-image-cont">
           <img
             className="exercise-image"
-            src="https://i.postimg.cc/GtwY4HZK/db-bench-press.jpg"
-            alt="exercise"
+            src="https://i.postimg.cc/ZYcXQ0MR/why-exercise.jpg"
+            alt="why-exercise"
           />
         </div>
       </div>
       <div className="first-container">
+        <div>
+          <img
+            className="exercise-image"
+            src="https://i.postimg.cc/bJ13kVKr/about-us.jpg"
+            alt="about-us"
+          />
+        </div>
         <div className="exercise-text">
           <h2>About Us</h2>
           <h3>
             You have visited just the right place to get your mind and body
-            right for your fitness journey! Explore the website and you will see
-            why! Have fun
+            right for your fitness journey! Our website will allow you to gain a
+            vast amount of exercise knowledge from other users and you can also
+            give your opinions on the exercises they decide to share. You may
+            also even post your own accomplishments and see what others have
+            accomplished in their own journeys.
           </h3>
-        </div>
-        <div>
-          <img
-            className="exercise-image"
-            src="https://i.postimg.cc/GtwY4HZK/db-bench-press.jpg"
-            alt="exercise"
-          />
         </div>
       </div>
     </div>

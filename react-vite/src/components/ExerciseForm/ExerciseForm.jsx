@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { writeExercise } from "../../redux/exerciseReducer";
 import { useNavigate } from "react-router-dom";
 import { getExerciseTypes } from "../../redux/exerciseReducer";
-// import "./CreateRestaurantForm.css";
-// import Layout from "../../router/Layout"
 
 function ExerciseForm() {
   const dispatch = useDispatch();
@@ -42,7 +40,7 @@ function ExerciseForm() {
     // };
     const newExercise = await dispatch(writeExercise(formData));
     // if (formData.errors) setErrors(formData.errors);
-    navigate(`/exercises/my-exercises}`);
+    navigate(`/exercises/my-exercises`);
   };
 
   return (

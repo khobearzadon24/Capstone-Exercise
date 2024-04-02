@@ -2,7 +2,9 @@ from flask import Blueprint, Flask, request
 from app.models import db, Exercise_Comment, User
 from flask_login import login_required
 from app.utils import is_exercise_comment_owner, get_current_user
+from app.forms import ExerciseCommentForm
 import json
+from types import SimpleNamespace
 
 exercise_comment_routes = Blueprint("exercise-comments", __name__)
 
@@ -54,3 +56,26 @@ def getExerciseCommentById(id):
     }
 
     return json.dumps(exercise_comment_formatted)
+
+# EDIT EXERCISE COMMENT BY ID ["/api/exericse-comments/:id"]
+@exercise_comment_routes.route("/<int:exerciseCommentId>", methods =["PUT"])
+@login_required
+@is_exercise_comment_owner
+def updateExerciseComment(exerciseCommentId):
+    exercise_comment = Exercise_Comment.query.get(exerciseCommentId)
+
+    if not exercise_comment:
+        return json.dumps({
+            "message": "Exercise Comment couldn't be found"
+        }), 404
+
+    data = json.loads(request.data, object_hook=lambda d: SimpleNamespace(**d))
+    #convert JSON to Object so form can key in using
+    form = ExerciseCommentForm(obj=data)
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        form.populate_obj(exercise_comment)
+        db.session.add(exercise_comment)
+        db.session.commit()
+        return json.dumps(exercise_comment.to_dict())
+    return {'message': 'Bad Request', 'errors': form.errors}, 400

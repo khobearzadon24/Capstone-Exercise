@@ -52,22 +52,22 @@ function OwnerExercises() {
       <div className="manage-page-container">
         <h1>Manage Your Exercises</h1>
         <div className="manage-all-container">
-          {exerciseArr.map((exercise) => (
-            <div key={exercise?.id} className="manage-container">
+          {exerciseArr.map((exercise, idx) => (
+            <div key={idx} className="manage-container">
               <NavLink
                 className="exercise-manage-container"
-                to={`/exercises/${exercise.id}`}
+                to={`/exercises/${exercise?.id}`}
               >
                 <img
                   className="exercise-img"
-                  src={`${exercise.imgUrl}`}
-                  alt={`${exercise.name}`}
+                  src={`${exercise?.imgUrl}`}
+                  alt={`${exercise?.name}`}
                 />
                 <div className="exercise-name-description">
-                  <p className="exercise-name">{`${exercise.name}`}</p>
+                  <p className="exercise-name">{`${exercise?.name}`}</p>
                   <div className="exercise-description-container">
                     <p className="exercise-description">
-                      {`${exercise.description}`}
+                      {`${exercise?.description}`}
                     </p>
                   </div>
                 </div>
@@ -75,7 +75,7 @@ function OwnerExercises() {
               <div className="update-delete">
                 <NavLink
                   className="update-button"
-                  to={`/exercises/${exercise.id}/update`}
+                  to={`/exercises/${exercise?.id}/update`}
                 >
                   Edit Exercise
                 </NavLink>
@@ -83,12 +83,7 @@ function OwnerExercises() {
                   <OpenModalButton
                     buttonText="Delete Exercise"
                     onItemClick={closeMenu}
-                    modalComponent={
-                      <DeleteExerciseModal
-                        exercise={exercise}
-                        renderExercise={renderExercise}
-                      />
-                    }
+                    modalComponent={<DeleteExerciseModal exercise={exercise} />}
                   />
                 </div>
               </div>

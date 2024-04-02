@@ -1,6 +1,7 @@
 /* TODO: Add sitewide styles */
 * {
-  margin: 5px;
-  color: black;
-  background: rgb(183, 127, 136);
+  /* margin: 5px; */
+  color: white;
+  /* background: linear-gradient(#535252, #3e415c); */
+  background: #3e415c;
 }

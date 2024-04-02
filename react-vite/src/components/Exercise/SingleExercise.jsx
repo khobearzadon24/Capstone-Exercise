@@ -5,9 +5,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import DeleteExerciseButton from "./DeleteExerciseButton";
 // import OpenModalButton from "../OpenModalButton/OpenModalButton";
 import AddExerciseCommentModal from "../ExerciseComment/ExerciseComment";
-import { addExerciseComment } from "../../redux/exerciseCommentReducer";
+import {
+  addExerciseComment,
+  fetchAllExerciseComments,
+} from "../../redux/exerciseCommentReducer";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
-import UpdateExerciseComment from "../ExerciseForm/UpdateExerciseForm";
+import UpdateExerciseComment from "../ExerciseComment/EditExerciseComment";
+import DeleteExerciseCommentButton from "../ExerciseComment/DeleteExerciseComment";
 // import DeleteMenuItemButton from "../MenuItems/DeleteMenuItemButton";
 // import { fetchOwnerMenuItems } from "../../redux/menuItemReducer";
 
@@ -16,10 +20,14 @@ function SingleExercise() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const exercise = useSelector((state) => state.exerciseState);
+  const exercise_comment = useSelector((state) => state.exerciseCommentState);
+
+  console.log(exercise_comment, "here is the exercise comments");
   console.log(exercise, "here is the exercise you wanted");
   //   const menu_items = useSelector((state) => state.menuItemState);
 
   const commentsArr = exercise[exerciseId]?.Exercise_comments;
+  // console.log(commentsArr[0]?.id, "here is your id");
 
   console.log(commentsArr, "here are your comments");
   //   const menuItemsArr = Object.values(menu_items);
@@ -48,7 +56,8 @@ function SingleExercise() {
   useEffect(() => {
     dispatch(fetchExercise(exerciseId))
       .then(dispatch(getExerciseTypes()))
-      .then(dispatch(addExerciseComment()));
+      .then(dispatch(addExerciseComment()))
+      .then(dispatch(fetchAllExerciseComments(exerciseId)));
     //   .then(dispatch(fetchOwnerMenuItems(restaurantId)));
   }, [dispatch, exerciseId]);
 
@@ -70,32 +79,40 @@ function SingleExercise() {
                 {exercise[exerciseId]?.lastName}
               </h1>
             </div>
+            <h1>{exercise[exerciseId]?.description}</h1>
           </div>
           <div className="exercise-header-container">
             <h4>Comments</h4>
           </div>
           <div className="exerciseDetails">
             <div className="exercise-comments-Container">
+              {commentsArr?.length === 0 && <h1>No Comments Yet</h1>}
               {commentsArr?.map((comment) => (
                 <div className="exercise-comments-Card" key={comment.id}>
                   <p className="name-exercise-comment">
                     {comment.firstName} {comment.lastName}
                   </p>
-                  <p className="description-exercise-comment">
-                    {comment.description}
+                  <div className="description-exercise-comment">
+                    {comment?.description}
                     {comment?.userId === user?.id && (
-                      <div className="delete-button">
+                      <div className="edit-exercise-comment-button">
                         <OpenModalButton
                           buttonText="Edit Exercise Comment"
                           onItemClick={closeMenu}
-                          modalComponent={<UpdateExerciseComment />}
+                          modalComponent={
+                            <UpdateExerciseComment id={comment?.id} />
+                          }
+                        />
+                        <DeleteExerciseCommentButton
+                          className="delete-button"
+                          id={comment?.id}
                         />
                       </div>
                     )}
-                  </p>
-                  <AddExerciseCommentModal className="add-comment-button" />
+                  </div>
                 </div>
               ))}
+              <AddExerciseCommentModal className="add-comment-button" />
             </div>
 
             <div className="ManageExercise">

@@ -99,13 +99,10 @@ def updateExercise(exerciseId):
     form = ExerciseForm()
     form["csrf_token"].data = request.cookies["csrf_token"]
 
+    url=None
     if form.validate_on_submit():
-        exercise = Exercise.query.get(id)
-        imgUrl = form.imgUrl.data
-        url= None
+        imgUrl= form.imgUrl.data
 
-        if not exercise:
-            return {"error": "Exercise could not be found"}, 404
 
         if imgUrl:
             imgUrl.filename = get_unique_filename(imgUrl.filename)
@@ -114,14 +111,24 @@ def updateExercise(exerciseId):
                 return {"exercise_image": "Failed to upload image, try again."}, 500
             url = upload["url"]
 
-        exercise.name = form.name.data
-        exercise.description = form.description.data
-        exercise.type = form.type.data
+
+    exercise = Exercise.query.get(exerciseId)
+
+    if not exercise:
+            return {"error": "Exercise could not be found"}, 404
+
+    exercise.name = form.data['name']
+    exercise.description = form.data['description']
+    exercise.type = form.data['type']
+    print(url, 'over here')
+    if url:
         exercise.imgUrl = url
 
-        db.session.commit()
 
-        return json.dumps(exercise.to_dict())
+
+    db.session.commit()
+
+    return json.dumps(exercise.to_dict()),201
     return {'message': 'Bad Request', 'errors': form.errors}, 400
 
 
@@ -177,17 +184,20 @@ def createExerciseComment(exerciseId):
 @exercise_routes.route('/<int:exerciseId>/exercise-comments', methods=["GET"])
 def getExerciseComments(exerciseId):
     exercise_comments = Exercise_Comment.query.filter_by(exerciseId=exerciseId).all()
-    user = User.query.get(exercise_comments.userId)
+    user = User.query.get(exercise_comments[0].userId)
     reviewResponse = [exercise_comment.to_dict() for exercise_comment in exercise_comments]
 
-    exercise_comment_formatted ={
-        'id': exercise_comments.id,
-        'userId': exercise_comments.userId,
-        "firstName": user.firstName,
-        "lastName": user.lastName,
-        'exerciseId': exercise_comments.exerciseId,
-        'description': exercise_comments.description,
-        'createdAt': str(exercise_comments.createdAt)
-    }
+    for item in reviewResponse:
+        item["firstName"] =user.firstName
+        item["lastName"] = user.lastName
+    # exercise_comment_formatted ={
+    #     'id': exercise_comments.id,
+    #     'userId': exercise_comments.userId,
+    #     "firstName": user.firstName,
+    #     "lastName": user.lastName,
+    #     'exerciseId': exercise_comments.exerciseId,
+    #     'description': exercise_comments.description,
+    #     'createdAt': str(exercise_comments.createdAt)
+    # }
 
-    return json.dumps(exercise_comment_formatted)
+    return json.dumps(reviewResponse)

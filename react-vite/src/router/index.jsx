@@ -17,6 +17,8 @@ import ExerciseForm from "../components/ExerciseForm/ExerciseForm";
 import UpdateExercise from "../components/ExerciseForm/UpdateExerciseForm";
 import OwnerExercises from "../components/Exercise/OwnerExercises";
 import Layout from "./Layout";
+import PostForm from "../components/PostForm/PostForm";
+import UpdatePost from "../components/PostForm/UpdatePostForm";
 
 export const router = createBrowserRouter([
   {
@@ -37,10 +39,6 @@ export const router = createBrowserRouter([
       {
         path: "exercises",
         element: <ExercisePage />,
-      },
-      {
-        path: "posts",
-        element: <PostPage />,
       },
       {
         path: "/exercises/chest",
@@ -89,6 +87,18 @@ export const router = createBrowserRouter([
       {
         path: "/exercises/my-exercises",
         element: <OwnerExercises />,
+      },
+      {
+        path: "posts",
+        element: <PostPage />,
+      },
+      {
+        path: "/posts/new",
+        element: <PostForm />,
+      },
+      {
+        path: "/posts/:postId/update",
+        element: <UpdatePost />,
       },
     ],
   },

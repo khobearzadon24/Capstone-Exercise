@@ -2,6 +2,7 @@
 const LOAD_ALL_POSTS = "post/loadAllPosts";
 const ADD_POST = "post/addPost";
 const UPDATE_POST = "post/updatePost";
+const LOAD_POST = "post/loadPost";
 
 //action creator
 export const loadAllPosts = (posts) => {
@@ -21,6 +22,13 @@ export const addPost = (post) => {
 export const updatePost = (post) => {
   return {
     type: UPDATE_POST,
+    post,
+  };
+};
+
+export const loadPost = (post) => {
+  return {
+    type: LOAD_POST,
     post,
   };
 };
@@ -61,6 +69,12 @@ export const editPost = (postId, payload) => async (dispatch) => {
   }
 };
 
+export const fetchPost = (postId) => async (dispatch) => {
+  const response = await fetch(`/api/post/${postId}`);
+  const post = await response.json();
+  dispatch(loadPost(post));
+};
+
 //reducer
 const postReducer = (state = {}, action) => {
   switch (action.type) {
@@ -74,6 +88,8 @@ const postReducer = (state = {}, action) => {
     case ADD_POST:
       return { ...state, [action.post.id]: action.post };
     case UPDATE_POST:
+      return { ...state, [action.post.id]: action.post };
+    case LOAD_POST:
       return { ...state, [action.post.id]: action.post };
     default:
       return state;

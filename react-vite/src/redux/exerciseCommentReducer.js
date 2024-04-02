@@ -5,7 +5,6 @@ const ADD_EXERCISECOMMENT = "exerciseComment/addExerciseComment";
 const DELETE_EXERCISECOMMENT = "exerciseComment/deleteExerciseComment";
 const UPDATE_EXERCISECOMMENT = "exerciseComment/updateExerciseComment";
 const LOAD_OWNER_EXERCISECOMMENTS = "exerciseComment/loadOwnerExerciseComments";
-
 const CLEAR_EXERCISECOMMENTS = "exerciseComment/clearExerciseComments";
 
 //action creator
@@ -69,6 +68,7 @@ export const fetchAllExerciseComments = (exerciseId) => async (dispatch) => {
 export const fetchExerciseComment = (exerciseCommentId) => async (dispatch) => {
   const response = await fetch(`/api/exercise-comments/${exerciseCommentId}`);
   const exerciseComment = await response.json();
+  console.log(exerciseComment, "here is what comes out");
   dispatch(loadExerciseComment(exerciseComment));
 };
 
@@ -140,11 +140,17 @@ export const editExerciseComment =
 const exerciseCommentReducer = (state = {}, action) => {
   switch (action.type) {
     case LOAD_EXERCISECOMMENTS: {
-      const exerciseCommentState = { ...state };
-      action.exercise_comment.Exercise_Comment.forEach((exercise_comment) => {
-        exerciseCommentState[exercise_comment.id] = exercise_comment;
+      const exerciseCommentState = {};
+      action.exercise_comments.forEach((comment) => {
+        exerciseCommentState[comment.id] = comment;
       });
       return exerciseCommentState;
+    }
+    case LOAD_EXERCISECOMMENT: {
+      return {
+        ...state,
+        [action.exercise_comment.id]: action.exercise_comment,
+      };
     }
     case ADD_EXERCISECOMMENT: {
       return {
@@ -154,7 +160,7 @@ const exerciseCommentReducer = (state = {}, action) => {
     }
     case DELETE_EXERCISECOMMENT: {
       const newState = { ...state };
-      delete newState[action.exercise_commentId];
+      delete newState[action?.exercise_commentId];
       return newState;
     }
     case LOAD_OWNER_EXERCISECOMMENTS: {
@@ -165,7 +171,10 @@ const exerciseCommentReducer = (state = {}, action) => {
       return exerciseCommentState;
     }
     case UPDATE_EXERCISECOMMENT:
-      return { ...state, [action.exercise.id]: action.exercise };
+      return {
+        ...state,
+        [action.exercise_comment.id]: action.exercise_comment,
+      };
     case CLEAR_EXERCISECOMMENTS: {
       return {};
     }

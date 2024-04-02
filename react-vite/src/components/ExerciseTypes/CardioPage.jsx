@@ -6,6 +6,7 @@ import {
 } from "../../redux/exerciseReducer";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchAllExerciseComments } from "../../redux/exerciseCommentReducer";
+import "./ExerciseTypes.css";
 
 function CardioPage() {
   const dispatch = useDispatch();
@@ -29,8 +30,8 @@ function CardioPage() {
   console.log(user);
   return (
     <>
-      <h1>This is the Cardio Page</h1>
-      <hr />
+      <h1 className="type-title">Legs Exercises</h1>
+
       <div className="exerciseDivs">
         {resultArr?.map((exercise, idx) => (
           <div
@@ -44,7 +45,7 @@ function CardioPage() {
             <div className="info">
               <p className="name">{exercise.name}</p>
             </div>
-            <img className="excerCardImage" src={exercise?.imgUrl} />
+            <img className="exerCardImage" src={exercise?.imgUrl} />
             {user?.id == exercise?.userId && (
               <button
                 className="edit-exercise"
