@@ -6,6 +6,7 @@ import {
   editExercise,
   getExerciseTypes,
 } from "../../redux/exerciseReducer";
+import "./ExerciseForm.css";
 
 function UpdateExercise({ id }) {
   const dispatch = useDispatch();
@@ -54,7 +55,8 @@ function UpdateExercise({ id }) {
 
     const response = await dispatch(editExercise(exerciseId, formData));
     // if (response.errors) setErrors(response.errors);
-    navigate(`/exercises/${exerciseId}`);
+    // navigate(`/exercises/${exerciseId}`);
+    window.location.reload();
   };
 
   return (
@@ -85,7 +87,7 @@ function UpdateExercise({ id }) {
             <div className="column-styles">
               <p>Description</p>
               <input
-                className="input-area"
+                className="input-area-description"
                 type="text"
                 placeholder="Enter A Description"
                 value={description}
@@ -133,7 +135,7 @@ function UpdateExercise({ id }) {
             </button>
             {imgUrlLoading && <p>Loading...</p>}
           </form>
-          <img className="exer-logo" src={exercise?.imgUrl} alt="exer-logo" />
+          {/* <img className="exer-logo" src={exercise?.imgUrl} alt="exer-logo" /> */}
         </div>
       )}
     </div>

@@ -1,0 +1,17 @@
+.exercise-comment-form {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.exercise-comment-area {
+  border: 1px black solid;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.exercise-comment-submit {
+  width: 180px;
+  height: 40px;
+  border-radius: 20px;
+}

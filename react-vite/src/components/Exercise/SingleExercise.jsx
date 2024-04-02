@@ -12,6 +12,8 @@ import {
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
 import UpdateExerciseComment from "../ExerciseComment/EditExerciseComment";
 import DeleteExerciseCommentButton from "../ExerciseComment/DeleteExerciseComment";
+import "./SingleExercise.css";
+import UpdateExercise from "../ExerciseForm/UpdateExerciseForm";
 // import DeleteMenuItemButton from "../MenuItems/DeleteMenuItemButton";
 // import { fetchOwnerMenuItems } from "../../redux/menuItemReducer";
 
@@ -74,15 +76,17 @@ function SingleExercise() {
           <div className="exercise-details-header-container">
             <h1 className="exercise-name">{exercise[exerciseId]?.name} </h1>
             <div className="made-by-container">
-              <h1>
+              <h1 className="made-by-name">
                 Made by {exercise[exerciseId]?.firstName}{" "}
                 {exercise[exerciseId]?.lastName}
               </h1>
             </div>
-            <h1>{exercise[exerciseId]?.description}</h1>
+            <h1 className="exercise-decription">
+              {exercise[exerciseId]?.description}
+            </h1>
           </div>
           <div className="exercise-header-container">
-            <h4>Comments</h4>
+            <h4 className="exercise-comments-title">Comments</h4>
           </div>
           <div className="exerciseDetails">
             <div className="exercise-comments-Container">
@@ -97,7 +101,7 @@ function SingleExercise() {
                     {comment?.userId === user?.id && (
                       <div className="edit-exercise-comment-button">
                         <OpenModalButton
-                          buttonText="Edit Exercise Comment"
+                          buttonText="Edit Comment"
                           onItemClick={closeMenu}
                           modalComponent={
                             <UpdateExerciseComment id={comment?.id} />
@@ -118,18 +122,12 @@ function SingleExercise() {
             <div className="ManageExercise">
               {exercise[exerciseId]?.userId === user?.id && (
                 <>
-                  <h1>Manage Exercise</h1>
-                  {/* <hr /> */}
-                  <button
-                    className="add-item"
-                    onClick={() => navigate(`/exercises/${exerciseId}/update`)}
-                  >
-                    Edit Exercise
-                  </button>
-                  <DeleteExerciseButton
-                    className="delete-button"
-                    id={exerciseId}
+                  <OpenModalButton
+                    buttonText="Edit Exercise"
+                    onItemClick={closeMenu}
+                    modalComponent={<UpdateExercise id={exerciseId} />}
                   />
+                  <DeleteExerciseButton className="add-item" id={exerciseId} />
                 </>
               )}
             </div>

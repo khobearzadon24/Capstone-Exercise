@@ -1,0 +1,60 @@
+.exercise-page-create {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 200px;
+  /* margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 30px; */
+}
+
+.exercise-form {
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px white solid;
+  border-radius: 20px;
+  width: 400px;
+  /* background-color: rgb(5, 162, 5); */
+  padding: 40px;
+  gap: 10px;
+}
+
+.exercise-title-form {
+  color: white;
+  font-size: 30px;
+}
+
+.input-area {
+  height: 20px;
+  border-radius: 20px;
+}
+
+.input-area-description {
+  height: 20px;
+  border-radius: 20px;
+  width: 400px;
+}
+
+.exercise-errors {
+  color: red;
+  font-weight: 800;
+}
+
+.exer-logo {
+  width: 500px;
+}
+
+.column-styles {
+  display: flex;
+  text-align: start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.exercise-submit {
+  width: 80px;
+  border-radius: 20px;
+}

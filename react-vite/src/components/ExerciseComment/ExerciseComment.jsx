@@ -6,6 +6,7 @@ import {
 } from "../../redux/exerciseCommentReducer";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
+import "./ExerciseComment.css";
 
 function AddExerciseCommentModal() {
   const dispatch = useDispatch();
@@ -31,12 +32,11 @@ function AddExerciseCommentModal() {
 
   return (
     <>
-      <p>Add Comment</p>
-      <form onSubmit={handleSubmit}>
+      <form className="exercise-comment-form" onSubmit={handleSubmit}>
         <input
           className="exercise-comment-area"
           type="text"
-          placeholder="Enter in your exercise comment"
+          placeholder="Type Comment Here"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         ></input>
