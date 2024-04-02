@@ -46,12 +46,12 @@ const postCommentReducer = (state = {}, action) => {
     case LOAD_ALL_POSTCOMMENTS: {
       const postCommentState = {};
       action.post_comments?.forEach((post_comment) => {
-        postCommentState[post_comment.id] = post_comment;
+        postCommentState[post_comment?.id] = post_comment;
       });
       return postCommentState;
     }
     case ADD_POSTCOMMENT:
-      return { ...state, [action.post_comment.id]: action.post_comment };
+      return { ...state, [action?.post_comment?.id]: action?.post_comment };
     default:
       return state;
   }

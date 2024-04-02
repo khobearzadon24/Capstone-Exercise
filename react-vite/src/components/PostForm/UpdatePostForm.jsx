@@ -41,7 +41,7 @@ function UpdatePost() {
     // setImgUrlLoading(true);
 
     const response = await dispatch(editPost(postId, payload));
-    if (response.errors) setErrors(response.errors);
+    if (response?.errors) setErrors(response?.errors);
     else navigate(`/posts`);
   };
 

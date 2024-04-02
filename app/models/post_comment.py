@@ -23,7 +23,7 @@ class Post_Comment(db.Model):
         return {
             'id': self.id,
             'userId': self.userId,
-            'postId': self.exerciseId,
+            'postId': self.postId,
             'description': self.description,
             'createdAt': str(self.createdAt)
         }

@@ -64,6 +64,27 @@ def getPostById(id):
     }
     return json.dumps(post_formatted)
 
+#EDIT/UPDATE A POST at ["api/posts/:id"]
+@post_routes.route("/<int:postId>", methods =["PUT"])
+@login_required
+@is_post_owner
+def updatePost(postId):
+    post = Post.query.get(postId)
+
+    if not post:
+        return json.dumps({
+            "message": "Post couldn't be found"
+        }), 404
+    data = json.load(request.data, object_hook=lambda d: SimpleNamespace(**d) )
+    form = PostForm(obj=data)
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        form.populate_obj(post)
+        db.session.add(post)
+        db.session.commit()
+        return json.dumps(post.to_dict())
+    return {'message': 'Bad Request', 'errors': form.errors}, 400
+
 #DELETE A POST at ["/api/posts/id"]
 @post_routes.route("/<int:postId>", methods=["DELETE"])
 @login_required

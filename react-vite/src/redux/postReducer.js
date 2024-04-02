@@ -3,6 +3,7 @@ const LOAD_ALL_POSTS = "post/loadAllPosts";
 const ADD_POST = "post/addPost";
 const UPDATE_POST = "post/updatePost";
 const LOAD_POST = "post/loadPost";
+const REMOVE_POST = "post/removePost";
 
 //action creator
 export const loadAllPosts = (posts) => {
@@ -33,6 +34,13 @@ export const loadPost = (post) => {
   };
 };
 
+export const removePost = (postId) => {
+  return {
+    type: REMOVE_POST,
+    postId,
+  };
+};
+
 // thunk action creator
 export const fetchAllPosts = () => async (dispatch) => {
   const response = await fetch("/api/posts");
@@ -56,6 +64,17 @@ export const writePost = (payload) => async (dispatch) => {
   }
 };
 
+export const deletePost = (postId) => async (dispatch) => {
+  const response = await fetch(`/api/posts/${postId}`, {
+    method: "DELETE",
+  });
+  if (response.ok) {
+    const post = await response.json();
+    dispatch(removePost(postId));
+    return post;
+  }
+};
+
 export const editPost = (postId, payload) => async (dispatch) => {
   const response = await fetch(`/api/posts/${postId}`, {
     method: "PUT",
@@ -70,7 +89,7 @@ export const editPost = (postId, payload) => async (dispatch) => {
 };
 
 export const fetchPost = (postId) => async (dispatch) => {
-  const response = await fetch(`/api/post/${postId}`);
+  const response = await fetch(`/api/posts/${postId}`);
   const post = await response.json();
   dispatch(loadPost(post));
 };
@@ -89,6 +108,11 @@ const postReducer = (state = {}, action) => {
       return { ...state, [action.post.id]: action.post };
     case UPDATE_POST:
       return { ...state, [action.post.id]: action.post };
+    case REMOVE_POST: {
+      const newState = { ...state };
+      delete newState[action.postId];
+      return newState;
+    }
     case LOAD_POST:
       return { ...state, [action.post.id]: action.post };
     default:
