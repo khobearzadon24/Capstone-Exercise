@@ -60,12 +60,12 @@ def getPostById(id):
         "userId": post.userId,
         "description": post.description,
         "name": post.name,
-        "Post_comments": post_comments,
+        "post_comments": post_comments,
     }
     return json.dumps(post_formatted)
 
 #EDIT/UPDATE A POST at ["api/posts/:id"]
-@post_routes.route("/<int:postId>", methods =["PUT"])
+@post_routes.route("/<int:postId>", methods =["GET","PUT"])
 @login_required
 @is_post_owner
 def updatePost(postId):
@@ -75,7 +75,7 @@ def updatePost(postId):
         return json.dumps({
             "message": "Post couldn't be found"
         }), 404
-    data = json.load(request.data, object_hook=lambda d: SimpleNamespace(**d) )
+    data = json.loads(request.data, object_hook=lambda d: SimpleNamespace(**d) )
     form = PostForm(obj=data)
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():

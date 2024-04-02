@@ -15,11 +15,16 @@ class Post(db.Model):
 
     post_comments = db.relationship("Post_Comment", back_populates="post", cascade='all, delete-orphan')
 
+    user = db.relationship("User", back_populates = "post")
+
     def to_dict(self):
         return {
             'id': self.id,
             'name': self.name,
+            'firstName': self.user.firstName,
+            'lastName': self.user.lastName,
             'description': self.description,
             'userId': self.userId,
-            'createdAt': str(self.createdAt)
+            'createdAt': str(self.createdAt),
+            'post_comments': [post_comment.to_dict() for post_comment in self.post_comments],
         }

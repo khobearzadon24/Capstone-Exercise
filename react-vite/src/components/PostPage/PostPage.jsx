@@ -7,6 +7,7 @@ import {
 import { fetchAllPosts } from "../../redux/postReducer";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchAllPostComments } from "../../redux/postCommentReducer";
+import "./PostPage.css";
 
 function PostPage() {
   const dispatch = useDispatch();
@@ -22,8 +23,10 @@ function PostPage() {
   console.log(postArr, "here is the array of posts");
 
   return (
-    <>
-      <h1>This is the Post Page</h1>
+    <div className="post-page-container">
+      <h1 className="post-title">
+        Post your accomplishments, exercise questions, or anything on your mind!
+      </h1>
       <hr />
       {user && (
         <button
@@ -37,24 +40,27 @@ function PostPage() {
         {postArr?.map((post, idx) => (
           <div className="postCard" key={idx}>
             <div className="info">
-              <h1 className="name">{post.name}</h1>
+              <h1 className="name">
+                {post.name} | By {post.firstName} {post.lastName}
+              </h1>
+
               <p className="post-description">{post.description}</p>
+              {user?.id == post?.userId && (
+                <button
+                  className="edit-exercise"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate(`/posts/${post?.id}/update`);
+                  }}
+                >
+                  Edit Post
+                </button>
+              )}
             </div>
-            {user?.id == post?.userId && (
-              <button
-                className="edit-exercise"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  navigate(`/posts/${post?.id}/update`);
-                }}
-              >
-                Edit Post
-              </button>
-            )}
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

@@ -1,0 +1,27 @@
+.post-page-container {
+  margin: 20px;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+}
+
+.post-title {
+  display: flex;
+  /* justify-content: center; */
+}
+
+.create-post-button {
+  display: flex;
+  /* justify-content: center; */
+  width: fit-content;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.postDivs {
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  /* text-align: center; */
+  gap: 50px;
+}

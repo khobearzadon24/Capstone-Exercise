@@ -87,7 +87,7 @@ def getExerciseById(id):
         "imgUrl": exercise.imgUrl,
         "name": exercise.name,
         "type": exercise.type,
-        "Exercise_comments": exercise_comments,
+        "exercise_comments": exercise_comments,
     }
     return json.dumps(exercise_formatted)
 

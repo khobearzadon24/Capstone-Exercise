@@ -19,6 +19,10 @@ class User(db.Model, UserMixin):
 
     exercise = db.relationship("Exercise", back_populates="user", cascade = 'all, delete-orphan')
 
+    post = db.relationship("Post", back_populates="user", cascade = 'all, delete-orphan')
+
+    post_comments = db.relationship("Post_Comment", back_populates="user", cascade = 'all, delete-orphan')
+
     @property
     def password(self):
         return self.hashed_password
