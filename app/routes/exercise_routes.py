@@ -3,7 +3,7 @@ from app.models.exercise import exerciseTypes
 from app.forms import ExerciseForm,ExerciseCommentForm
 from flask import Blueprint, request
 from flask_login import login_required
-from app.routes.aws_helper import upload_file_to_s3, get_unique_filename
+from app.routes.aws_helper import upload_file_to_s3, get_unique_filename, remove_file_from_s3
 from app.utils.authorization import is_exercise_owner, get_current_user
 import json
 from types import SimpleNamespace
@@ -145,6 +145,7 @@ def deleteExercise(exerciseId):
 
     db.session.delete(exercise)
     db.session.commit()
+    remove_file_from_s3(exercise.imgUrl)
     return json.dumps({
         "message": "Successfully deleted"
     })
