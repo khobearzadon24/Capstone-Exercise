@@ -68,7 +68,7 @@ function ChestPage() {
                   className="edit-button"
                   buttonText="Edit Exercise"
                   onItemClick={closeMenu}
-                  modalComponent={<UpdateExercise />}
+                  modalComponent={<UpdateExercise id={exercise?.id} />}
                 />
               </div>
             )}

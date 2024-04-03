@@ -12,7 +12,7 @@ function UpdateExercise({ id }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { exerciseId } = useParams();
-  const exercise = useSelector((state) => state.exerciseState[exerciseId]);
+  const exercise = useSelector((state) => state.exerciseState[id]);
   const exerciseTypes = useSelector((state) => state.exerciseState.types);
 
   const [name, setName] = useState(exercise?.name);
