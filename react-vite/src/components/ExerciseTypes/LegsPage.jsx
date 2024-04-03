@@ -68,7 +68,7 @@ function LegsPage() {
             <img className="exerCardImage" src={exercise?.imgUrl} />
             {user?.id == exercise?.userId && (
               <OpenModalButton
-                className="edit-button"
+                className="edit-button-legs"
                 buttonText="Edit Exercise"
                 onItemClick={closeMenu}
                 modalComponent={<UpdateExercise id={exercise?.id} />}

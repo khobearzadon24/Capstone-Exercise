@@ -24,7 +24,7 @@ function Navigation() {
       </div>
       <div className="right-side-nav">
         <div className="search-bar" onClick={(e) => handleFeature(e)}>
-          <FaSearch />
+          <FaSearch className="search-icon" />
           <input
             type="text"
             name="search-bar"

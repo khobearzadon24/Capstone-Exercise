@@ -9,11 +9,11 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { fetchPost, editPost } from "../../redux/postReducer";
 
-function UpdatePost() {
+function UpdatePost({ id }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { postId } = useParams();
-  const post = useSelector((state) => state.postState[postId]);
+  const post = useSelector((state) => state.postState[id]);
   //   const exerciseTypes = useSelector((state) => state.exerciseState.types);
 
   const [name, setName] = useState(post?.name);

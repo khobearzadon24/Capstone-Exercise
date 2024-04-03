@@ -97,3 +97,11 @@ exercise-post-buttons {
   justify-content: center;
   flex-direction: row;
 }
+
+.search-icon {
+  background-color: transparent;
+}
+/*
+::placeholder {
+  color: black;
+} */

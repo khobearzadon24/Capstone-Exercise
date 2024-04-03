@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   fetchAllExercises,
@@ -8,6 +8,9 @@ import { fetchAllPosts } from "../../redux/postReducer";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchAllPostComments } from "../../redux/postCommentReducer";
 import "./PostPage.css";
+import OpenModalButton from "../OpenModalButton/OpenModalButton";
+import PostForm from "../PostForm/PostForm";
+import UpdatePost from "../PostForm/UpdatePostForm";
 
 function PostPage() {
   const dispatch = useDispatch();
@@ -15,7 +18,24 @@ function PostPage() {
   const posts = useSelector((state) => state.postState);
   const user = useSelector((state) => state.session.user);
   const post_comment = useSelector((state) => state.postCommentState);
+  const [showMenu, setShowMenu] = useState(false);
+  const ulRef = useRef();
 
+  useEffect(() => {
+    if (!showMenu) return;
+
+    const closeMenu = (e) => {
+      if (!ulRef.current.contains(e.target)) {
+        setShowMenu(false);
+      }
+    };
+
+    document.addEventListener("click", closeMenu);
+
+    return () => document.removeEventListener("click", closeMenu);
+  }, [showMenu]);
+
+  const closeMenu = () => setShowMenu(false);
   useEffect(() => {
     dispatch(fetchAllPosts());
     dispatch(fetchAllPostComments());
@@ -37,32 +57,35 @@ function PostPage() {
       </h1>
       <hr />
       {user && (
-        <button
-          className="create-post-button"
-          onClick={() => navigate("/posts/new")}
-        >
-          Create Post
-        </button>
+        <div>
+          <OpenModalButton
+            className="create-post-button"
+            buttonText="Create Post"
+            onItemClick={closeMenu}
+            modalComponent={<PostForm />}
+          />
+        </div>
       )}
       <div className="postDivs">
         {postArr?.map((post, idx) => (
           <div className="postCard" key={idx}>
-            <div className="info">
-              <h1 className="name">
-                {post.name} | By {post.firstName} {post.lastName}
-              </h1>
+            <div className="info-w-edit-button">
+              <div className="info">
+                <h1 className="name">
+                  {post.name} | By {post.firstName} {post.lastName}
+                </h1>
 
-              <p className="post-description">{post.description}</p>
+                <p className="post-description">{post.description}</p>
+              </div>
               {user?.id == post?.userId && (
-                <button
-                  className="edit-exercise"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    navigate(`/posts/${post?.id}/update`);
-                  }}
-                >
-                  Edit Post
-                </button>
+                <div>
+                  <OpenModalButton
+                    className="edit-post-button"
+                    buttonText="Edit Post"
+                    onItemClick={closeMenu}
+                    modalComponent={<UpdatePost id={post?.id} />}
+                  />
+                </div>
               )}
             </div>
           </div>
