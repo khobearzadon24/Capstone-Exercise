@@ -39,7 +39,9 @@ function AddExerciseCommentModal() {
           placeholder="Type Comment Here"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-        ></input>
+          required
+          // maxLength={75}
+        />
         <p className="exercise-errors">
           {errors.description ? errors.description : null}
         </p>

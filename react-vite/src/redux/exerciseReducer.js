@@ -98,8 +98,8 @@ export const writeExercise = (payload) => async (dispatch) => {
     body: payload,
   });
   // const exercise = await response.json();
+  const { resPost } = await response.json();
   if (response.ok) {
-    const { resPost } = await response.json();
     dispatch(addExercise(resPost));
   } else {
     console.log("There was an error making your post");
