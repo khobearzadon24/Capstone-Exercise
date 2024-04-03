@@ -10,7 +10,7 @@ import "./ProfileButton.css";
 
 function ProfileButton() {
   const dispatch = useDispatch();
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
   const user = useSelector((store) => store.session.user);
   const ulRef = useRef();
@@ -38,8 +38,8 @@ function ProfileButton() {
 
   const logout = (e) => {
     e.preventDefault();
-    dispatch(thunkLogout());
-    closeMenu();
+    dispatch(thunkLogout()).then(navigate("/"));
+    // closeMenu();
   };
 
   return (

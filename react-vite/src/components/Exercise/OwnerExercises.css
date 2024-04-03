@@ -1,0 +1,30 @@
+.manage-page-container {
+  display: flex;
+  justify-content: center;
+}
+
+.manage-title {
+  font-size: 40px;
+  color: rgb(116, 177, 201);
+  margin-bottom: 30px;
+}
+
+.update-delete-owner {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+
+.exercise-manage-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.exercise-description-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

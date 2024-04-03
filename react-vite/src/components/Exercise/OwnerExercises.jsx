@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
 import DeleteExerciseModal from "../DeleteExercise/DeleteExerciseModal";
 import UpdateExercise from "../ExerciseForm/UpdateExerciseForm";
+import "./OwnerExercises.css";
 
 function OwnerExercises() {
   const exercise = useSelector((state) => state.exerciseState);
@@ -47,33 +48,28 @@ function OwnerExercises() {
 
   return (
     <>
-      <div>
-        <p>This is the owner exercises page</p>
-      </div>
       <div className="manage-page-container">
-        <h1>Manage Your Exercises</h1>
         <div className="manage-all-container">
+          <h1 className="manage-title">Manage Your Exercises</h1>
           {exerciseArr.map((exercise, idx) => (
             <div key={idx} className="manage-container">
+              <div className="exercise-description-container">
+                <p className="exercise-name">{`${exercise?.name}`}</p>
+                <p className="exercise-description">
+                  {`${exercise?.description}`}
+                </p>
+              </div>
               <NavLink
                 className="exercise-manage-container"
                 to={`/exercises/${exercise?.id}`}
               >
                 <img
-                  className="exercise-img"
+                  className="exercise-img-manage"
                   src={`${exercise?.imgUrl}`}
                   alt={`${exercise?.name}`}
                 />
-                <div className="exercise-name-description">
-                  <p className="exercise-name">{`${exercise?.name}`}</p>
-                  <div className="exercise-description-container">
-                    <p className="exercise-description">
-                      {`${exercise?.description}`}
-                    </p>
-                  </div>
-                </div>
               </NavLink>
-              <div className="update-delete">
+              <div className="update-delete-owner">
                 <div>
                   <OpenModalButton
                     className="edit-button"
