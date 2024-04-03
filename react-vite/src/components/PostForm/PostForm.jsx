@@ -26,7 +26,6 @@ function PostForm() {
 
   return (
     <>
-      <h1>This is the form page</h1>
       <div>
         <div className="exercise-page-create">
           <form className="exercise-form" onSubmit={onSubmit}>
@@ -36,7 +35,7 @@ function PostForm() {
               <input
                 className="input-area"
                 type="text"
-                placeholder="Enter A Name"
+                placeholder="Enter Post Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 // required
@@ -49,9 +48,9 @@ function PostForm() {
             <div className="column-styles">
               <p>Description</p>
               <input
-                className="input-area"
+                className="input-area-description"
                 type="text"
-                placeholder="Enter the description of the exercise."
+                placeholder="Enter Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 // required

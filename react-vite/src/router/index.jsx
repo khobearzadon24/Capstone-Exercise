@@ -28,10 +28,10 @@ export const router = createBrowserRouter([
         path: "/",
         element: <LandingPage />,
       },
-      {
-        path: "login",
-        element: <LoginFormPage />,
-      },
+      // {
+      //   path: "login",
+      //   element: <LoginFormPage />,
+      // },
       {
         path: "signup",
         element: <SignupFormPage />,
@@ -76,14 +76,14 @@ export const router = createBrowserRouter([
         path: "/exercises/:exerciseId",
         element: <SingleExercise />,
       },
-      {
-        path: "/exercises/new",
-        element: <ExerciseForm />,
-      },
-      {
-        path: "/exercises/:exerciseId/update",
-        element: <UpdateExercise />,
-      },
+      // {
+      //   path: "/exercises/new",
+      //   element: <ExerciseForm />,
+      // },
+      // {
+      //   path: "/exercises/:exerciseId/update",
+      //   element: <UpdateExercise />,
+      // },
       {
         path: "/exercises/my-exercises",
         element: <OwnerExercises />,
@@ -92,14 +92,14 @@ export const router = createBrowserRouter([
         path: "posts",
         element: <PostPage />,
       },
-      {
-        path: "/posts/new",
-        element: <PostForm />,
-      },
-      {
-        path: "/posts/:postId/update",
-        element: <UpdatePost />,
-      },
+      // {
+      //   path: "/posts/new",
+      //   element: <PostForm />,
+      // },
+      // {
+      //   path: "/posts/:postId/update",
+      //   element: <UpdatePost />,
+      // },
     ],
   },
 ]);

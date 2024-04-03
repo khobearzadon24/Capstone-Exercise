@@ -55,3 +55,14 @@
 .info {
   margin-right: 5px;
 }
+
+.postDivs {
+  margin-top: 10px;
+}
+.postCard {
+  border: 1px white solid;
+  border-radius: 20px;
+  padding: 10px;
+  width: 600px;
+  margin-left: 30%;
+}

@@ -48,8 +48,8 @@ function UpdatePost({ id }) {
   return (
     <div>
       {post && (
-        <div className="post-page-create">
-          <form className="post-form" onSubmit={onSubmit}>
+        <div className="exercise-page-create">
+          <form className="exercise-form" onSubmit={onSubmit}>
             <h1 className="exercise-title-form">Update Your Post</h1>
             <div className="column-styles">
               <p>Name</p>
@@ -69,7 +69,7 @@ function UpdatePost({ id }) {
             <div className="column-styles">
               <p>Description</p>
               <input
-                className="input-area"
+                className="input-area-description"
                 type="text"
                 placeholder="Enter A Description"
                 value={description}
@@ -81,7 +81,7 @@ function UpdatePost({ id }) {
               </p>
             </div>
 
-            <button className="post-submit" type="submit">
+            <button className="exercise-submit" type="submit">
               Submit
             </button>
           </form>
