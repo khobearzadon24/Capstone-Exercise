@@ -4,6 +4,8 @@
   justify-content: center;
   text-align: center;
   gap: 200px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   /* margin-left: 40px;
   margin-right: 40px;
   margin-top: 30px; */
@@ -24,6 +26,8 @@
 .exercise-title-form {
   color: white;
   font-size: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .input-area {

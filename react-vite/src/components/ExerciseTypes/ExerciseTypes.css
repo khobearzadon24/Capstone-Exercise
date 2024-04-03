@@ -3,6 +3,8 @@
   color: rgb(116, 177, 201);
   display: flex;
   justify-content: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .exerciseDivs {
@@ -12,6 +14,8 @@
   justify-content: space-between;
   margin: 20px;
   gap: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .exerciseCard {

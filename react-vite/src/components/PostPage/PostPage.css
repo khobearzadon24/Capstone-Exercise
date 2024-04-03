@@ -1,5 +1,7 @@
 .post-page-container {
   margin: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   /* display: inline; */
   /* justify-content: center; */
   /* flex-direction: column; */

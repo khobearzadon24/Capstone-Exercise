@@ -6,7 +6,7 @@ function LandingPage() {
     <div className="landing-page-container">
       <div className="first-container">
         <div className="exercise-text">
-          <h2>Why Exercise?</h2>
+          <h2 className="landing-page-title">Why Exercise?</h2>
           <h3>
             Exercising is a great and important way of making sure that you are
             getting the regular amount of physical activity your body needs.
@@ -32,7 +32,7 @@ function LandingPage() {
           />
         </div>
         <div className="exercise-text">
-          <h2>About Us</h2>
+          <h2 className="landing-page-title">About Us</h2>
           <h3>
             You have visited just the right place to get your mind and body
             right for your fitness journey! Our website will allow you to gain a

@@ -8,6 +8,8 @@
   gap: 10px;
   width: 500px;
   border-radius: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .sign-up-logo {
@@ -81,4 +83,5 @@
 .input {
   border-radius: 20px;
   padding-left: 10px;
+  padding: 8px;
 }

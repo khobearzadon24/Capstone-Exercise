@@ -1,5 +1,7 @@
-.exercise-page {
+.exercises-page {
   margin: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .types-title {
@@ -7,6 +9,8 @@
   justify-content: center;
   font-size: 35px;
   color: rgb(116, 177, 201);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .style-hover {

@@ -45,7 +45,7 @@ function ExercisePage() {
   // console.log(types, "here is the types");
   console.log(user);
   return (
-    <div className="exercise-page">
+    <div className="exercises-page">
       <h1 className="types-title">Type of Exercises</h1>
       {user && (
         // <button

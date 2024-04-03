@@ -5,6 +5,8 @@
   text-align: center;
   flex-direction: column;
   margin-left: 15%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .first-container {
@@ -28,4 +30,8 @@
   width: 350px;
   height: 225px;
   border-radius: 20px;
+}
+
+.landing-page-title {
+  color: rgb(116, 177, 201);
 }
