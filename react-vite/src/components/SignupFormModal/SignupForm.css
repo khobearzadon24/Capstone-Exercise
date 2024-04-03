@@ -1,0 +1,84 @@
+.sign-up-modal {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+  width: 500px;
+  border-radius: 20px;
+}
+
+.sign-up-logo {
+  display: flex;
+  justify-content: center;
+  color: rgb(116, 177, 201);
+}
+
+.sign-up-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 60%;
+}
+
+.email-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.first-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.last-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.password-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.confirm-password-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.sign-up-form > button {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5% 0;
+  z-index: 1;
+  color: white;
+  font-size: large;
+  height: 40px;
+  width: 120px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(116, 177, 201);
+}
+
+.sign-up-errors {
+  margin: 0;
+  display: flex;
+  font-weight: 500;
+  justify-content: center;
+  color: red;
+}
+
+.input {
+  border-radius: 20px;
+  padding-left: 10px;
+}

@@ -45,7 +45,6 @@ function ExerciseForm() {
 
   return (
     <>
-      <h1>This is the form page</h1>
       <div>
         {exerciseTypes && (
           <div className="exercise-page-create">
@@ -73,7 +72,7 @@ function ExerciseForm() {
               <div className="column-styles">
                 <p>Description</p>
                 <input
-                  className="input-area"
+                  className="input-area-description"
                   type="text"
                   placeholder="Enter the description of the exercise."
                   value={description}
@@ -103,7 +102,7 @@ function ExerciseForm() {
                 </p>
               </div>
               <div className="column-styles">
-                <p>Image Url</p>
+                <p>Exericse Image</p>
                 <input
                   className="input-area"
                   type="file"

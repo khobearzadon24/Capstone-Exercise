@@ -17,7 +17,7 @@ function LandingPage() {
         </div>
         <div className="exercise-image-cont">
           <img
-            className="exercise-image"
+            className="exercise-image-landing"
             src="https://i.postimg.cc/ZYcXQ0MR/why-exercise.jpg"
             alt="why-exercise"
           />
@@ -26,7 +26,7 @@ function LandingPage() {
       <div className="first-container">
         <div>
           <img
-            className="exercise-image"
+            className="exercise-image-landing"
             src="https://i.postimg.cc/bJ13kVKr/about-us.jpg"
             alt="about-us"
           />

@@ -54,7 +54,7 @@ function UpdateExerciseComment({ id }) {
             <div className="column-styles">
               <p>Description</p>
               <input
-                className="input-area"
+                className="input-area-description"
                 type="text"
                 placeholder="Enter A Description"
                 value={description}
@@ -65,7 +65,7 @@ function UpdateExerciseComment({ id }) {
                 {errors.description ? errors.description : null}
               </p>
             </div>
-            <button className="exercise-comment-submit" type="submit">
+            <button className="exercise-comment-submit-edit" type="submit">
               Submit
             </button>
           </form>

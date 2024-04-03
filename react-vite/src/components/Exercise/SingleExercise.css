@@ -12,8 +12,9 @@
   width: 80vw;
 }
 
-.exercise-image {
-  width: 500px;
+.exercise-image-single {
+  width: 400px;
+  border-radius: 20px;
   /* height: auto; */
   /* object-fit: contain; */
 }
@@ -64,7 +65,7 @@
 
 h4 {
   font-weight: 400;
-  color: darkslategray;
+  /* color: darkslategray; */
   margin-top: 0px;
 }
 .exercise-comments-Card {
@@ -79,16 +80,16 @@ h4 {
   padding: 15px;
 }
 
-.name-exercise-comment {
+/* .name-exercise-comment {
   font-weight: bold;
-}
+} */
 
 .description-exercise-comment {
   color: white;
 }
 
 .exercise-details-container button {
-  background-color: darkslategray;
+  /* background-color: darkslategray; */
   color: white;
   font-size: medium;
   padding: 10px 24px;

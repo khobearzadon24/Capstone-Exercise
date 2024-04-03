@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import {
@@ -8,13 +8,33 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchAllExerciseComments } from "../../redux/exerciseCommentReducer";
 import "./ExercisePage.css";
+import ExerciseForm from "../ExerciseForm/ExerciseForm";
+import OpenModalButton from "../OpenModalButton/OpenModalButton";
 
 function ExercisePage() {
   const dispatch = useDispatch();
+  const [showMenu, setShowMenu] = useState(false);
+  const ulRef = useRef();
   const navigate = useNavigate();
   const exercises = useSelector((state) => state.exerciseState);
   const types = useSelector((state) => state.exerciseState);
   const user = useSelector((state) => state.session.user);
+
+  useEffect(() => {
+    if (!showMenu) return;
+
+    const closeMenu = (e) => {
+      if (!ulRef.current.contains(e.target)) {
+        setShowMenu(false);
+      }
+    };
+
+    document.addEventListener("click", closeMenu);
+
+    return () => document.removeEventListener("click", closeMenu);
+  }, [showMenu]);
+
+  const closeMenu = () => setShowMenu(false);
 
   useEffect(() => {
     dispatch(fetchAllExercises());
@@ -28,12 +48,20 @@ function ExercisePage() {
     <div className="exercise-page">
       <h1 className="types-title">Type of Exercises</h1>
       {user && (
-        <button
-          className="style-hover"
-          onClick={() => navigate("/exercises/new")}
-        >
-          Add Exercise
-        </button>
+        // <button
+        //   className="style-hover"
+        //   onClick={() => navigate("/exercises/new")}
+        // >
+        //   Add Exercise
+        // </button>
+        <div>
+          <OpenModalButton
+            className="add-button"
+            buttonText="Add Exercise"
+            onItemClick={closeMenu}
+            modalComponent={<ExerciseForm />}
+          />
+        </div>
       )}
       <div className="exercises-type-container">
         <NavLink className="type-box" to="/exercises/chest">

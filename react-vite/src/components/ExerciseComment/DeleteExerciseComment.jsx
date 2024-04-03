@@ -6,6 +6,7 @@ import {
 } from "../../redux/exerciseCommentReducer";
 import { useNavigate, useParams } from "react-router-dom";
 import { useModal } from "../../context/Modal";
+import "./DeleteExerciseComment.css";
 
 function DeleteExerciseCommentButton({ id }) {
   const dispatch = useDispatch();

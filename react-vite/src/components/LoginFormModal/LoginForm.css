@@ -1,0 +1,48 @@
+.container-of-log-in {
+  border-radius: 20px;
+  border: 1px white solid;
+}
+
+.log-in-modal-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.log-in-modal-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  /* border-radius: 20px; */
+}
+
+.enter-email {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.enter-password {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.log-in-modal-button {
+  width: 80px;
+  margin-left: 65px;
+}
+
+.demo-user {
+  width: 90px;
+  margin-left: 60px;
+}
+
+.login-errors {
+  display: flex;
+  margin: 0;
+  font-weight: normal;
+  justify-content: center;
+  color: red;
+}

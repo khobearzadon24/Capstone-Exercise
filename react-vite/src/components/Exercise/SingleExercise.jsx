@@ -69,7 +69,7 @@ function SingleExercise() {
         <div className="exercise-details-container">
           <div className="exercise-image-container">
             <img
-              className="exercise-image"
+              className="exercise-image-single"
               src={exercise[exerciseId]?.imgUrl}
             ></img>
           </div>
@@ -116,7 +116,9 @@ function SingleExercise() {
                   </div>
                 </div>
               ))}
-              <AddExerciseCommentModal className="add-comment-button" />
+              {user && (
+                <AddExerciseCommentModal className="add-comment-button" />
+              )}
             </div>
 
             <div className="ManageExercise">

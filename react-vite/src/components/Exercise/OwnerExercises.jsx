@@ -5,6 +5,7 @@ import { fetchOwnerExercises } from "../../redux/exerciseReducer";
 import { NavLink } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
 import DeleteExerciseModal from "../DeleteExercise/DeleteExerciseModal";
+import UpdateExercise from "../ExerciseForm/UpdateExerciseForm";
 
 function OwnerExercises() {
   const exercise = useSelector((state) => state.exerciseState);
@@ -73,12 +74,14 @@ function OwnerExercises() {
                 </div>
               </NavLink>
               <div className="update-delete">
-                <NavLink
-                  className="update-button"
-                  to={`/exercises/${exercise?.id}/update`}
-                >
-                  Edit Exercise
-                </NavLink>
+                <div>
+                  <OpenModalButton
+                    className="edit-button"
+                    buttonText="Edit Exercise"
+                    onItemClick={closeMenu}
+                    modalComponent={<UpdateExercise id={exercise?.id} />}
+                  />
+                </div>
                 <div className="delete-button">
                   <OpenModalButton
                     buttonText="Delete Exercise"

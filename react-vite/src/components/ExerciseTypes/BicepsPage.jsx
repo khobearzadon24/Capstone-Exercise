@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   fetchAllExercises,
@@ -7,6 +7,8 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchAllExerciseComments } from "../../redux/exerciseCommentReducer";
 import "./ExerciseTypes.css";
+import UpdateExercise from "../ExerciseForm/UpdateExerciseForm";
+import OpenModalButton from "../OpenModalButton/OpenModalButton";
 
 function BicepsPage() {
   const dispatch = useDispatch();
@@ -14,6 +16,23 @@ function BicepsPage() {
   const exercises = useSelector((state) => state.exerciseState);
   const types = useSelector((state) => state.exerciseState);
   const user = useSelector((state) => state.session.user);
+
+  const [showMenu, setShowMenu] = useState(false);
+  const ulRef = useRef();
+
+  useEffect(() => {
+    if (!showMenu) return;
+
+    const closeMenu = (e) => {
+      if (!ulRef.current.contains(e.target)) {
+        setShowMenu(false);
+      }
+    };
+
+    document.addEventListener("click", closeMenu);
+
+    return () => document.removeEventListener("click", closeMenu);
+  }, [showMenu]);
 
   useEffect(() => {
     dispatch(fetchAllExercises());
@@ -46,15 +65,14 @@ function BicepsPage() {
             </div>
             <img className="exerCardImage" src={exercise?.imgUrl} />
             {user?.id == exercise?.userId && (
-              <button
-                className="edit-exercise"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  navigate(`/exercises/${exercise?.id}/update`);
-                }}
-              >
-                Edit Exercise
-              </button>
+              <div>
+                <OpenModalButton
+                  className="edit-button"
+                  buttonText="Edit Exercise"
+                  onItemClick={closeMenu}
+                  modalComponent={<UpdateExercise />}
+                />
+              </div>
             )}
           </div>
         ))}
