@@ -97,6 +97,8 @@ exercise-post-buttons {
   display: flex;
   justify-content: center;
   flex-direction: row;
+  gap: 15px;
+  text-align: center;
 }
 
 .search-icon {

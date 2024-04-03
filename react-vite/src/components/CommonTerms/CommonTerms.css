@@ -1,0 +1,14 @@
+.common-terms-modal {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 30px;
+  border-radius: 20px;
+  border: white 1px solid;
+}
+
+.to-know {
+  display: flex;
+  justify-content: center;
+}

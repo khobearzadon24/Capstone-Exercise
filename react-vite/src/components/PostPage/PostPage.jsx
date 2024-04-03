@@ -55,7 +55,7 @@ function PostPage() {
       <h1 className="post-title">
         Post your accomplishments, exercise questions, or anything on your mind!
       </h1>
-      <hr />
+      <hr className="line-break" />
       {user && (
         <div>
           <OpenModalButton
