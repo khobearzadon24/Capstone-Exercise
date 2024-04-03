@@ -25,7 +25,7 @@ def allExerciseTypes():
     return json.dumps(exerciseTypes)
 
 
-#CREATE A NEW EXERCISE at ["/api/exercise"]
+#CREATE A NEW EXERCISE at ["/api/exercises"]
 @exercise_routes.route("/", methods=["POST"])
 @login_required
 def newExercise():

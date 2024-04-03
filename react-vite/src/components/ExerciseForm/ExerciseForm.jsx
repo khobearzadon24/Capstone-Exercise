@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { writeExercise } from "../../redux/exerciseReducer";
 import { useNavigate } from "react-router-dom";
 import { getExerciseTypes } from "../../redux/exerciseReducer";
+import { useModal } from "../../context/Modal";
 
 function ExerciseForm() {
   const dispatch = useDispatch();
+  const { closeModal } = useModal();
   const navigate = useNavigate();
   const exerciseTypes = useSelector((state) => state.exerciseState.types);
 
@@ -40,6 +42,7 @@ function ExerciseForm() {
     // };
     const newExercise = await dispatch(writeExercise(formData));
     // if (formData.errors) setErrors(formData.errors);
+    closeModal();
     navigate(`/exercises/my-exercises`);
   };
 

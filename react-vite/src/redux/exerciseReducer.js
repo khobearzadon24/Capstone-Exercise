@@ -97,12 +97,15 @@ export const writeExercise = (payload) => async (dispatch) => {
     // body: JSON.stringify(payload),
     body: payload,
   });
+  console.log(response, "here is the response");
   // const exercise = await response.json();
-  const { resPost } = await response.json();
+  const resPost = await response.json();
+  console.log(resPost);
   if (response.ok) {
-    dispatch(addExercise(resPost));
+    const newExer = await dispatch(addExercise(resPost));
+    return newExer;
   } else {
-    console.log("There was an error making your post");
+    return console.log(resPost, "There was an error making your post");
   }
 };
 
@@ -155,15 +158,19 @@ const exerciseReducer = (state = {}, action) => {
       });
       return exerciseState;
     }
-    case ADD_EXERCISE:
-      return { ...state, [action?.exercise?.id]: action.exercise };
+    case ADD_EXERCISE: {
+      const exerciseState = { ...state };
+      console.log(action.exercise, "OVER HERE");
+      exerciseState[action.exercise.id] = action.exercise;
+      return exerciseState;
+    }
     case REMOVE_EXERCISE: {
       const newState = { ...state };
-      delete newState[action?.exerciseId];
+      delete newState[action.exerciseId];
       return newState;
     }
     case UPDATE_EXERCISE:
-      return { ...state, [action?.exercise?.id]: action.exercise };
+      return { ...state, [action.exercise.id]: action.exercise };
     case CLEAR_EXERCISES:
       return {};
     default:

@@ -23,14 +23,14 @@ function UpdateExercise({ id }) {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    dispatch(fetchExercise(exerciseId)).then(dispatch(getExerciseTypes()));
+    dispatch(fetchExercise(id)).then(dispatch(getExerciseTypes()));
     setName(exercise?.name);
     setDescription(exercise?.description);
     setType(exercise?.type);
     setImgUrl(exercise?.imgUrl);
   }, [
     dispatch,
-    exerciseId,
+    id,
     exercise?.name,
     exercise?.description,
     exercise?.type,
@@ -53,7 +53,7 @@ function UpdateExercise({ id }) {
     formData.append("type", type);
     setImgUrlLoading(true);
 
-    const response = await dispatch(editExercise(exerciseId, formData));
+    const response = await dispatch(editExercise(id, formData));
     // if (response.errors) setErrors(response.errors);
     // navigate(`/exercises/${exerciseId}`);
     window.location.reload();
