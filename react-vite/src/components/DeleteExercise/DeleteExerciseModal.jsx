@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import { removeExercise } from "../../redux/exerciseReducer";
+import "./DeleteExerciseModal.css";
 
 function DeleteExerciseModal({ exercise }) {
   const dispatch = useDispatch();
@@ -15,11 +16,15 @@ function DeleteExerciseModal({ exercise }) {
 
   return (
     <div className="delete-modal-container">
-      <h1>Confirm Delete</h1>
-      <p>Are you sure you want to delete this exercise?</p>
+      <h1 className="confirm-delete">Confirm Delete</h1>
+      <p className="you-sure">Are you sure you want to delete this exercise?</p>
       <div className="yes-no">
-        <button onClick={deleteSubmit}>Yes Delete Exercise</button>
-        <button onClick={closeModal}>No Keep Exercise</button>
+        <button className="yes-delete" onClick={deleteSubmit}>
+          Yes Delete Exercise
+        </button>
+        <button className="yes-delete" onClick={closeModal}>
+          No Keep Exercise
+        </button>
       </div>
     </div>
   );
