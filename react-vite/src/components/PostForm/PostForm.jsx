@@ -24,7 +24,7 @@ function PostForm() {
     const newPost = await dispatch(writePost(payload));
     if (newPost.errors) setErrors(newPost.errors);
     closeModal();
-    // else navigate(`/posts`);
+    window.location.reload();
   };
 
   return (
