@@ -138,6 +138,11 @@ button {
 }
 
 .delete-exercise-button {
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px white solid;
+  background-color: rgb(116, 177, 201);
+  font-size: 20px;
   width: fit-content;
 }
 
@@ -146,4 +151,9 @@ button {
   justify-content: space-between;
   margin-top: 10px;
   height: 40px;
+}
+
+.be-the-first {
+  font-size: 20px;
+  margin-bottom: 10px;
 }

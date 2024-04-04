@@ -1,0 +1,28 @@
+.exercise-comment-edit-title {
+  color: rgb(116, 177, 201);
+}
+
+.edit-description {
+  color: rgb(116, 177, 201);
+}
+
+.input-area-description-edit {
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 20px;
+  font-size: 15;
+  border: 1px white solid;
+  width: 280px;
+}
+
+.exercise-comment-submit-edit {
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px white solid;
+  background-color: rgb(116, 177, 201);
+  font-size: 15px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+}
