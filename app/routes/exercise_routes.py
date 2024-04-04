@@ -91,7 +91,7 @@ def getExerciseById(id):
     }
     return json.dumps(exercise_formatted)
 
-#EDIT/UPDATE A EXERCISE at ["/api/exercise/:id"]
+#EDIT/UPDATE A EXERCISE at ["/api/exercises/:id"]
 @exercise_routes.route("/<int:exerciseId>", methods=["PUT"])
 @login_required
 @is_exercise_owner
@@ -120,7 +120,8 @@ def updateExercise(exerciseId):
     exercise.name = form.data['name']
     exercise.description = form.data['description']
     exercise.type = form.data['type']
-    print(url, 'over here')
+    print(exercise, 'HERE IS THE EXERCISE OVER HERE ')
+    print(url, 'over here eiwhfweifwefwe')
     if url:
         exercise.imgUrl = url
 
@@ -143,9 +144,9 @@ def deleteExercise(exerciseId):
             "message": "Exercise couldn't be found"
         }), 404
 
+    remove_file_from_s3(exercise.imgUrl)
     db.session.delete(exercise)
     db.session.commit()
-    remove_file_from_s3(exercise.imgUrl)
     return json.dumps({
         "message": "Successfully deleted"
     })

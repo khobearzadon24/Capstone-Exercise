@@ -21,6 +21,7 @@ function UpdateExercise({ id }) {
   const [imgUrlLoading, setImgUrlLoading] = useState(false);
   const [errors, setErrors] = useState({});
 
+  console.log(exercise, "here is the exercise you are editing");
   useEffect(() => {
     dispatch(fetchExercise(id)).then(dispatch(getExerciseTypes()));
     setName(exercise?.name);

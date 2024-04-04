@@ -1,16 +1,16 @@
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
-import { removeExercise } from "../../redux/exerciseReducer";
+import { deleteExercise } from "../../redux/exerciseReducer";
 import "./DeleteExerciseModal.css";
 
 function DeleteExerciseModal({ exercise }) {
   const dispatch = useDispatch();
   const { closeModal } = useModal();
-  // console.log(exercise, "here is the exercise over here");
+  console.log(exercise, "here is the exercise over here");
 
   const deleteSubmit = async (e) => {
     e.preventDefault();
-    await dispatch(removeExercise(exercise?.id));
+    await dispatch(deleteExercise(exercise.id));
     closeModal();
   };
 
