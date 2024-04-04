@@ -34,6 +34,7 @@ function ExerciseForm() {
     formData.append("description", description);
     formData.append("type", type);
     setImgUrlLoading(true);
+    console.log(formData, "over here it is");
     // const payload = {
     //   name,
     //   description,

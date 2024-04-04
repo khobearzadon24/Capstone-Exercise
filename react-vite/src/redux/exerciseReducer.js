@@ -91,6 +91,7 @@ export const fetchOwnerExercises = () => async (dispatch) => {
 };
 
 export const writeExercise = (payload) => async (dispatch) => {
+  console.log(payload, "here is the payload");
   const response = await fetch("/api/exercises/", {
     method: "POST",
     // headers: { "Content-Type": "application/json" },
