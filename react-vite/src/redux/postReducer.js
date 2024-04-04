@@ -43,7 +43,7 @@ export const removePost = (postId) => {
 
 // thunk action creator
 export const fetchAllPosts = () => async (dispatch) => {
-  const response = await fetch("/api/posts");
+  const response = await fetch("/api/posts/");
   const posts = await response.json();
   dispatch(loadAllPosts(posts));
 };
