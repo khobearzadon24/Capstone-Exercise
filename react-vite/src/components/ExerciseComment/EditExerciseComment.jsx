@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 import {
   fetchExerciseComment,
@@ -9,12 +9,8 @@ import {
 
 function UpdateExerciseComment({ id }) {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const { exerciseId } = useParams();
+  // const { exerciseId } = useParams();
   const exercise = useSelector((state) => state.exerciseState);
-  // const exerciseComment = useSelector(
-  //   (state) => state.exerciseCommentState[id]
-  // );
   const exerciseComment = useSelector(
     (state) => state.exerciseCommentState[id]
   );

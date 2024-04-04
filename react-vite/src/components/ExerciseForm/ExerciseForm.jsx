@@ -40,8 +40,8 @@ function ExerciseForm() {
     //   type,
     //   imgUrl: imgUrl,
     // };
-    const newExercise = await dispatch(writeExercise(formData));
-    // if (formData.errors) setErrors(formData.errors);
+    await dispatch(writeExercise(formData));
+    if (formData.errors) setErrors(formData.errors);
     closeModal();
     navigate(`/exercises/my-exercises`);
   };

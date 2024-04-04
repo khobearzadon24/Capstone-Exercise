@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
 import {
   fetchExercise,
   editExercise,
   getExerciseTypes,
 } from "../../redux/exerciseReducer";
 import "./ExerciseForm.css";
+import { useModal } from "../../context/Modal";
 
 function UpdateExercise({ id }) {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const { exerciseId } = useParams();
+  const { closeModal } = useModal();
   const exercise = useSelector((state) => state.exerciseState[id]);
   const exerciseTypes = useSelector((state) => state.exerciseState.types);
 
@@ -54,8 +53,9 @@ function UpdateExercise({ id }) {
     setImgUrlLoading(true);
 
     const response = await dispatch(editExercise(id, formData));
-    // if (response.errors) setErrors(response.errors);
+    if (response.errors) setErrors(response.errors);
     // navigate(`/exercises/${exerciseId}`);
+    // closeModal();
     window.location.reload();
   };
 

@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import LoginFormPage from "../components/LoginFormPage";
 import SignupFormPage from "../components/SignupFormPage";
 import LandingPage from "../components/LandingPage/LandingPage";
 import ExercisePage from "../components/Exercise/ExercisePage";
@@ -13,12 +12,8 @@ import LegsPage from "../components/ExerciseTypes/LegsPage";
 import CardioPage from "../components/ExerciseTypes/CardioPage";
 import AbsPage from "../components/ExerciseTypes/AbsPage";
 import SingleExercise from "../components/Exercise/SingleExercise";
-import ExerciseForm from "../components/ExerciseForm/ExerciseForm";
-import UpdateExercise from "../components/ExerciseForm/UpdateExerciseForm";
 import OwnerExercises from "../components/Exercise/OwnerExercises";
 import Layout from "./Layout";
-import PostForm from "../components/PostForm/PostForm";
-import UpdatePost from "../components/PostForm/UpdatePostForm";
 
 export const router = createBrowserRouter([
   {
@@ -28,10 +23,7 @@ export const router = createBrowserRouter([
         path: "/",
         element: <LandingPage />,
       },
-      // {
-      //   path: "login",
-      //   element: <LoginFormPage />,
-      // },
+
       {
         path: "signup",
         element: <SignupFormPage />,
@@ -76,14 +68,6 @@ export const router = createBrowserRouter([
         path: "/exercises/:exerciseId",
         element: <SingleExercise />,
       },
-      // {
-      //   path: "/exercises/new",
-      //   element: <ExerciseForm />,
-      // },
-      // {
-      //   path: "/exercises/:exerciseId/update",
-      //   element: <UpdateExercise />,
-      // },
       {
         path: "/exercises/my-exercises",
         element: <OwnerExercises />,
@@ -92,14 +76,6 @@ export const router = createBrowserRouter([
         path: "posts",
         element: <PostPage />,
       },
-      // {
-      //   path: "/posts/new",
-      //   element: <PostForm />,
-      // },
-      // {
-      //   path: "/posts/:postId/update",
-      //   element: <UpdatePost />,
-      // },
     ],
   },
 ]);

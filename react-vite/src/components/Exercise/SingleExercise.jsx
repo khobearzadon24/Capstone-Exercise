@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchExercise, getExerciseTypes } from "../../redux/exerciseReducer";
-import { useNavigate, useParams } from "react-router-dom";
 import DeleteExerciseButton from "./DeleteExerciseButton";
-// import OpenModalButton from "../OpenModalButton/OpenModalButton";
 import AddExerciseCommentModal from "../ExerciseComment/ExerciseComment";
 import {
   addExerciseComment,
@@ -14,25 +13,21 @@ import UpdateExerciseComment from "../ExerciseComment/EditExerciseComment";
 import DeleteExerciseCommentButton from "../ExerciseComment/DeleteExerciseComment";
 import "./SingleExercise.css";
 import UpdateExercise from "../ExerciseForm/UpdateExerciseForm";
-// import DeleteMenuItemButton from "../MenuItems/DeleteMenuItemButton";
-// import { fetchOwnerMenuItems } from "../../redux/menuItemReducer";
 
 function SingleExercise() {
   const { exerciseId } = useParams();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const exercise = useSelector((state) => state.exerciseState);
-  const exercise_comment = useSelector((state) => state.exerciseCommentState);
 
-  console.log(exercise_comment, "here is the exercise comments");
-  console.log(exercise, "here is the exercise you wanted");
-  //   const menu_items = useSelector((state) => state.menuItemState);
+  const exercise = useSelector((state) => state.exerciseState);
+  // const exercise_comment = useSelector((state) => state.exerciseCommentState);
+
+  // console.log(exercise_comment, "here is the exercise comments");
+  // console.log(exercise, "here is the exercise you wanted");
 
   const commentsArr = exercise[exerciseId]?.exercise_comments;
-  // console.log(commentsArr[0]?.id, "here is your id");
 
-  console.log(commentsArr, "here are your comments");
-  //   const menuItemsArr = Object.values(menu_items);
+  // console.log(commentsArr, "here are your comments");
+
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
 

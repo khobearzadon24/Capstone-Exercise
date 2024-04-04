@@ -4,14 +4,14 @@ import {
   createExerciseComment,
   fetchAllExerciseComments,
 } from "../../redux/exerciseCommentReducer";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState } from "react";
 import "./ExerciseComment.css";
 
 function AddExerciseCommentModal() {
   const dispatch = useDispatch();
   const { closeModal } = useModal();
-  const navigate = useNavigate();
+
   const { exerciseId } = useParams();
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState({});
@@ -26,6 +26,7 @@ function AddExerciseCommentModal() {
     );
     await dispatch(fetchAllExerciseComments(exerciseId));
     if (newExerciseComment.errors) setErrors(newExerciseComment.errors);
+    closeModal();
     window.location.reload();
     // reset();
   };

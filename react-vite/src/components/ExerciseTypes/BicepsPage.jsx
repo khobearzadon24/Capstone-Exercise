@@ -4,8 +4,8 @@ import {
   fetchAllExercises,
   getExerciseTypes,
 } from "../../redux/exerciseReducer";
-import { useNavigate, useParams } from "react-router-dom";
-import { fetchAllExerciseComments } from "../../redux/exerciseCommentReducer";
+import { useNavigate } from "react-router-dom";
+
 import "./ExerciseTypes.css";
 import UpdateExercise from "../ExerciseForm/UpdateExerciseForm";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
@@ -14,7 +14,6 @@ function BicepsPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const exercises = useSelector((state) => state.exerciseState);
-  const types = useSelector((state) => state.exerciseState);
   const user = useSelector((state) => state.session.user);
 
   const [showMenu, setShowMenu] = useState(false);
@@ -33,6 +32,8 @@ function BicepsPage() {
 
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
+
+  const closeMenu = () => setShowMenu(false);
 
   useEffect(() => {
     dispatch(fetchAllExercises());

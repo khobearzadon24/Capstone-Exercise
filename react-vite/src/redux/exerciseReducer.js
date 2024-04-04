@@ -160,7 +160,7 @@ const exerciseReducer = (state = {}, action) => {
     }
     case ADD_EXERCISE: {
       const exerciseState = { ...state };
-      console.log(action.exercise, "OVER HERE");
+      // console.log(action.exercise, "OVER HERE");
       exerciseState[action.exercise.id] = action.exercise;
       return exerciseState;
     }

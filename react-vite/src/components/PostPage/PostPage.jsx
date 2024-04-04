@@ -1,11 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  fetchAllExercises,
-  getExerciseTypes,
-} from "../../redux/exerciseReducer";
 import { fetchAllPosts } from "../../redux/postReducer";
-import { useNavigate, useParams } from "react-router-dom";
 import { fetchAllPostComments } from "../../redux/postCommentReducer";
 import "./PostPage.css";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
@@ -14,7 +9,6 @@ import UpdatePost from "../PostForm/UpdatePostForm";
 
 function PostPage() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const posts = useSelector((state) => state.postState);
   const user = useSelector((state) => state.session.user);
   const post_comment = useSelector((state) => state.postCommentState);
@@ -42,7 +36,7 @@ function PostPage() {
   }, [dispatch]);
 
   let postArr = Object.values(posts);
-  let postCommentArr = Object.values(post_comment);
+  // let postCommentArr = Object.values(post_comment);
   console.log(post_comment, "over here is the comment state");
 
   console.log(postArr, "here is the array of posts");

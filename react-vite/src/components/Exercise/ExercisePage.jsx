@@ -5,8 +5,6 @@ import {
   fetchAllExercises,
   getExerciseTypes,
 } from "../../redux/exerciseReducer";
-import { useNavigate, useParams } from "react-router-dom";
-import { fetchAllExerciseComments } from "../../redux/exerciseCommentReducer";
 import "./ExercisePage.css";
 import ExerciseForm from "../ExerciseForm/ExerciseForm";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
@@ -15,9 +13,8 @@ function ExercisePage() {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
-  const navigate = useNavigate();
-  const exercises = useSelector((state) => state.exerciseState);
-  const types = useSelector((state) => state.exerciseState);
+  // const exercises = useSelector((state) => state.exerciseState);
+  // const types = useSelector((state) => state.exerciseState);
   const user = useSelector((state) => state.session.user);
 
   useEffect(() => {

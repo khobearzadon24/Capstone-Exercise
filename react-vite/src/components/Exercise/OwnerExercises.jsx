@@ -12,10 +12,7 @@ function OwnerExercises() {
   const exercise = useSelector((state) => state.exerciseState);
   const [postExercise, setPostExercise] = useState(false);
 
-  const renderExercise = () => {
-    setPostExercise((arg) => !arg);
-  };
-  // console.log(exercise), "EXERCISE");
+
 
   const exerciseArr = Object.values(exercise);
   console.log(exerciseArr, "this is the exercise arr");

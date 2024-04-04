@@ -9,7 +9,7 @@ import CommonTerms from "../CommonTerms/CommonTerms";
 function Navigation() {
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
-  const handleFeature = (e) => {
+  const handleFeature = () => {
     alert("Feature Coming Soon");
   };
   useEffect(() => {

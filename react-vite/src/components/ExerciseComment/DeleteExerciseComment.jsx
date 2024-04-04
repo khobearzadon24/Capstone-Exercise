@@ -1,16 +1,13 @@
 import { useDispatch } from "react-redux";
-// import { deleteRestaurant } from "../../redux/restaurantReducer";
 import {
   fetchAllExerciseComments,
   removeExerciseComment,
 } from "../../redux/exerciseCommentReducer";
-import { useNavigate, useParams } from "react-router-dom";
-import { useModal } from "../../context/Modal";
+import { useParams } from "react-router-dom";
 import "./DeleteExerciseComment.css";
 
 function DeleteExerciseCommentButton({ id }) {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { exerciseId } = useParams();
 
   const deleteExerciseComment = () => {

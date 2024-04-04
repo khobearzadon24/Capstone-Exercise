@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-// import { writeExercise } from "../../redux/exerciseReducer";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { writePost } from "../../redux/postReducer";
 import { useNavigate } from "react-router-dom";
 
