@@ -7,6 +7,8 @@ import {
   editExerciseComment,
 } from "../../redux/exerciseCommentReducer";
 
+import "./EditExerciseComment.css";
+
 function UpdateExerciseComment({ id }) {
   const dispatch = useDispatch();
   // const { exerciseId } = useParams();
@@ -46,11 +48,13 @@ function UpdateExerciseComment({ id }) {
       {exerciseComment && (
         <div className="exercise-page-create">
           <form className="exercise-form" onSubmit={onSubmit}>
-            <h1 className="exercise-title-form">Edit Exercise Comment</h1>
+            <h1 className="exercise-comment-edit-title ">
+              Edit Exercise Comment
+            </h1>
             <div className="column-styles">
-              <p>Description</p>
+              <p className="edit-description">Description</p>
               <input
-                className="input-area-description"
+                className="input-area-description-edit"
                 type="text"
                 placeholder="Enter A Description"
                 value={description}

@@ -58,7 +58,8 @@ function ExerciseForm() {
             >
               <h1 className="exercise-title-form">Create An Exercise</h1>
               <div className="column-styles">
-                <p>Name</p>
+                <p className="form-name">Name</p>
+
                 <input
                   className="input-area"
                   type="text"
@@ -73,7 +74,7 @@ function ExerciseForm() {
               </div>
 
               <div className="column-styles">
-                <p>Description</p>
+                <p className="form-name">Description</p>
                 <input
                   className="input-area-description"
                   type="text"
@@ -87,7 +88,7 @@ function ExerciseForm() {
                 </p>
               </div>
               <div className="column-styles">
-                <p>Type</p>
+                <p className="form-name">Type</p>
                 <select
                   className="input-area"
                   value={type}
@@ -105,7 +106,7 @@ function ExerciseForm() {
                 </p>
               </div>
               <div className="column-styles">
-                <p>Exericse Image</p>
+                <p className="form-name">Exericse Image</p>
                 <input
                   className="input-area"
                   type="file"

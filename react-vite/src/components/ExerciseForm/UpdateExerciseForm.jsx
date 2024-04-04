@@ -70,7 +70,7 @@ function UpdateExercise({ id }) {
           >
             <h1 className="exercise-title-form">Update Your Exercise</h1>
             <div className="column-styles">
-              <p>Name</p>
+              <p className="form-name">Name</p>
               <input
                 className="input-area"
                 type="text"
@@ -85,7 +85,7 @@ function UpdateExercise({ id }) {
             </div>
 
             <div className="column-styles">
-              <p>Description</p>
+              <p className="form-name">Description</p>
               <input
                 className="input-area-description"
                 type="text"
@@ -99,7 +99,7 @@ function UpdateExercise({ id }) {
               </p>
             </div>
             <div className="column-styles">
-              <p>Type</p>
+              <p className="form-name">Type</p>
               <select
                 className="input-area"
                 value={type}
@@ -117,7 +117,7 @@ function UpdateExercise({ id }) {
               </p>
             </div>
             <div className="column-styles">
-              <p>Image Url</p>
+              <p className="form-name">Exercise Image</p>
               <input
                 className="input-area"
                 type="file"
