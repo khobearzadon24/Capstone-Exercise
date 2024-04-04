@@ -53,9 +53,9 @@ function UpdateExercise({ id }) {
     setImgUrlLoading(true);
 
     const response = await dispatch(editExercise(id, formData));
-    if (response.errors) setErrors(response.errors);
+    // if (response.errors) setErrors(response.errors);
     // navigate(`/exercises/${exerciseId}`);
-    // closeModal();
+    closeModal();
     window.location.reload();
   };
 

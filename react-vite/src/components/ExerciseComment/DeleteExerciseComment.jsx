@@ -5,15 +5,18 @@ import {
 } from "../../redux/exerciseCommentReducer";
 import { useParams } from "react-router-dom";
 import "./DeleteExerciseComment.css";
+import { useModal } from "../../context/Modal";
 
 function DeleteExerciseCommentButton({ id }) {
   const dispatch = useDispatch();
   const { exerciseId } = useParams();
+  const { closeModal } = useModal();
 
   const deleteExerciseComment = () => {
     // e.preventDefault();
     dispatch(removeExerciseComment(id));
     dispatch(fetchAllExerciseComments(exerciseId));
+    closeModal();
     // figure out the navigate
   };
 

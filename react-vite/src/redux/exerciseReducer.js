@@ -170,7 +170,7 @@ const exerciseReducer = (state = {}, action) => {
       return newState;
     }
     case UPDATE_EXERCISE:
-      return { ...state, [action.exercise.id]: action.exercise };
+      return { ...state, [action?.exercise?.id]: action?.exercise };
     case CLEAR_EXERCISES:
       return {};
     default:
