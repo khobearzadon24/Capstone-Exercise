@@ -139,14 +139,15 @@ def updateExercise(exerciseId):
 @is_exercise_owner
 def deleteExercise(exerciseId):
     exercise = Exercise.query.get(exerciseId)
+
     if not exercise:
         return json.dumps({
             "message": "Exercise couldn't be found"
         }), 404
 
+    remove_file_from_s3(exercise.imgUrl)
     db.session.delete(exercise)
     db.session.commit()
-    remove_file_from_s3(exercise.imgUrl)
     return json.dumps({
         "message": "Successfully deleted"
     })
