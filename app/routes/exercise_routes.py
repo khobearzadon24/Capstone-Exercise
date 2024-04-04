@@ -144,9 +144,9 @@ def deleteExercise(exerciseId):
             "message": "Exercise couldn't be found"
         }), 404
 
-    remove_file_from_s3(exercise.imgUrl)
     db.session.delete(exercise)
     db.session.commit()
+    remove_file_from_s3(exercise.imgUrl)
     return json.dumps({
         "message": "Successfully deleted"
     })
