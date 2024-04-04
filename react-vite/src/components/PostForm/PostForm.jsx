@@ -2,14 +2,17 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { writePost } from "../../redux/postReducer";
 import { useNavigate } from "react-router-dom";
+import { useModal } from "../../context/Modal";
 
 function PostForm() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { closeModal } = useModal();
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState({});
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -20,7 +23,8 @@ function PostForm() {
 
     const newPost = await dispatch(writePost(payload));
     if (newPost.errors) setErrors(newPost.errors);
-    else navigate(`/posts`);
+    closeModal();
+    // else navigate(`/posts`);
   };
 
   return (
