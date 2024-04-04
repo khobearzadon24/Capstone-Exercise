@@ -24,7 +24,7 @@
 }
 
 .exercise-title-form {
-  color: white;
+  color: rgb(116, 177, 201);
   font-size: 30px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -61,4 +61,8 @@
 .exercise-submit {
   width: 80px;
   border-radius: 20px;
+}
+
+.form-name {
+  color: rgb(116, 177, 201);
 }

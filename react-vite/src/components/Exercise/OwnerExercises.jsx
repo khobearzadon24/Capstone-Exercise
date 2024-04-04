@@ -12,8 +12,6 @@ function OwnerExercises() {
   const exercise = useSelector((state) => state.exerciseState);
   const [postExercise, setPostExercise] = useState(false);
 
-
-
   const exerciseArr = Object.values(exercise);
   console.log(exerciseArr, "this is the exercise arr");
 
@@ -48,6 +46,11 @@ function OwnerExercises() {
       <div className="manage-page-container">
         <div className="manage-all-container">
           <h1 className="manage-title">Manage Your Exercises</h1>
+          {exerciseArr.length === 0 && (
+            <NavLink className="no-exercises-yet" to={`/exercises`}>
+              You can create an exercise on the exercise page! Just click me!
+            </NavLink>
+          )}
           {exerciseArr.map((exercise, idx) => (
             <div key={idx} className="manage-container">
               <div className="exercise-description-container">

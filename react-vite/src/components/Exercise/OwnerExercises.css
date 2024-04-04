@@ -30,3 +30,13 @@
   justify-content: center;
   flex-direction: column;
 }
+
+.no-exercises-yet {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  border: 1px white solid;
+  padding: 10px;
+  border-radius: 20px;
+}

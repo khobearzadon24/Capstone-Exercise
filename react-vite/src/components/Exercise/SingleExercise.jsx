@@ -85,14 +85,17 @@ function SingleExercise() {
           </div>
           <div className="exerciseDetails">
             <div className="exercise-comments-Container">
-              {commentsArr?.length === 0 && <h1>No Comments Yet</h1>}
+              {commentsArr?.length === 0 && (
+                <h1 className="be-the-first">Be the first to comment!</h1>
+              )}
               {commentsArr?.map((comment) => (
                 <div className="exercise-comments-Card" key={comment.id}>
+                  <p>{comment?.createdAt}</p>
                   <p className="name-exercise-comment">
                     {comment.firstName} {comment.lastName}
                   </p>
                   <div className="description-exercise-comment">
-                    {comment?.description}
+                    <p>{comment?.description}</p>
                     {comment?.userId === user?.id && (
                       <div className="edit-exercise-comment-button">
                         <OpenModalButton
