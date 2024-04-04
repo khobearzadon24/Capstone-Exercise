@@ -94,6 +94,7 @@ function ExerciseForm() {
                   className="input-area"
                   value={type}
                   onChange={(e) => setType(e.target.value)}
+                  required
                 >
                   <option value={""} disabled defaultValue={""}>
                     Select Type
@@ -115,6 +116,7 @@ function ExerciseForm() {
                   placeholder="Enter New Image Url"
                   // value={imgUrl}
                   onChange={(e) => setImgUrl(e.target.files[0])}
+                  required
                 ></input>
                 <p className="exercise-errors">
                   {errors.imgUrl ? errors.imgUrl : null}
