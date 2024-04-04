@@ -81,6 +81,7 @@ export const fetchExercise = (exerciseId) => async (dispatch) => {
 export const fetchAllExercises = () => async (dispatch) => {
   const response = await fetch("/api/exercises/");
   const exercises = await response.json();
+  console.log(exercises, "over here is the exercises");
   dispatch(loadAllExercises(exercises));
 };
 
@@ -101,7 +102,7 @@ export const writeExercise = (payload) => async (dispatch) => {
   console.log(response, "here is the response");
   // const exercise = await response.json();
   const resPost = await response.json();
-  console.log(resPost);
+  console.log(resPost, "here is the resPost");
   if (response.ok) {
     const newExer = await dispatch(addExercise(resPost));
     return newExer;

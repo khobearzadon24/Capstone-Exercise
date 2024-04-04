@@ -33,14 +33,14 @@ def newExercise():
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         imgUrl = form.imgUrl.data
-        url = None
+        # url = None
 
-        if imgUrl:
-            imgUrl.filename = get_unique_filename(imgUrl.filename)
-            upload = upload_file_to_s3(imgUrl)
-            if "url" not in upload:
-                return {"exercise_image": "Failed to upload image, try again."}, 500
-            url = upload["url"]
+        # if imgUrl:
+        imgUrl.filename = get_unique_filename(imgUrl.filename)
+        upload = upload_file_to_s3(imgUrl)
+        if "url" not in upload:
+            return {"exercise_image": "Failed to upload image, try again."}, 500
+        url = upload["url"]
 
         newExercise = Exercise(
             name=form.data['name'],
