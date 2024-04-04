@@ -1,0 +1,31 @@
+.delete-modal-container {
+  padding: 20px;
+  border: 1px white solid;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.confirm-delete {
+  margin-left: 15%;
+  color: rgb(116, 177, 201);
+}
+
+.you-sure {
+  color: rgb(116, 177, 201);
+}
+.yes-no {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.yes-delete {
+  padding: 7px;
+  border: 1px white solid;
+  border-radius: 20px;
+  background-color: rgb(116, 177, 201);
+}
