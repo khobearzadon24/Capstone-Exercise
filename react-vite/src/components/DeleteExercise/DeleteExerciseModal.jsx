@@ -10,7 +10,7 @@ function DeleteExerciseModal({ exercise }) {
 
   const deleteSubmit = async (e) => {
     e.preventDefault();
-    await dispatch(deleteExercise(exercise.id));
+    await dispatch(deleteExercise(exercise?.id));
     closeModal();
   };
 
