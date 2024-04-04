@@ -41,7 +41,7 @@ function AddExerciseCommentModal() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
-          // maxLength={75}
+          maxLength={100}
         />
         <p className="exercise-errors">
           {errors.description ? errors.description : null}

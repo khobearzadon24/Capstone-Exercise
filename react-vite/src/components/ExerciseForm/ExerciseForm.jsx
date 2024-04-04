@@ -67,7 +67,7 @@ function ExerciseForm() {
                   placeholder="Enter A Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  // required
+                  required
                 ></input>
                 <p className="exercise-errors">
                   {errors.name ? errors.name : null}
@@ -82,7 +82,7 @@ function ExerciseForm() {
                   placeholder="Enter the description of the exercise."
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  // required
+                  required
                 ></input>
                 <p className="exercise-errors">
                   {errors.description ? errors.description : null}
