@@ -65,7 +65,7 @@ function ExercisePage() {
           <h1 className="type-of-title">Chest</h1>
           <img
             className="type-image"
-            src="https://i.postimg.cc/y8d7bbQM/chest-image.jpg"
+            src="https://i.postimg.cc/3rt1p0tf/Designer.jpg"
             alt="chest"
           />
         </NavLink>
@@ -73,7 +73,7 @@ function ExercisePage() {
           <h1 className="type-of-title">Triceps</h1>
           <img
             className="type-image"
-            src="https://i.postimg.cc/HkQ9F6rt/tricep-image.jpg"
+            src="https://i.postimg.cc/Hs949cW7/donald-triceps.jpg"
             alt="triceps"
           />
         </NavLink>
@@ -81,7 +81,7 @@ function ExercisePage() {
           <h1 className="type-of-title">Back</h1>
           <img
             className="type-image"
-            src="https://i.postimg.cc/W45gPCT0/back-image.jpg"
+            src="https://i.postimg.cc/fLXtBpsR/Screenshot-2024-04-05-at-3-22-59-PM.png"
             alt="back"
           />
         </NavLink>
@@ -89,7 +89,7 @@ function ExercisePage() {
           <h1 className="type-of-title">Biceps</h1>
           <img
             className="type-image"
-            src="https://i.postimg.cc/hvQ21nxd/bicep-image.png"
+            src="https://i.postimg.cc/MKcTDgY2/donald-biceps.jpg"
             alt="biceps"
           />
         </NavLink>
@@ -97,7 +97,7 @@ function ExercisePage() {
           <h1 className="type-of-title">Shoulders</h1>
           <img
             className="type-image"
-            src="https://i.postimg.cc/xdF7vt7B/shoulder-image.jpg"
+            src="https://i.postimg.cc/qq2tD4Bb/mickey-shoulders.png"
             alt="shoulders"
           />
         </NavLink>
@@ -105,7 +105,7 @@ function ExercisePage() {
           <h1 className="type-of-title">Legs</h1>
           <img
             className="type-image"
-            src="https://i.postimg.cc/sxK5W0Hh/legs-image.jpg"
+            src="https://i.postimg.cc/2j1gb33F/donald-legs.png"
             alt="legs"
           />
         </NavLink>
@@ -113,7 +113,7 @@ function ExercisePage() {
           <h1 className="type-of-title">Cardio</h1>
           <img
             className="type-image"
-            src="https://i.postimg.cc/8CVs1mtQ/cardio-image.png"
+            src="https://i.postimg.cc/fbDrznH6/cardio-disney.jpg"
             alt="cardio"
           />
         </NavLink>
@@ -121,7 +121,7 @@ function ExercisePage() {
           <h1 className="type-of-title">Abs</h1>
           <img
             className="type-image"
-            src="https://i.postimg.cc/d0TX98Y1/abs-image.png"
+            src="https://i.postimg.cc/1zph5rcj/goofy-with-huge-muscles-working-out-2-by-jesse220-dgp0214-pre.jpg"
             alt="abs"
           />
         </NavLink>
