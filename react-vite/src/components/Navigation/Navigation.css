@@ -67,6 +67,7 @@ ul {
   text-decoration: none;
   font-size: 40px;
   color: rgb(116, 177, 201);
+  margin-top: 19px;
 }
 /*
 .profile-logo {
@@ -75,6 +76,9 @@ ul {
 
 .exercise-post-buttons {
   background-color: black;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
 }
 
 .search-bar {
