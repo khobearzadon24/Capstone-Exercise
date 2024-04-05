@@ -83,7 +83,7 @@ function PostPage() {
 
                 <p className="post-description">{post.description}</p>
               </div>
-              {user?.id == post?.userId && (
+              {/* {user?.id == post?.userId && (
                 <div className="update-delete-post">
                   <div>
                     <OpenModalButton
@@ -102,7 +102,7 @@ function PostPage() {
                     />
                   </div>
                 </div>
-              )}
+              )} */}
             </div>
             {/* <div>{post?.post_comments?.description}</div>
             <div> here {Object.values(post?.post_comments[description])}</div> */}
