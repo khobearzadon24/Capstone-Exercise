@@ -79,6 +79,7 @@ function UpdateExercise({ id }) {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
+                maxLength={30}
               ></input>
               <p className="exercise-errors">
                 {errors.name ? errors.name : null}
@@ -94,6 +95,7 @@ function UpdateExercise({ id }) {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 required
+                maxLength={75}
               ></input>
               <p className="exercise-errors">
                 {errors.description ? errors.description : null}

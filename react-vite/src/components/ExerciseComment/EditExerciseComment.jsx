@@ -59,7 +59,9 @@ function UpdateExerciseComment({ id }) {
                 placeholder="Enter A Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                // required
+                required
+                minLength={2}
+                maxLength={100}
               ></input>
               <p className="exercise-errors">
                 {errors.description ? errors.description : null}
