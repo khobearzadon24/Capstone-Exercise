@@ -8,11 +8,13 @@ import { useNavigate, useParams } from "react-router-dom";
 // } from "../../redux/exerciseReducer";
 
 import { fetchPost, editPost } from "../../redux/postReducer";
+import { useModal } from "../../context/Modal";
 
 function UpdatePost({ id }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { postId } = useParams();
+  // const { postId } = useParams();
+  const { closeModal } = useModal();
   const post = useSelector((state) => state.postState[id]);
   //   const exerciseTypes = useSelector((state) => state.exerciseState.types);
 
@@ -21,10 +23,10 @@ function UpdatePost({ id }) {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    dispatch(fetchPost(postId));
+    dispatch(fetchPost(id));
     setName(post?.name);
     setDescription(post?.description);
-  }, [dispatch, postId, post?.name, post?.description]);
+  }, [dispatch, post?.id, post?.name, post?.description]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -40,9 +42,10 @@ function UpdatePost({ id }) {
     // formData.append("type", type);
     // setImgUrlLoading(true);
 
-    const response = await dispatch(editPost(postId, payload));
+    const response = await dispatch(editPost(id, payload));
     if (response?.errors) setErrors(response?.errors);
-    else navigate(`/posts`);
+    closeModal();
+    window.location.reload();
   };
 
   return (
@@ -59,7 +62,7 @@ function UpdatePost({ id }) {
                 placeholder="Enter A Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                // required
+                required
               ></input>
               <p className="exercise-errors">
                 {errors.name ? errors.name : null}
@@ -74,7 +77,7 @@ function UpdatePost({ id }) {
                 placeholder="Enter A Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                // required
+                required
               ></input>
               <p className="exercise-errors">
                 {errors.description ? errors.description : null}

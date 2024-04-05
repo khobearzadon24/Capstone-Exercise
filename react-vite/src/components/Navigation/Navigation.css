@@ -9,17 +9,18 @@
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   position: sticky;
   margin-bottom: 40px;
   margin-left: 0px;
   margin-right: 0px;
   top: 0px;
   height: 50px;
-  border-bottom: 1px black solid;
-  border-top: 1px black solid;
+  border-bottom: 1px white solid;
+  /* border-top: 2px white solid; */
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background-color: black;
 }
 
 .home-button {
@@ -27,29 +28,32 @@
   font-weight: bold;
   font-size: 40px;
   color: rgb(116, 177, 201);
+  background-color: black;
 }
 
 .profile-dropdown {
   position: absolute;
   width: 15%;
-  top: 50px;
+  top: 61px;
   right: 2%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: gray;
+  background-color: #3e415c;
   gap: 10px;
   padding: 0;
   font-size: large;
   border: 2px black solid;
   border-radius: 10px;
   padding: 10px;
-  /* background-color: blue; */
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 ul {
   list-style-type: none;
+  background-color: black;
 }
 
 .exercise-page {
@@ -64,13 +68,13 @@ ul {
   font-size: 40px;
   color: rgb(116, 177, 201);
 }
-
+/*
 .profile-logo {
   color: blue;
-}
+} */
 
-exercise-post-buttons {
-  display: flex;
+.exercise-post-buttons {
+  background-color: black;
 }
 
 .search-bar {
@@ -84,7 +88,7 @@ exercise-post-buttons {
   padding-right: 20px;
   /* margin-right: 10%; */
   border: 1px black solid;
-  background-color: lightgray;
+  background-color: rgb(62, 61, 61);
 }
 
 .search-bar > input {
@@ -99,6 +103,7 @@ exercise-post-buttons {
   flex-direction: row;
   gap: 15px;
   text-align: center;
+  background-color: black;
 }
 
 .search-icon {
@@ -108,3 +113,19 @@ exercise-post-buttons {
 ::placeholder {
   color: black;
 } */
+
+.exercise-page {
+  background-color: black;
+}
+
+.post-page {
+  background-color: black;
+}
+
+.common-terms {
+  background-color: black;
+}
+
+.profile-button {
+  background-color: black;
+}

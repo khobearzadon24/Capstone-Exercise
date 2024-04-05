@@ -17,6 +17,14 @@
   margin-bottom: 10px;
 }
 
+.info:hover {
+  cursor: pointer;
+}
+
+.postCard:hover {
+  box-shadow: 5px 5px 5px black;
+}
+
 /* .create-post-button {
   display: flex;
   justify-content: center;
@@ -70,6 +78,27 @@
   border: 1px white solid;
   border-radius: 20px;
   padding: 10px;
-  width: 600px;
+  width: 50%;
+  /* height: 100px; */
   margin-left: 30%;
+  overflow: auto;
+}
+
+.update-delete-post {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.input-area-description {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.post-createdAt {
+  font-size: 15px;
+  display: flex;
+  justify-content: flex-start;
 }

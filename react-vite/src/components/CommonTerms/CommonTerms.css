@@ -2,13 +2,19 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   padding: 30px;
-  border-radius: 20px;
+  /* border-radius: 20px; */
+  background-color: #3e415c;
   border: white 1px solid;
 }
 
 .to-know {
   display: flex;
   justify-content: center;
+  background-color: #3e415c;
+}
+
+.what-to-know {
+  background-color: #3e415c;
 }

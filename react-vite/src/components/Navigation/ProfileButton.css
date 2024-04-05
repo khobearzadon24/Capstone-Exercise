@@ -4,7 +4,7 @@
   width: 40px;
   position: relative;
   z-index: 1;
-  background-color: transparent;
+  background-color: black;
   border: none;
 }
 
@@ -17,5 +17,5 @@
 .profile-logo {
   width: 30px;
   height: 30px;
-  color: blue;
+  background-color: black;
 }

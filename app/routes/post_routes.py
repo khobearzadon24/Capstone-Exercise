@@ -105,8 +105,8 @@ def deletePost(postId):
 # CREATE A POST_COMMENT FOR A POST BASED ON ID
 @post_routes.route('/<int:postId>/post-comments', methods=["POST"])
 @login_required
-def createPostComment(post_id):
-    post = Post.query.get(post_id)
+def createPostComment(postId):
+    post = Post.query.get(postId)
     if not post:
         return json.dumps({
             "message": "Post couldn't be found"
@@ -118,7 +118,7 @@ def createPostComment(post_id):
         newPostComment = Post_Comment(
             description=form.data['description'],
             userId=get_current_user(),
-            postId=post_id
+            postId=postId
         )
         db.session.add(newPostComment)
         db.session.commit()
@@ -137,6 +137,11 @@ def createPostComment(post_id):
 @post_routes.route('/<int:postId>/post-comments', methods=["GET"])
 def getPostComments(postId):
     post_comments = Post_Comment.query.filter_by(postId=postId).all()
+    user = User.query.get(post_comments[0].userId)
     reviewResponse = [post_comment.to_dict() for post_comment in post_comments]
+
+    for item in reviewResponse:
+        item["firstName"] = user.firstName
+        item["lastName"] = user.lastName
 
     return json.dumps(reviewResponse)

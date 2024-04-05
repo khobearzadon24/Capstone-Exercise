@@ -78,7 +78,7 @@ function UpdateExercise({ id }) {
                 placeholder="Enter A Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                // required
+                required
               ></input>
               <p className="exercise-errors">
                 {errors.name ? errors.name : null}
@@ -93,7 +93,7 @@ function UpdateExercise({ id }) {
                 placeholder="Enter A Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                // required
+                required
               ></input>
               <p className="exercise-errors">
                 {errors.description ? errors.description : null}
@@ -105,6 +105,7 @@ function UpdateExercise({ id }) {
                 className="input-area"
                 value={type}
                 onChange={(e) => setType(e.target.value)}
+                required
               >
                 <option value={""} disabled defaultValue={""}>
                   Select Type

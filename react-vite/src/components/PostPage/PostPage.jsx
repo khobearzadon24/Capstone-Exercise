@@ -6,12 +6,15 @@ import "./PostPage.css";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
 import PostForm from "../PostForm/PostForm";
 import UpdatePost from "../PostForm/UpdatePostForm";
+import DeletePostButton from "./DeletePost";
+import { useNavigate } from "react-router-dom";
 
 function PostPage() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const posts = useSelector((state) => state.postState);
   const user = useSelector((state) => state.session.user);
-  const post_comment = useSelector((state) => state.postCommentState);
+  // const post_comment = useSelector((state) => state.postCommentState);
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
 
@@ -32,15 +35,18 @@ function PostPage() {
   const closeMenu = () => setShowMenu(false);
   useEffect(() => {
     dispatch(fetchAllPosts());
-    dispatch(fetchAllPostComments());
+    // dispatch(fetchAllPostComments());
   }, [dispatch]);
 
   let postArr = Object.values(posts);
+  // console.log(postArr[0], "look here");
+  // let postComments = Object.values(postArr[0]?.post_comments);
+  // console.log(postComments, "over here you");
   // let postCommentArr = Object.values(post_comment);
-  console.log(post_comment, "over here is the comment state");
+  // console.log(post_comment, "over here is the comment state");
 
   console.log(postArr, "here is the array of posts");
-  console.log(postArr[0]?.post_comments);
+  // console.log(postArr[0]?.post_comment);
   // const commentsArr = posts;
   // console.log(commentsArr, "here is the comments for the posts");
 
@@ -64,7 +70,13 @@ function PostPage() {
         {postArr?.map((post, idx) => (
           <div className="postCard" key={idx}>
             <div className="info-w-edit-button">
-              <div className="info">
+              <div
+                className="info"
+                onClick={() => {
+                  navigate(`/posts/${post.id}`);
+                }}
+              >
+                <h3 className="post-createdAt">{post.createdAt}</h3>
                 <h1 className="name">
                   {post.name} | By {post.firstName} {post.lastName}
                 </h1>
@@ -72,16 +84,28 @@ function PostPage() {
                 <p className="post-description">{post.description}</p>
               </div>
               {user?.id == post?.userId && (
-                <div>
-                  <OpenModalButton
-                    className="edit-post-button"
-                    buttonText="Edit Post"
-                    onItemClick={closeMenu}
-                    modalComponent={<UpdatePost id={post?.id} />}
-                  />
+                <div className="update-delete-post">
+                  <div>
+                    <OpenModalButton
+                      className="edit-post-button"
+                      buttonText="Edit Post"
+                      onItemClick={closeMenu}
+                      modalComponent={<UpdatePost id={post?.id} />}
+                    />
+                  </div>
+                  <div>
+                    <OpenModalButton
+                      className="edit-post-button"
+                      buttonText="Delete Post"
+                      onItemClick={closeMenu}
+                      modalComponent={<DeletePostButton post={post} />}
+                    />
+                  </div>
                 </div>
               )}
             </div>
+            {/* <div>{post?.post_comments?.description}</div>
+            <div> here {Object.values(post?.post_comments[description])}</div> */}
           </div>
         ))}
       </div>

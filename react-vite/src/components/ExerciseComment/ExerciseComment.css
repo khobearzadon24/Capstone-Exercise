@@ -16,10 +16,10 @@
 
 .exercise-comment-submit {
   padding: 10px;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   border: 1px white solid;
   background-color: rgb(116, 177, 201);
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .exercise-page-create {

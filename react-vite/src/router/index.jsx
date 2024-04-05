@@ -13,6 +13,7 @@ import CardioPage from "../components/ExerciseTypes/CardioPage";
 import AbsPage from "../components/ExerciseTypes/AbsPage";
 import SingleExercise from "../components/Exercise/SingleExercise";
 import OwnerExercises from "../components/Exercise/OwnerExercises";
+import SinglePost from "../components/PostPage/SinglePost";
 import Layout from "./Layout";
 
 export const router = createBrowserRouter([
@@ -67,6 +68,10 @@ export const router = createBrowserRouter([
       {
         path: "/exercises/:exerciseId",
         element: <SingleExercise />,
+      },
+      {
+        path: "/posts/:postId",
+        element: <SinglePost />,
       },
       {
         path: "/exercises/my-exercises",

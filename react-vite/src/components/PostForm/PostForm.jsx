@@ -41,7 +41,9 @@ function PostForm() {
                 placeholder="Enter Post Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                // required
+                required
+                minLength={3}
+                maxLength={30}
               ></input>
               <p className="exercise-errors">
                 {errors.name ? errors.name : null}
@@ -56,7 +58,9 @@ function PostForm() {
                 placeholder="Enter Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                // required
+                required
+                minLength={3}
+                maxLength={75}
               ></input>
               <p className="exercise-errors">
                 {errors.description ? errors.description : null}
