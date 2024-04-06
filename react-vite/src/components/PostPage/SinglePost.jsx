@@ -25,7 +25,7 @@ function SinglePost() {
   // const exercise_comment = useSelector((state) => state.exerciseCommentState);
 
   // console.log(exercise_comment, "here is the exercise comments");
-  // console.log(exercise, "here is the exercise you wanted");
+  console.log(post, "here is the post you wanted");
 
   const commentsArr = post[postId]?.post_comments;
 
