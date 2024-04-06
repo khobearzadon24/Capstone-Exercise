@@ -47,6 +47,7 @@ def allCurrentUserPosts():
 @post_routes.route("/<int:id>")
 def getPostById(id):
     post = Post.query.get(id)
+    user = User.query.get(post.userId)
 
     if not post:
         return json.dumps({
@@ -58,6 +59,8 @@ def getPostById(id):
     post_formatted = {
         "id": post.id,
         "userId": post.userId,
+        "firstName": user.firstName,
+        "lastName": user.lastName,
         "description": post.description,
         "name": post.name,
         "post_comments": post_comments,
