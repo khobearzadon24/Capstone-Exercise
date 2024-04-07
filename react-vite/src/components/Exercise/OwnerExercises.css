@@ -40,3 +40,19 @@
   padding: 10px;
   border-radius: 20px;
 }
+
+.exercise-img-manage {
+  width: 50%;
+  height: 70%;
+}
+
+.manage-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.exercise-description {
+  display: flex;
+  justify-content: center;
+}
