@@ -6,7 +6,7 @@ function Footer() {
   return (
     <div className="footer">
       <div>
-        Khobe
+        Khobe Arzadon
         <Link to="https://github.com/khobearzadon24" target="_blank">
           <FaGithub />
         </Link>
