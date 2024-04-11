@@ -68,7 +68,13 @@ function PostPage() {
       )}
       <div className="postDivs">
         {postArr?.map((post, idx) => (
-          <div className="postCard" key={idx}>
+          <div
+            className="postCard"
+            onClick={() => {
+              navigate(`/posts/${post.id}`);
+            }}
+            key={idx}
+          >
             <div className="info-w-edit-button">
               <div
                 className="info"

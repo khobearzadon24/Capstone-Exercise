@@ -84,7 +84,8 @@ export const editPost = (postId, payload) => async (dispatch) => {
   if (response.ok) {
     const post = await response.json();
     dispatch(updatePost(payload));
-    return post;
+  } else {
+    console.log("There was an error editing your post.");
   }
 };
 

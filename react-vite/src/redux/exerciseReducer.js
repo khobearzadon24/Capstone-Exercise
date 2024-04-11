@@ -134,7 +134,7 @@ export const editExercise = (exerciseId, payload) => async (dispatch) => {
     const exercise = await response.json();
     dispatch(updateExercise(exercise));
   } else {
-    console.log("There was an error editing yout post.");
+    console.log("There was an error editing your post.");
   }
 };
 
