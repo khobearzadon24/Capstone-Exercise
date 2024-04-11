@@ -53,7 +53,8 @@ function PostPage() {
   return (
     <div className="post-page-container">
       <h1 className="post-title">
-        Post your accomplishments, exercise questions, or anything on your mind!
+        Post your accomplishments, <br /> exercise questions, <br /> or anything
+        on your mind!
       </h1>
       <hr className="line-break" />
       {user && (

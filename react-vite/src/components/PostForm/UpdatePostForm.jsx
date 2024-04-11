@@ -12,7 +12,7 @@ import { useModal } from "../../context/Modal";
 
 function UpdatePost({ id }) {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // const { postId } = useParams();
   const { closeModal } = useModal();
   const post = useSelector((state) => state.postState[id]);
@@ -26,7 +26,7 @@ function UpdatePost({ id }) {
     dispatch(fetchPost(id));
     setName(post?.name);
     setDescription(post?.description);
-  }, [dispatch, post?.id, post?.name, post?.description]);
+  }, [dispatch, id, post?.name, post?.description]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -43,7 +43,7 @@ function UpdatePost({ id }) {
     // setImgUrlLoading(true);
 
     const response = await dispatch(editPost(id, payload));
-    if (response?.errors) setErrors(response?.errors);
+    // if (response?.errors) setErrors(response?.errors);
     closeModal();
     window.location.reload();
   };

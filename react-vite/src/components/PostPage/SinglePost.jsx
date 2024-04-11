@@ -118,11 +118,7 @@ function SinglePost() {
                     onItemClick={closeMenu}
                     modalComponent={<UpdatePost id={postId} />}
                   />
-                  <OpenModalButton
-                    buttonText="Delete Post"
-                    onItemClick={closeMenu}
-                    modalComponent={<DeletePostButton id={postId} />}
-                  />
+                  <DeletePostButton className="add-item" id={postId} />
                   {/* <DeletePostButton className="add-item" id={postId} /> */}
                 </>
               )}
