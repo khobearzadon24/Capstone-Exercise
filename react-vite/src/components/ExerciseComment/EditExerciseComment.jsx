@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import {
   fetchExerciseComment,
@@ -11,7 +11,7 @@ import "./EditExerciseComment.css";
 
 function UpdateExerciseComment({ id }) {
   const dispatch = useDispatch();
-  // const { exerciseId } = useParams();
+  // const { id } = useParams();
   const exercise = useSelector((state) => state.exerciseState);
   const exerciseComment = useSelector(
     (state) => state.exerciseCommentState[id]

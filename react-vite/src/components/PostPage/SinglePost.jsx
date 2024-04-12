@@ -89,7 +89,7 @@ function SinglePost() {
                   </p>
                   <div className="description-exercise-comment">
                     <p>{comment?.description}</p>
-                    {/* {comment?.userId === user?.id && (
+                    {comment?.userId === user?.id && (
                       <div className="edit-exercise-comment-button">
                         <OpenModalButton
                           buttonText="Edit Comment"
@@ -103,11 +103,11 @@ function SinglePost() {
                           id={comment?.id}
                         />
                       </div>
-                    )} */}
+                    )}
                   </div>
                 </div>
               ))}
-              {/* {user && <AddPostCommentModal className="add-comment-button" />} */}
+              {user && <AddPostCommentModal className="add-comment-button" />}
             </div>
 
             <div className="ManageExercise">

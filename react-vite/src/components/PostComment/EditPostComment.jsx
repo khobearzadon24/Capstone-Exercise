@@ -16,7 +16,7 @@ import "../ExerciseComment/EditExerciseComment.css";
 function UpdatePostComment({ id }) {
   const dispatch = useDispatch();
   // const { exerciseId } = useParams();
-  const { postId } = useParams();
+  // const { postId } = useParams();
   const post = useSelector((state) => state.postState);
   const postComment = useSelector((state) => state.postCommentState[id]);
   console.log(postComment, "here is the comments");
