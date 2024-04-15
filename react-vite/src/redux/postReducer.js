@@ -56,10 +56,12 @@ export const writePost = (payload) => async (dispatch) => {
   });
   const post = await response.json();
   if (response.status !== 201) {
+    console.log(post);
     return post;
   }
   if (response.ok) {
     dispatch(addPost(post));
+    console.log(post);
     return post;
   }
 };
