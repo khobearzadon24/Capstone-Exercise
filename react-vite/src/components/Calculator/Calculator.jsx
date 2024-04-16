@@ -77,17 +77,51 @@ function Calculator() {
         </div>
 
         <div className="digits">
-          {createDigits()}
-          <button onClick={() => updateCalc("0")}>0</button>
-          <button onClick={() => updateCalc(".")}>.</button>
+          <button className="calculator-button" onClick={() => updateCalc("9")}>
+            9
+          </button>
+          <button className="calculator-button" onClick={() => updateCalc("8")}>
+            8
+          </button>
+          <button className="calculator-button" onClick={() => updateCalc("7")}>
+            7
+          </button>
+          <button className="calculator-button" onClick={() => updateCalc("6")}>
+            6
+          </button>
+          <button className="calculator-button" onClick={() => updateCalc("5")}>
+            5
+          </button>
+          <button className="calculator-button" onClick={() => updateCalc("4")}>
+            4
+          </button>
+          <button className="calculator-button" onClick={() => updateCalc("3")}>
+            3
+          </button>
+          <button className="calculator-button" onClick={() => updateCalc("2")}>
+            2
+          </button>
+          <button className="calculator-button" onClick={() => updateCalc("1")}>
+            1
+          </button>
+          <button className="calculator-button" onClick={() => updateCalc("0")}>
+            0
+          </button>
+          <button className="calculator-button" onClick={() => updateCalc(".")}>
+            .
+          </button>
 
-          <button onClick={() => calculate()}>=</button>
-          <button onClick={() => clearAll()}>Clear</button>
-          <button className="not-buttons" disabled>
+          <button className="calculator-button" onClick={() => calculate()}>
+            =
+          </button>
+          <button className="calculator-button" onClick={() => clearAll()}>
+            Clear
+          </button>
+          <button className="calculator-button" disabled>
             {" "}
             Calculator
           </button>
-          <button className="not-buttons" disabled>
+          <button className="calculator-button" disabled>
             {" "}
             Get that PR!
           </button>
