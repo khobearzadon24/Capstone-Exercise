@@ -29,8 +29,7 @@ function AddPostCommentModal() {
     await dispatch(fetchAllPostComments(postId));
     if (newPostComment.errors) setErrors(newPostComment.errors);
     closeModal();
-    window.location.reload();
-    // reset();
+    // window.location.reload();
   };
 
   return (

@@ -39,16 +39,8 @@ function PostPage() {
   }, [dispatch]);
 
   let postArr = Object.values(posts);
-  // console.log(postArr[0], "look here");
-  // let postComments = Object.values(postArr[0]?.post_comments);
-  // console.log(postComments, "over here you");
-  // let postCommentArr = Object.values(post_comment);
-  // console.log(post_comment, "over here is the comment state");
 
   console.log(postArr, "here is the array of posts");
-  // console.log(postArr[0]?.post_comment);
-  // const commentsArr = posts;
-  // console.log(commentsArr, "here is the comments for the posts");
 
   return (
     <div className="post-page-container">

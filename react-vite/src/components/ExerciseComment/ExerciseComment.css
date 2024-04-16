@@ -17,7 +17,7 @@
 .exercise-comment-submit {
   padding: 10px;
   /* border-radius: 20px; */
-  border: 1px white solid;
+  border: 2px white solid;
   background-color: rgb(116, 177, 201);
   font-size: 15px;
 }

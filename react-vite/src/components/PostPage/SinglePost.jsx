@@ -119,7 +119,6 @@ function SinglePost() {
                     modalComponent={<UpdatePost id={postId} />}
                   />
                   <DeletePostButton className="add-item" id={postId} />
-                  {/* <DeletePostButton className="add-item" id={postId} /> */}
                 </>
               )}
             </div>

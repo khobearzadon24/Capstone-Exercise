@@ -127,6 +127,11 @@ function SingleExercise() {
                     onItemClick={closeMenu}
                     modalComponent={<UpdateExercise id={exerciseId} />}
                   />
+                  {/* <OpenModalButton
+                    buttonText="Delete Exercise"
+                    onItemClick={closeMenu}
+                    modalComponent={<DeleteExerciseButton id={exerciseId} />}
+                  /> */}
                   <DeleteExerciseButton className="add-item" id={exerciseId} />
                 </>
               )}
