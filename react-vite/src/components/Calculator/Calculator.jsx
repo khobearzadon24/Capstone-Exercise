@@ -58,12 +58,22 @@ function Calculator() {
         </div>
 
         <div className="operators">
-          <button onClick={() => updateCalc("/")}>÷</button>
-          <button onClick={() => updateCalc("*")}>x</button>
-          <button onClick={() => updateCalc("+")}>+</button>
-          <button onClick={() => updateCalc("-")}>-</button>
+          <button className="calculator-button" onClick={() => updateCalc("/")}>
+            ÷
+          </button>
+          <button className="calculator-button" onClick={() => updateCalc("*")}>
+            x
+          </button>
+          <button className="calculator-button" onClick={() => updateCalc("+")}>
+            +
+          </button>
+          <button className="calculator-button" onClick={() => updateCalc("-")}>
+            -
+          </button>
 
-          <button onClick={() => deleteLast()}>DEL</button>
+          <button className="calculator-button" onClick={() => deleteLast()}>
+            DEL
+          </button>
         </div>
 
         <div className="digits">

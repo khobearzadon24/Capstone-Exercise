@@ -19,3 +19,11 @@
   height: 30px;
   background-color: black;
 }
+
+.log-out-button {
+  font-size: 15px;
+  align-items: center;
+  text-align: center;
+  height: 20px;
+  border: 1px white solid;
+}

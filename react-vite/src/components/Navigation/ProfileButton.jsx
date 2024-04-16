@@ -67,7 +67,9 @@ function ProfileButton() {
                 </button> */}
               </li>
               <li>
-                <button onClick={logout}>Log Out</button>
+                <button className="log-out-button" onClick={logout}>
+                  Log Out
+                </button>
               </li>
             </>
           ) : (

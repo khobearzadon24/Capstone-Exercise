@@ -11,7 +11,6 @@ body {
 
 .Ap {
   display: flex;
-  /* min-height: 100vh; */
   align-items: center;
   justify-content: center;
   padding: 16px;
@@ -40,7 +39,7 @@ body {
   color: #fcf9f9;
 }
 
-button {
+.calculator-button {
   appearance: none;
   border: none;
   outline: none;
