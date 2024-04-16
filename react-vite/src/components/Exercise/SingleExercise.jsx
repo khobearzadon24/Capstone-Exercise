@@ -90,12 +90,12 @@ function SingleExercise() {
               )}
               {commentsArr?.map((comment) => (
                 <div className="exercise-comments-Card" key={comment.id}>
-                  <p>{comment?.createdAt}</p>
+                  <p className="date-comment">{comment?.createdAt}</p>
                   <p className="name-exercise-comment">
                     {comment.firstName} {comment.lastName}
                   </p>
                   <div className="description-exercise-comment">
-                    <p>{comment?.description}</p>
+                    <p className="describe-comment">{comment?.description}</p>
                     {comment?.userId === user?.id && (
                       <div className="edit-exercise-comment-button">
                         <OpenModalButton

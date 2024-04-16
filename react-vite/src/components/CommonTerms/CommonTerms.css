@@ -5,16 +5,41 @@
   gap: 12px;
   padding: 30px;
   /* border-radius: 20px; */
-  background-color: #3e415c;
-  border: white 1px solid;
+  /* background-color: #3e415c; */
+  background-image: linear-gradient(
+    to right top,
+    #04464a,
+    #0a3641,
+    #133b50,
+    #152542,
+    #281f3d
+  );
+  border: white 2px solid;
 }
 
 .to-know {
   display: flex;
   justify-content: center;
-  background-color: #3e415c;
+  background-color: transparent;
+  /* background-image: linear-gradient(
+    to right top,
+    #7df3fc,
+    #6be4ff,
+    #77d2ff,
+    #99bdff,
+    #bda5f5
+  ); */
 }
 
 .what-to-know {
-  background-color: #3e415c;
+  /* background-color: #3e415c; */
+  background-color: transparent;
+  /* background-image: linear-gradient(
+    to right top,
+    #7df3fc,
+    #6be4ff,
+    #77d2ff,
+    #99bdff,
+    #bda5f5
+  ); */
 }

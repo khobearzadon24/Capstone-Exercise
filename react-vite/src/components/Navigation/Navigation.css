@@ -40,7 +40,15 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: #3e415c;
+  /* background-color: #3e415c; */
+  background-image: linear-gradient(
+    to right top,
+    #04464a,
+    #0a3641,
+    #133b50,
+    #152542,
+    #281f3d
+  );
   gap: 10px;
   padding: 0;
   font-size: large;
@@ -132,4 +140,10 @@ ul {
 
 .profile-button {
   background-color: black;
+}
+
+.common-calc {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }

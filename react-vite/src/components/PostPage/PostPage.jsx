@@ -76,7 +76,7 @@ function PostPage() {
                 }}
               >
                 <h3 className="post-createdAt">{post.createdAt}</h3>
-                <h1 className="name">
+                <h1 className="name-poster">
                   {post.name} | By {post.firstName} {post.lastName}
                 </h1>
 

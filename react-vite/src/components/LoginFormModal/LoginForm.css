@@ -20,6 +20,7 @@
   padding: 20px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
   /* border-radius: 20px; */
 }
 
@@ -44,6 +45,7 @@
   margin-left: 65px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: rgb(116, 177, 201);
 }
 
 .demo-user {
@@ -51,6 +53,7 @@
   margin-left: 60px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: rgb(116, 177, 201);
 }
 
 .login-errors {

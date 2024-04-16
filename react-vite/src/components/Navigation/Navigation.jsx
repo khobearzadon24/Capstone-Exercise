@@ -5,6 +5,7 @@ import "./Navigation.css";
 import { FaSearch } from "react-icons/fa";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
 import CommonTerms from "../CommonTerms/CommonTerms";
+import Calculator from "../Calculator/Calculator";
 
 function Navigation() {
   const [showMenu, setShowMenu] = useState(false);
@@ -44,12 +45,18 @@ function Navigation() {
         </NavLink>
       </div>
       <div className="right-side-nav">
-        <div>
+        <div className="common-calc">
           <OpenModalButton
             className="common-terms"
             buttonText="Common Terms"
             onItemClick={closeMenu}
             modalComponent={<CommonTerms />}
+          />
+          <OpenModalButton
+            className="common-terms"
+            buttonText="Calculator"
+            onItemClick={closeMenu}
+            modalComponent={<Calculator />}
           />
         </div>
         <div className="search-bar" onClick={(e) => handleFeature(e)}>

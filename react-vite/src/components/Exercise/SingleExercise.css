@@ -71,7 +71,15 @@ h4 {
 }
 .exercise-comments-Card {
   display: flex;
-  background-color: transparent;
+  /* background-color: transparent; */
+  background-image: linear-gradient(
+    to right top,
+    #04464a,
+    #0a3641,
+    #133b50,
+    #152542,
+    #281f3d
+  );
   justify-content: space-between;
   flex-direction: column;
   border: 1px solid grey;
@@ -82,16 +90,20 @@ h4 {
   overflow: auto;
 }
 
-/* .name-exercise-comment {
-  font-weight: bold;
-} */
+.name-exercise-comment {
+  background: transparent;
+}
+
+.describe-comment {
+  background: transparent;
+}
 
 .description-exercise-comment {
   color: white;
+  background: transparent;
 }
 
 .exercise-details-container button {
-  /* background-color: darkslategray; */
   color: white;
   font-size: 15px;
   padding: 10px 24px;
@@ -156,4 +168,8 @@ button {
 .be-the-first {
   font-size: 20px;
   margin-bottom: 10px;
+}
+
+.date-comment {
+  background: transparent;
 }
