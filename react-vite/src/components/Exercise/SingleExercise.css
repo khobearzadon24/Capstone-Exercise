@@ -163,6 +163,7 @@ button {
   justify-content: space-between;
   margin-top: 10px;
   height: 40px;
+  background-color: transparent;
 }
 
 .be-the-first {
