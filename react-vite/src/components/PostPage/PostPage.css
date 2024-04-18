@@ -11,6 +11,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
+  font-size: 40px;
   margin-bottom: 5px;
   color: rgb(116, 177, 201);
   text-shadow: 5px 2px 2px black;
