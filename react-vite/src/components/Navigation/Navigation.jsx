@@ -31,11 +31,10 @@ function Navigation() {
 
   return (
     <div className="nav-bar">
-      <div>
-        <NavLink className="home-button" to="/">
-          Show Up Show Out
-        </NavLink>
-      </div>
+      <NavLink className="home-button" to="/">
+        Show Up Show Out
+      </NavLink>
+
       <div className="exercise-post-buttons">
         <NavLink className="exercise-page" to="/exercises">
           Exercises

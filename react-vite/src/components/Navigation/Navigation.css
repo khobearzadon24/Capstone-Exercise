@@ -146,4 +146,9 @@ ul {
   display: flex;
   justify-content: center;
   gap: 10px;
+  background-color: black;
+}
+
+@media (max-width: 1250px) {
+  /* … */
 }
