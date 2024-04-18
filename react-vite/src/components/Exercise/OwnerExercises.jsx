@@ -2,13 +2,14 @@ import { useSelector } from "react-redux";
 import { useEffect, useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { fetchOwnerExercises } from "../../redux/exerciseReducer";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
 import DeleteExerciseModal from "../DeleteExercise/DeleteExerciseModal";
 import UpdateExercise from "../ExerciseForm/UpdateExerciseForm";
 import "./OwnerExercises.css";
 
 function OwnerExercises() {
+  const navigate = useNavigate();
   const exercise = useSelector((state) => state.exerciseState);
   const [postExercise, setPostExercise] = useState(false);
 
@@ -59,16 +60,14 @@ function OwnerExercises() {
                   {`${exercise?.description}`}
                 </p>
               </div>
-              <NavLink
-                className="exercise-manage-container"
-                to={`/exercises/${exercise?.id}`}
-              >
+              <div className="exercise-manage-container">
                 <img
                   className="exercise-img-manage"
+                  onClick={() => navigate(`/exercises/${exercise?.id}`)}
                   src={`${exercise?.imgUrl}`}
                   alt={`${exercise?.name}`}
                 />
-              </NavLink>
+              </div>
               <div className="update-delete-owner">
                 <div>
                   <OpenModalButton

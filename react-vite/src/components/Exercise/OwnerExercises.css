@@ -44,6 +44,12 @@
 .exercise-img-manage {
   width: 50%;
   height: 70%;
+  border: 1px white solid;
+}
+
+.exercise-img-manage:hover {
+  box-shadow: 5px 2px 2px white;
+  cursor: pointer;
 }
 
 .manage-container {
