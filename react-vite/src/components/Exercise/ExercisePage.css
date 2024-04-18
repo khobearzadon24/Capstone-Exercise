@@ -11,6 +11,7 @@
   color: rgb(116, 177, 201);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-shadow: 5px 2px 2px black;
 }
 
 .style-hover {
@@ -40,6 +41,7 @@
 
 .type-of-title {
   font-size: 20px;
+  text-shadow: 5px 2px 2px black;
 }
 
 .type-image {
@@ -47,6 +49,10 @@
   height: 250px;
   border-radius: 20px;
   border: 2px black solid;
+}
+
+.type-image:hover {
+  box-shadow: 2px 2px 5px black;
 }
 
 .execise-page {

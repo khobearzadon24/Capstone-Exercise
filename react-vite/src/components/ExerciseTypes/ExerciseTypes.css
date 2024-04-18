@@ -5,6 +5,7 @@
   justify-content: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-shadow: 5px 2px 2px white;
 }
 
 .exerciseDivs {
@@ -33,6 +34,10 @@
   border: 1px black solid;
 }
 
+.exerCardImage:hover {
+  box-shadow: 2px 2px 5px black;
+}
+
 .edit-exercise {
   display: flex;
   justify-content: center;
@@ -47,4 +52,5 @@
 
 .name {
   font-size: 20px;
+  text-shadow: 5px 2px 2px black;
 }

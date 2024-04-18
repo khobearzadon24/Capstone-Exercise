@@ -6,7 +6,7 @@ function LandingPage() {
       <div className="first-container">
         <div className="exercise-text">
           <h2 className="landing-page-title">Why Exercise?</h2>
-          <h3>
+          <h3 className="landing-text">
             Exercising is a great and important way of making sure that you are
             getting the regular amount of physical activity your body needs.
             Being physically active can improve your brain health, help manage
@@ -32,7 +32,7 @@ function LandingPage() {
         </div>
         <div className="exercise-text">
           <h2 className="landing-page-title">About Us</h2>
-          <h3>
+          <h3 className="landing-text">
             You have visited just the right place to get your mind and body
             right for your fitness journey! Our website will allow you to gain a
             vast amount of exercise knowledge from other users and you can also

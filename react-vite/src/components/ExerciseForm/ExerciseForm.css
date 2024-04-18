@@ -28,6 +28,7 @@
   font-size: 30px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-shadow: 5px 2px 2px black;
 }
 
 .input-area {
@@ -65,4 +66,5 @@
 
 .form-name {
   color: rgb(116, 177, 201);
+  text-shadow: 5px 2px 2px black;
 }

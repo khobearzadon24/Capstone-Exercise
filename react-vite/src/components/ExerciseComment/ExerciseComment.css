@@ -20,6 +20,7 @@
   border: 2px white solid;
   background-color: rgb(116, 177, 201);
   font-size: 15px;
+  text-shadow: 3px 2px 2px black;
 }
 
 .exercise-page-create {

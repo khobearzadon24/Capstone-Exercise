@@ -11,16 +11,19 @@
 .confirm-delete {
   margin-left: 15%;
   color: rgb(116, 177, 201);
+  text-shadow: 5px 2px 2px black;
 }
 
 .you-sure {
   color: rgb(116, 177, 201);
+  text-shadow: 5px 2px 2px black;
 }
 .yes-no {
   display: flex;
   justify-content: center;
   flex-direction: row;
   gap: 10px;
+  text-shadow: 3px 2px 2px black;
 }
 
 .yes-delete {
@@ -28,4 +31,5 @@
   border: 1px white solid;
   border-radius: 20px;
   background-color: rgb(116, 177, 201);
+  text-shadow: 3px 2px 2px black;
 }

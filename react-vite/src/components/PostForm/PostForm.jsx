@@ -34,7 +34,7 @@ function PostForm() {
           <form className="exercise-form" onSubmit={onSubmit}>
             <h1 className="exercise-title-form">Create a Post</h1>
             <div className="column-styles">
-              <p>Name</p>
+              <p className="form-name">Name</p>
               <input
                 className="input-area"
                 type="text"
@@ -51,7 +51,7 @@ function PostForm() {
             </div>
 
             <div className="column-styles">
-              <p>Description</p>
+              <p className="form-name">Description</p>
               <input
                 className="input-area-description"
                 type="text"

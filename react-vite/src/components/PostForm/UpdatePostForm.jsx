@@ -9,6 +9,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { fetchPost, editPost } from "../../redux/postReducer";
 import { useModal } from "../../context/Modal";
+// import "../ExerciseForm/ExerciseForm.css";
 
 function UpdatePost({ id }) {
   const dispatch = useDispatch();

@@ -26,4 +26,20 @@
   text-align: center;
   height: 20px;
   border: 1px white solid;
+  text-shadow: 2px 2px 1px black;
+}
+
+.profile-text {
+  text-shadow: 5px 2px 2px black;
+  text-decoration: none;
+}
+
+.profile-text-exercises {
+  text-shadow: 5px 2px 2px black;
+  text-decoration: none;
+}
+
+.profile-text-exercises:hover {
+  cursor: pointer;
+  text-shadow: 3px 2px 2px rgb(116, 177, 201);
 }

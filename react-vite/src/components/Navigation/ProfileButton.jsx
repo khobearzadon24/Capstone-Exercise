@@ -51,12 +51,17 @@ function ProfileButton() {
         <ul className={"profile-dropdown"} ref={ulRef}>
           {user ? (
             <>
-              <li>
+              <li className="profile-text">
                 {user.firstName} {user.lastName}
               </li>
-              <li>{user.email}</li>
-              <li>
-                <NavLink to="/exercises/my-exercises">My Exercises</NavLink>
+              <li className="profile-text">{user.email}</li>
+              <li className="profile-text">
+                <NavLink
+                  className="profile-text-exercises"
+                  to="/exercises/my-exercises"
+                >
+                  My Exercises
+                </NavLink>
                 {/* <button
                   onClick={(e) => {
                     e.stopPropagation();

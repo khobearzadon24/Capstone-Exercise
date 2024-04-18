@@ -16,6 +16,7 @@
 .exercise-image-single {
   width: 400px;
   border-radius: 20px;
+  border: 2px solid white;
   /* height: auto; */
   /* object-fit: contain; */
 }
@@ -25,18 +26,21 @@
   display: flex;
   justify-content: center;
   margin-bottom: 0;
+  text-shadow: 5px 2px 2px black;
 }
 
 .made-by-name {
   display: flex;
   justify-content: center;
   font-size: 13px;
+  text-shadow: 3px 2px 2px black;
 }
 
 .exercise-decription {
   font-size: 18px;
   display: flex;
   justify-content: center;
+  text-shadow: 3px 2px 2px black;
 }
 
 .exercise-details-header-container {
@@ -92,10 +96,12 @@ h4 {
 
 .name-exercise-comment {
   background: transparent;
+  text-shadow: 3px 2px 2px black;
 }
 
 .describe-comment {
   background: transparent;
+  text-shadow: 3px 2px 2px black;
 }
 
 .description-exercise-comment {
@@ -129,6 +135,7 @@ button {
 .exercise-comments-title {
   margin-top: 20px;
   color: white;
+  text-shadow: 5px 2px 2px black;
 }
 
 .ManageExercise {
@@ -169,8 +176,10 @@ button {
 .be-the-first {
   font-size: 20px;
   margin-bottom: 10px;
+  text-shadow: 5px 2px 2px black;
 }
 
 .date-comment {
   background: transparent;
+  text-shadow: 3px 2px 2px black;
 }
