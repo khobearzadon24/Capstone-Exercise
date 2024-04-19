@@ -49,9 +49,10 @@ function LoginFormModal() {
     <div className="container-of-log-in">
       <h1 className="log-in-modal-title">Log In</h1>
       <form className="log-in-modal-form" onSubmit={handleSubmit}>
-        <label className="enter-email">
+        <label className="enter-email-login">
           Email
           <input
+            className="input-info"
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -62,6 +63,7 @@ function LoginFormModal() {
         <label className="enter-password">
           Password
           <input
+            className="input-info"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}

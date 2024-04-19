@@ -10,6 +10,7 @@
   border-radius: 20px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-shadow: 5px 2px 2px black;
 }
 
 .sign-up-logo {
@@ -30,24 +31,28 @@
   display: flex;
   justify-content: space-between;
   gap: 5px;
+  /* border-radius: 20px; */
 }
 
 .first-label {
   display: flex;
   justify-content: space-between;
   gap: 5px;
+  /* border-radius: 20px; */
 }
 
 .last-label {
   display: flex;
   justify-content: space-between;
   gap: 5px;
+  /* border-radius: 20px; */
 }
 
 .password-label {
   display: flex;
   justify-content: space-between;
   gap: 5px;
+  /* border-radius: 20px; */
 }
 
 .confirm-password-label {
@@ -79,7 +84,7 @@
   color: red;
 }
 
-.input {
+.input-info {
   border-radius: 20px;
   padding-left: 10px;
   padding: 8px;

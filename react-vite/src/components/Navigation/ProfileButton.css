@@ -43,3 +43,11 @@
   cursor: pointer;
   text-shadow: 3px 2px 2px rgb(116, 177, 201);
 }
+
+.login-signup {
+  text-shadow: 5px 2px 2px black;
+}
+
+.profile-dropdown {
+  text-shadow: 5px 2px 2px black;
+}

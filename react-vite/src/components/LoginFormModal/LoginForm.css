@@ -11,6 +11,8 @@
   margin-top: 10px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: rgb(116, 177, 201);
+  text-shadow: 5px 2px 2px black;
 }
 .log-in-modal-form {
   display: flex;
@@ -24,12 +26,15 @@
   /* border-radius: 20px; */
 }
 
-.enter-email {
+.enter-email-login {
   display: flex;
   justify-content: center;
   gap: 10px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: rgb(116, 177, 201);
+  text-shadow: 5px 2px 2px black;
+  /* border-radius: 20px; */
 }
 
 .enter-password {
@@ -38,6 +43,9 @@
   gap: 10px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: rgb(116, 177, 201);
+  text-shadow: 5px 2px 2px black;
+  /* border-radius: 20px; */
 }
 
 .log-in-modal-button {
@@ -46,6 +54,7 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   background-color: rgb(116, 177, 201);
+  text-shadow: 2px 2px 2px black;
 }
 
 .demo-user {
@@ -54,6 +63,7 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   background-color: rgb(116, 177, 201);
+  text-shadow: 2px 2px 2px black;
 }
 
 .login-errors {
@@ -64,4 +74,10 @@
   color: red;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.input-info {
+  /* border-radius: 20px; */
+  padding-left: 10px;
+  padding: 8px;
 }
