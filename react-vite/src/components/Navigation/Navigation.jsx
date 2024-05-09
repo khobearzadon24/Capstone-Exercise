@@ -66,9 +66,9 @@ function Navigation() {
             placeholder="Search for an exercise"
           />
         </div>
-        <ul>
+        <div className="profile-button-area">
           <ProfileButton className="profile-button" />
-        </ul>
+        </div>
       </div>
     </div>
   );

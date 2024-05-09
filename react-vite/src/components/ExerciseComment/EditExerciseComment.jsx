@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { useModal } from "../../context/Modal";
 
 import {
   fetchExerciseComment,
@@ -11,6 +12,7 @@ import "./EditExerciseComment.css";
 
 function UpdateExerciseComment({ id }) {
   const dispatch = useDispatch();
+  const { closeModal } = useModal();
   // const { id } = useParams();
   const exercise = useSelector((state) => state.exerciseState);
   const exerciseComment = useSelector(
@@ -40,6 +42,7 @@ function UpdateExerciseComment({ id }) {
     const response = await dispatch(editExerciseComment(id, payload));
     if (response?.errors) setErrors(response?.errors);
     // else navigate(`/exercises/${exerciseId}`);
+    closeModal();
     window.location.reload();
   };
 

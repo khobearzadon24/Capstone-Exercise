@@ -27,7 +27,7 @@ function AddExerciseCommentModal() {
     await dispatch(fetchAllExerciseComments(exerciseId));
     if (newExerciseComment.errors) setErrors(newExerciseComment.errors);
     closeModal();
-    window.location.reload();
+    // window.location.reload();
     // reset();
   };
 

@@ -10,8 +10,9 @@
 
 .profile-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: centerß;
   align-items: center;
+  text-align: center;
 }
 
 .profile-logo {
@@ -24,7 +25,7 @@
   font-size: 15px;
   align-items: center;
   text-align: center;
-  height: 20px;
+  /* height: 20px; */
   border: 1px white solid;
   text-shadow: 2px 2px 1px black;
 }
@@ -49,5 +50,7 @@
 }
 
 .profile-dropdown {
+  display: flex;
+  justify-content: center;
   text-shadow: 5px 2px 2px black;
 }

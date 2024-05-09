@@ -105,6 +105,7 @@ function SingleExercise() {
                             <UpdateExerciseComment id={comment?.id} />
                           }
                         />
+
                         <DeleteExerciseCommentButton
                           className="delete-button"
                           id={comment?.id}

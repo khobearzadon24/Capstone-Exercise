@@ -35,7 +35,7 @@ function ExercisePage() {
 
   useEffect(() => {
     dispatch(fetchAllExercises());
-    dispatch(getExerciseTypes);
+    dispatch(getExerciseTypes());
   }, [dispatch]);
 
   // console.log(exercises, "here is the state of exercises");

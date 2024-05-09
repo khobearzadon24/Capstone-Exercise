@@ -12,9 +12,9 @@ function DeleteExerciseCommentButton({ id }) {
   const { exerciseId } = useParams();
   const { closeModal } = useModal();
 
-  const deleteExerciseComment = () => {
+  const deleteExerciseComment = async () => {
     // e.preventDefault();
-    dispatch(removeExerciseComment(id));
+    await dispatch(removeExerciseComment(id));
     dispatch(fetchAllExerciseComments(exerciseId));
     closeModal();
     // figure out the navigate
@@ -31,7 +31,7 @@ function DeleteExerciseCommentButton({ id }) {
         ) {
           deleteExerciseComment(e);
         }
-        window.location.reload();
+        // window.location.reload();
       }}
     >
       Delete Comment

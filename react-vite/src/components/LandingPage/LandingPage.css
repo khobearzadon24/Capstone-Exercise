@@ -43,3 +43,6 @@
   text-shadow: 3px 2px 2px black;
 }
 /* text-shadow: 3px 2px 2px black; */
+
+@media (max-width: 1260px) {
+}
