@@ -6,9 +6,12 @@ import { FaSearch } from "react-icons/fa";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
 import CommonTerms from "../CommonTerms/CommonTerms";
 import Calculator from "../Calculator/Calculator";
+import SearchBar from "../SearchBar/SearchBar";
+import { SearchResultsList } from "../SearchBar/SearchResultsList";
 
 function Navigation() {
   const [showMenu, setShowMenu] = useState(false);
+  const [results, setResults] = useState([]);
   const ulRef = useRef();
   const handleFeature = () => {
     alert("Feature Coming Soon");
@@ -58,13 +61,17 @@ function Navigation() {
             modalComponent={<Calculator />}
           />
         </div>
-        <div className="search-bar" onClick={(e) => handleFeature(e)}>
+        {/* <div className="search-bar" onClick={(e) => handleFeature(e)}>
           <FaSearch className="search-icon" />
           <input
             type="text"
             name="search-bar"
             placeholder="Search for an exercise"
           />
+        </div> */}
+        <div className="search-area">
+          <SearchBar setResults={setResults} />
+          <SearchResultsList results={results} />
         </div>
         <div className="profile-button-area">
           <ProfileButton className="profile-button" />

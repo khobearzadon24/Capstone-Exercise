@@ -161,6 +161,11 @@ ul {
   background-color: black;
 }
 
+.search-area {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 1260px) {
   /* … */
   /* .right-side-nav {
