@@ -58,14 +58,14 @@ function Navigation() {
             modalComponent={<Calculator />}
           />
         </div>
-        <div className="search-bar" onClick={(e) => handleFeature(e)}>
+        {/* <div className="search-bar" onClick={(e) => handleFeature(e)}>
           <FaSearch className="search-icon" />
           <input
             type="text"
             name="search-bar"
             placeholder="Search for an exercise"
           />
-        </div>
+        </div> */}
         <div className="profile-button-area">
           <ProfileButton className="profile-button" />
         </div>
