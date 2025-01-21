@@ -4,8 +4,10 @@
   flex-direction: column;
   gap: 12px;
   padding: 30px;
-  /* border-radius: 20px; */
-  /* background-color: #3e415c; */
+  height: 300px;
+  width: 300px;
+  border-radius: 20px;
+  background-color: #fceed1;
   background-image: linear-gradient(
     to right top,
     #04464a,
@@ -14,7 +16,7 @@
     #152542,
     #281f3d
   );
-  border: white 2px solid;
+  border: black 2px solid;
 }
 
 .to-know {

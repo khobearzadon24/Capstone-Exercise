@@ -2,7 +2,10 @@
 * {
   /* margin: 5px; */
   color: white;
-  background: rgb(72, 69, 69);
+  background: #fceed1;
+  font-family: "Lucida Console", "Courier New", monospace;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
   /* background: linear-gradient(
     to right top,
     #04464a,

@@ -16,7 +16,7 @@
   justify-content: space-around;
   flex-direction: row;
   width: 75%;
-  /* border: 2px solid black; */
+  /* border: 1px solid black; */
   border-radius: 20px;
   padding: 30px;
   margin-bottom: 30px;
@@ -30,17 +30,17 @@
   width: 350px;
   height: 225px;
   border-radius: 20px;
-  border: white 1px solid;
-  box-shadow: 3px 5px 5px black;
+  border: black 1px solid;
+  /* box-shadow: 3px 5px 5px black; */
 }
 
 .landing-page-title {
   color: rgb(116, 177, 201);
-  text-shadow: 5px 2px 2px black;
+  /* text-shadow: 5px 2px 2px black; */
 }
 
 .landing-text {
-  text-shadow: 3px 2px 2px black;
+  /* text-shadow: 3px 2px 2px black; */
 }
 /* text-shadow: 3px 2px 2px black; */
 
