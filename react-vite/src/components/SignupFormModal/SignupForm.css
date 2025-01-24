@@ -8,9 +8,9 @@
   gap: 10px;
   width: 500px;
   border-radius: 20px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  text-shadow: 5px 2px 2px black;
+  font-family: "Lucida Console", "Courier New", monospace;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .sign-up-logo {

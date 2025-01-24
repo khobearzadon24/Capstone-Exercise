@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Console", "Courier New", monospace;
   font-weight: 600;
 }
 .exercise-image-container {
@@ -27,21 +26,24 @@
   display: flex;
   justify-content: center;
   margin-bottom: 0;
-  text-shadow: 5px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .made-by-name {
   display: flex;
   justify-content: center;
   font-size: 13px;
-  text-shadow: 3px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .exercise-decription {
   font-size: 18px;
   display: flex;
   justify-content: center;
-  text-shadow: 3px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .exercise-details-header-container {
@@ -97,12 +99,14 @@ h4 {
 
 .name-exercise-comment {
   background: transparent;
-  text-shadow: 3px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .describe-comment {
   background: transparent;
-  text-shadow: 3px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .description-exercise-comment {
@@ -136,7 +140,8 @@ button {
 .exercise-comments-title {
   margin-top: 20px;
   color: white;
-  text-shadow: 5px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .ManageExercise {
@@ -177,10 +182,12 @@ button {
 .be-the-first {
   font-size: 20px;
   margin-bottom: 10px;
-  text-shadow: 5px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .date-comment {
   background: transparent;
-  text-shadow: 3px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }

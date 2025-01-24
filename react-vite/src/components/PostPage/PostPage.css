@@ -1,7 +1,6 @@
 .post-page-container {
   margin: 20px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Console", "Courier New", monospace;
   /* display: inline; */
   /* justify-content: center; */
   /* flex-direction: column; */
@@ -14,7 +13,8 @@
   font-size: 40px;
   margin-bottom: 5px;
   color: rgb(116, 177, 201);
-  text-shadow: 5px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .line-break {
@@ -27,7 +27,8 @@
 
 .postCard:hover {
   cursor: pointer;
-  box-shadow: 5px 5px 5px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 /* .create-post-button {
@@ -147,7 +148,8 @@
   font-size: 15px;
   display: flex;
   justify-content: flex-start;
-  text-shadow: 3px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
   background-color: transparent;
   /* background-image: linear-gradient(
     to right top,
@@ -160,11 +162,13 @@
 }
 
 .name-poster {
-  text-shadow: 5px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
   background-color: transparent;
 }
 
 .post-description {
-  text-shadow: 3px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
   background-color: transparent;
 }

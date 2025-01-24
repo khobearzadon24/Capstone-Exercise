@@ -1,11 +1,13 @@
 .exercise-comment-edit-title {
   color: rgb(116, 177, 201);
-  text-shadow: 5px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .edit-description {
   color: rgb(116, 177, 201);
-  text-shadow: 5px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .input-area-description-edit {
@@ -27,5 +29,6 @@
   width: fit-content;
   display: flex;
   justify-content: center;
-  text-shadow: 5px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }

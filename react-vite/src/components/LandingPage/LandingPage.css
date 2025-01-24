@@ -5,8 +5,7 @@
   text-align: center;
   flex-direction: column;
   margin-left: 15%;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Console", "Courier New", monospace;
 }
 
 .first-container {

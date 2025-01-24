@@ -3,9 +3,8 @@
   color: rgb(116, 177, 201);
   display: flex;
   justify-content: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  text-shadow: 5px 2px 2px black;
+  font-family: "Lucida Console", "Courier New", monospace;
+  /* text-shadow: 5px 2px 2px black; */
 }
 
 .exerciseDivs {
@@ -15,8 +14,7 @@
   justify-content: space-between;
   margin: 20px;
   gap: 20px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Console", "Courier New", monospace;
 }
 
 .exerciseCard {
@@ -52,5 +50,6 @@
 
 .name {
   font-size: 20px;
-  text-shadow: 5px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }

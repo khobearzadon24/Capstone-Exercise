@@ -1,21 +1,14 @@
 .common-terms-modal {
-  display: flex;
+  display: flex-inline;
+  overflow-y: scroll;
   justify-content: center;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
   padding: 30px;
-  height: 300px;
-  width: 300px;
-  border-radius: 20px;
+  height: 500px;
+  width: 800px;
   background-color: #fceed1;
-  background-image: linear-gradient(
-    to right top,
-    #04464a,
-    #0a3641,
-    #133b50,
-    #152542,
-    #281f3d
-  );
+  /* background-image: #fceed1; */
   border: black 2px solid;
 }
 
@@ -36,6 +29,10 @@
 .what-to-know {
   /* background-color: #3e415c; */
   background-color: transparent;
+  margin-bottom: 10px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  color: black;
   /* background-image: linear-gradient(
     to right top,
     #7df3fc,

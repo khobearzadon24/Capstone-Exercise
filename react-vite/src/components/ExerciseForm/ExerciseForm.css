@@ -4,8 +4,7 @@
   justify-content: center;
   text-align: center;
   gap: 200px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Console", "Courier New", monospace;
   /* margin-left: 40px;
   margin-right: 40px;
   margin-top: 30px; */
@@ -26,9 +25,8 @@
 .exercise-title-form {
   color: rgb(116, 177, 201);
   font-size: 30px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  text-shadow: 5px 2px 2px black;
+  font-family: "Lucida Console", "Courier New", monospace;
+  /* text-shadow: 5px 2px 2px black; */
 }
 
 .input-area {
@@ -66,5 +64,6 @@
 
 .form-name {
   color: rgb(116, 177, 201);
-  text-shadow: 5px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }

@@ -27,7 +27,7 @@
   border-right: 2px white solid; */
   border-bottom: 1px black solid;
   /* box-shadow: 2px 5px 5px 2px rgb(116, 177, 201); */
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Lucida Console", "Courier New", monospace;
   /* background-color: black; */
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
@@ -65,8 +65,7 @@
   /* border: 2px black solid; */
   border-radius: 10px;
   padding: 10px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Console", "Courier New", monospace;
 }
 
 ul {

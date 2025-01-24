@@ -1,15 +1,17 @@
 .manage-page-container {
   display: flex;
   justify-content: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  /* font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif; */
+  font-family: "Lucida Console", "Courier New", monospace;
 }
 
 .manage-title {
   font-size: 45px;
   color: rgb(116, 177, 201);
   margin-bottom: 30px;
-  text-shadow: 5px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
   display: flex;
   justify-content: center;
 }

@@ -20,10 +20,10 @@
   border: 2px white solid;
   background-color: rgb(116, 177, 201);
   font-size: 15px;
-  text-shadow: 3px 2px 2px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .exercise-page-create {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Console", "Courier New", monospace;
 }
