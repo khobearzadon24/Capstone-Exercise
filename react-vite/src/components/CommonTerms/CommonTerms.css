@@ -30,8 +30,7 @@
   /* background-color: #3e415c; */
   background-color: transparent;
   margin-bottom: 10px;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+  text-shadow: none;
   color: black;
   /* background-image: linear-gradient(
     to right top,

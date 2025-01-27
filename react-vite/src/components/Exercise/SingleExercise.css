@@ -166,7 +166,7 @@ button {
 .delete-exercise-button {
   padding: 10px;
   border: 2px white solid;
-  background-color: rgb(116, 177, 201);
+  background-color: rgb(48, 88, 105);
   font-size: 10px;
   width: fit-content;
 }

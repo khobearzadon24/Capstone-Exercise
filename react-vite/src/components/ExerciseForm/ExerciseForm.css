@@ -23,7 +23,7 @@
 }
 
 .exercise-title-form {
-  color: rgb(116, 177, 201);
+  color: rgb(48, 88, 105);
   font-size: 30px;
   font-family: "Lucida Console", "Courier New", monospace;
   /* text-shadow: 5px 2px 2px black; */
@@ -63,7 +63,7 @@
 }
 
 .form-name {
-  color: rgb(116, 177, 201);
+  color: rgb(48, 88, 105);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }

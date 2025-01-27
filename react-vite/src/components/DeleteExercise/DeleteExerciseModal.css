@@ -10,13 +10,13 @@
 
 .confirm-delete {
   margin-left: 15%;
-  color: rgb(116, 177, 201);
+  color: rgb(48, 88, 105);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
 
 .you-sure {
-  color: rgb(116, 177, 201);
+  color: rgb(48, 88, 105);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
@@ -33,7 +33,7 @@
   padding: 7px;
   border: 1px white solid;
   border-radius: 20px;
-  background-color: rgb(116, 177, 201);
+  background-color: rgb(48, 88, 105);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }

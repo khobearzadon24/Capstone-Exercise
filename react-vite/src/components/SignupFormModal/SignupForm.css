@@ -16,7 +16,7 @@
 .sign-up-logo {
   display: flex;
   justify-content: center;
-  color: rgb(116, 177, 201);
+  color: rgb(48, 88, 105);
 }
 
 .sign-up-form {
@@ -73,7 +73,7 @@
   font-size: 15px;
   height: 40px;
   width: 120px;
-  background-color: rgb(116, 177, 201);
+  background-color: rgb(48, 88, 105);
 }
 
 .sign-up-errors {

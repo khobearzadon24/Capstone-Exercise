@@ -1,11 +1,11 @@
 .exercise-comment-edit-title {
-  color: rgb(116, 177, 201);
+  color: rgb(48, 88, 105);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
 
 .edit-description {
-  color: rgb(116, 177, 201);
+  color: rgb(48, 88, 105);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
@@ -24,7 +24,7 @@
   padding: 10px;
   border-radius: 20px;
   border: 1px white solid;
-  background-color: rgb(116, 177, 201);
+  background-color: rgb(48, 88, 105);
   font-size: 15px;
   width: fit-content;
   display: flex;

@@ -9,7 +9,7 @@
   justify-content: center;
   margin-top: 10px;
   font-family: "Lucida Console", "Courier New", monospace;
-  color: rgb(116, 177, 201);
+  color: rgb(48, 88, 105);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
@@ -29,7 +29,7 @@
   justify-content: center;
   gap: 10px;
   font-family: "Lucida Console", "Courier New", monospace;
-  color: rgb(116, 177, 201);
+  color: rgb(48, 88, 105);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
   /* border-radius: 20px; */
@@ -40,7 +40,7 @@
   justify-content: center;
   gap: 10px;
   font-family: "Lucida Console", "Courier New", monospace;
-  color: rgb(116, 177, 201);
+  color: rgb(48, 88, 105);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
   /* border-radius: 20px; */
@@ -50,7 +50,7 @@
   width: 80px;
   margin-left: 65px;
   font-family: "Lucida Console", "Courier New", monospace;
-  background-color: rgb(116, 177, 201);
+  background-color: rgb(48, 88, 105);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
@@ -59,7 +59,7 @@
   width: 90px;
   margin-left: 60px;
   font-family: "Lucida Console", "Courier New", monospace;
-  background-color: rgb(116, 177, 201);
+  background-color: rgb(48, 88, 105);
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }

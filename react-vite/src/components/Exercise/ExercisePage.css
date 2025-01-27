@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   font-size: 45px;
-  color: rgb(116, 177, 201);
+  color: rgb(48, 88, 105);
   font-family: "Lucida Console", "Courier New", monospace;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
@@ -17,7 +17,7 @@
 
 .style-hover {
   padding: 10px;
-  background-color: rgb(116, 177, 201);
+  background-color: rgb(48, 88, 105);
   border-radius: 20px;
   /* box-shadow: 2px 2px 5px black; */
 }
